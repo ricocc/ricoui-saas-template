@@ -1,62 +1,15 @@
-# Navigation And Footer
+# 09 Navigation & Footer
 
-Sources:
-
-- `src/collections/menu.json`
-- `src/components/sections/Header.astro`
-- `src/components/sections/Footer.astro`
-- `src/config/site.js`
+导航来自 `src/collections/menu.json`。
 
 ## Header
 
-The header reads navigation items from `src/collections/menu.json`.
-
-Current structure:
-
-- Home
-- Pages dropdown
-  - Features
-  - Pricing
-  - About
-  - Blog
-  - Changelog
-  - Sign in
-  - Sign up
-  - 404
-- Elements
-- Contact
-
-Header behavior is supported by `src/assets/js/main.js`:
-
-- Sticky style after scroll.
-- Mobile menu open/close.
-- Active route styling.
-- Dark mode toggle.
+- 顶部导航已中文化。
+- `Elements`、`Changelog` 保留英文栏目名。
+- GitHub CTA 保留英文品牌名。
+- 浅色 / 深色切换显示为中文。
 
 ## Footer
 
-Footer links are defined inside `src/components/sections/Footer.astro`.
-
-Current groups:
-
-- Product
-- Resources
-- Company
-- Legal
-
-Footer also includes:
-
-- Logo.
-- Short product description.
-- Version badge.
-- Built with Astro & Tailwind label.
-- Social links from `src/config/site.js`.
-- Back-to-top widget.
-
-## QA
-
-- Verify dropdown behavior on desktop.
-- Verify mobile menu open/close.
-- Verify active nav item styles.
-- Verify footer external links open correctly.
-- Verify social icons render in light and dark modes.
+- 产品、资源、项目、协议分组已中文化。
+- `Docs`、`GitHub`、`MIT License` 等标识保留英文。

@@ -1,26 +1,29 @@
 # CLAUDE.md
 
-This file gives AI coding assistants the working context and conventions needed when editing this repository.
+本文件为 AI coding assistants 提供编辑本仓库时需要遵循的上下文和约定。
 
 ## Project
 
-RicoFast is a static-first SaaS website template built with Astro, Tailwind CSS v4, MDX, and a reusable component system.
+RicoFast 是一个 static-first SaaS 官网模板，基于 Astro、Tailwind CSS v4、MDX 和可复用组件系统构建。
 
-It is a front-end template, not a full backend SaaS product. The project includes marketing pages, MDX blog/changelog content, demo pricing, demo auth screens, a demo contact form, SEO setup, dark mode, and a documented design system.
+当前项目已中文化：界面文案和文档以中文为主；`DESIGN.md`、`skills`、组件名、路由、工具名和技术名等英文标识保持英文。
 
-Primary docs:
+它是前端模板，不是完整后端 SaaS 产品。项目包含营销页、MDX Blog/Changelog、演示价格、演示 Auth 页面、演示联系表单、SEO、暗黑模式和设计系统文档。
 
-- `docs/PRD.md` - current implemented product scope.
-- `docs/PLAN.md` - concise project overview.
-- `docs/DESIGN.md` - design tokens and UI rules.
-- `docs/plan/` - page-level notes.
-- `README.md` and `README-zh.md` - user-facing setup docs.
+## Primary Docs
+
+- `docs/PRD.md`：当前实现范围。
+- `docs/PLAN.md`：项目概览。
+- `docs/DESIGN.md`：设计 tokens 和 UI 规则。
+- `docs/plan/`：页面级记录。
+- `README.md`：中文主文档。
+- `README-zh.md`：旧中文入口兼容文件。
 
 ## Current Stack
 
 | Layer | Choice |
 | --- | --- |
-| Framework | Astro 5.15 |
+| Framework | Astro 6.4 |
 | Styling | Tailwind CSS v4 with `@theme` tokens |
 | Content | MDX, `@astrojs/mdx`, Astro Content Layer |
 | Icons | `@lucide/astro` |
@@ -30,7 +33,7 @@ Primary docs:
 | Lint/format | Biome |
 | Images | Static assets, `sharp` |
 
-The dev server is configured for port `5200` in `astro.config.mjs`.
+开发服务器端口在 `astro.config.mjs` 中配置为 `5200`。
 
 ## Commands
 
@@ -43,35 +46,34 @@ pnpm check
 pnpm astro
 ```
 
-`pnpm build` runs `astro check && astro build`.
+`pnpm build` 会运行 `astro check && astro build`。
 
 ## Repository Layout
 
 ```text
 src/
-  assets/js/main.js        Header behavior, dark mode, mobile menu, AOS init
-  collections/             JSON data for menu, social links, tech stack
+  assets/js/main.js        Header、dark mode、mobile menu、AOS init
+  collections/             menu、social、tech stack JSON
   components/
     cards/                 BlogCard, TechStackCard
     elements/              PageHeader, SectionHeader, SeparatorLine
     home/                  HeroSection
     sections/              Header, Footer, Pricing, FAQ, BlogSection
-    ui/                    Button, Badge, Logo, BrowserFrame, PricingToggle, etc.
-    widgets/               Toc, Pagination, ToTop, TrackGa, OptimizedImage, etc.
-  config/site.js           Site identity, metadata, social URLs, email
+    ui/                    Button, Badge, Logo, BrowserFrame, PricingToggle
+    widgets/               Toc, Pagination, ToTop, TrackGa, OptimizedImage
+  config/site.js           站点信息、SEO、社交链接、邮箱
   content/
-    post/                  Blog MDX entries
-    changelog/             Changelog MDX entries
+    post/                  Blog MDX
+    changelog/             Changelog MDX
   layouts/                 Layout, PageLayout, PostLayout, Meta
   pages/                   Astro routes
-  styles/                  Global tokens, article styles, AOS overrides
+  styles/                  global tokens, article styles, AOS overrides
   content.config.js        Content Layer schemas
 public/
-  assets/                  Template images and icons
-  rico/                    Rico/RicoUI support assets
+  assets/
+  rico/
   favicon.png
   og.jpg
-  robots.txt
 docs/
   PRD.md
   PLAN.md
@@ -81,7 +83,7 @@ docs/
 
 ## Routes
 
-Current routes include:
+当前路由包括：
 
 - `/`
 - `/features`
@@ -100,88 +102,60 @@ Current routes include:
 - `/rss.xml`
 - `/404`
 
-`/sign-in` and `/sign-up` are the preferred auth-template routes. `/signin` and `/signup` are also present in the repo, so check both before changing auth screens.
+`/sign-in` 和 `/sign-up` 是首选 Auth 模板路由；`/signin` 和 `/signup` 作为居中卡片版本保留。
 
 ## Design System
 
-Design tokens live in `src/styles/global.css` and are documented in `docs/DESIGN.md`.
+设计 tokens 在 `src/styles/global.css`，文档在 `docs/DESIGN.md`。
 
-Important tokens and rules:
+重要规则：
 
+- 全站字体使用 `Source Han Sans SC`, `Noto Sans SC`, `思源黑体`。
 - Primary color: `--color-primary` = `#2d6dc3`
 - Accent color: `--color-accent` = `#fad13b`
 - Light canvas: `--color-bg-primary` = `#fdfaf5`
 - Dark canvas: `--color-bg-primary-dark` = `#0b1220`
-- Display font: `--font-brand` = Instrument Serif
-- UI/body font: `--font-sans` = Inter
 - Main max width: `--max-screen` = `1200px`
 - Inner max width: `--inner-screen` = `800px`
-- Use `.site-container` for regular sections.
-- Use `.inner-container` for narrow article/content layouts.
-- Dark mode is class-based and stored in `localStorage` as `dark_mode`.
+- 常规 section 使用 `.site-container`。
+- 文章和窄内容使用 `.inner-container`。
+- Dark mode 是 class-based，并存储在 `localStorage.dark_mode`。
 
-When adding UI:
+新增 UI 时：
 
-- Use existing tokens before adding new values.
-- Use existing components before creating new ones.
-- Keep light and dark mode styles together.
-- Keep motion subtle and respect `prefers-reduced-motion`.
-- Prefer Lucide icons via `@lucide/astro`.
-- Do not introduce a new dependency for simple UI behavior.
+- 优先使用现有 tokens。
+- 优先使用现有组件。
+- 浅色和深色样式一起考虑。
+- 动效保持克制，并尊重 `prefers-reduced-motion`。
+- 图标优先使用 `@lucide/astro`。
+- 简单 UI 行为不要引入新依赖。
 
 ## Astro And Content Rules
 
-- Use Astro Content Layer collections from `src/content.config.js`.
-- Use `getCollection()` for blog/changelog content.
-- Use `entry.id` for content routes.
-- Use `render(entry)` rather than old Astro content APIs.
-- Use `import.meta.env` for environment variables.
-- Public client-exposed env vars must use the `PUBLIC_` prefix.
-- `getStaticPaths()` params should be strings.
+- 使用 `src/content.config.js` 中的 Astro Content Layer collections。
+- Blog/Changelog 使用 `getCollection()`。
+- 内容路由使用 `entry.id`。
+- 渲染使用 `render(entry)`。
+- 环境变量使用 `import.meta.env`。
+- 客户端公开变量必须使用 `PUBLIC_` 前缀。
+- `getStaticPaths()` params 应为字符串。
 
-Blog posts live in `src/content/post/<slug>/index.mdx`.
+Blog posts: `src/content/post/<slug>/index.mdx`。
 
-Changelog entries live in `src/content/changelog/*.mdx`.
-
-## Component Conventions
-
-- Page-level sections go in `src/components/sections/`.
-- Small reusable primitives go in `src/components/ui/`.
-- Structural text/layout helpers go in `src/components/elements/`.
-- Repeated cards go in `src/components/cards/`.
-- Page utilities go in `src/components/widgets/`.
-- Site identity should come from `src/config/site.js` when practical.
-- Navigation comes from `src/collections/menu.json`.
+Changelog entries: `src/content/changelog/*.mdx`。
 
 ## Styling Conventions
 
-- Prefer Tailwind utilities plus project tokens.
-- Avoid one-off hex values unless extending the token system deliberately.
-- Avoid inline styles for colors and layout unless dynamic CSS variables are genuinely needed.
-- Use `font-brand` only for display headings.
-- Use the default sans font for body, forms, labels, navigation, and buttons.
-- Major marketing sections commonly use `py-16 md:py-24`.
-- Use dashed borders where the existing visual language does.
-- Ensure text fits on mobile before finishing UI work.
-
-## Motion Conventions
-
-- AOS is initialized in `src/assets/js/main.js`.
-- Custom AOS styles live in `src/styles/aos-custom.css`.
-- Common reveal attributes:
-
-```html
-data-aos="fade-up-xs"
-data-aos-once="true"
-```
-
-- Use staggered delays sparingly, usually `data-aos-delay={i * 100}`.
-- Use CSS transitions/animations for small local effects.
-- Use `motion` only when orchestration is worth the dependency.
+- 优先使用 Tailwind utilities 和项目 tokens。
+- 不要随手写 one-off hex，除非是在扩展 token 系统。
+- 表单、导航、按钮和正文都使用默认 sans 字体，即思源黑体字体栈。
+- 主要营销 section 常用 `py-16 md:py-24`。
+- 保留现有虚线边框语言。
+- 完成 UI 前检查移动端文本是否溢出。
 
 ## SEO And Analytics
 
-Relevant files:
+相关文件：
 
 - `src/config/site.js`
 - `src/layouts/Meta.astro`
@@ -191,7 +165,7 @@ Relevant files:
 - `public/og.jpg`
 - `public/robots.txt`
 
-Environment variables:
+环境变量：
 
 ```env
 PUBLIC_SITE_URL=https://your-domain.com
@@ -199,38 +173,29 @@ PUBLIC_GA4_ID=
 PUBLIC_UMAMI_ID=
 ```
 
-Analytics are optional. Do not require analytics IDs for local development.
+Analytics 可选，本地开发不应要求填写 analytics ID。
 
 ## Before Editing
 
-1. Read the relevant page/component first.
-2. Check `docs/PRD.md` for current scope.
-3. Check `docs/DESIGN.md` before changing visual patterns.
-4. Check the matching `docs/plan/*.md` file when changing a page.
-5. Preserve unrelated user changes in the working tree.
+1. 先读相关页面或组件。
+2. 涉及范围时检查 `docs/PRD.md`。
+3. 改视觉前检查 `docs/DESIGN.md`。
+4. 改页面时可查看 `docs/plan/*.md`。
+5. 保留与任务无关的用户改动。
 
 ## After Editing
 
-For code changes, run the narrowest useful verification:
+代码或内容路由变化后，优先运行：
 
-- `pnpm build` for route/content/type changes.
-- `pnpm check` for formatting/lint-sensitive edits.
-- Manual browser review for visual/layout changes.
+- `pnpm build`
+- `pnpm check`
 
-For docs-only changes, a text scan is usually enough.
-
-Useful scans:
-
-```bash
-rg -n "TODO|FIXME|\\[ \\]" docs README.md README-zh.md CLAUDE.md
-rg -n "template positioning|backend feature|real auth" docs README.md README-zh.md CLAUDE.md
-```
+文档改动可用文本扫描确认。
 
 ## Do Not
 
-- Do not reintroduce previous-template positioning.
-- Do not recreate removed planning docs unless explicitly asked.
-- Do not add new public claims that are not reflected in the current code.
-- Do not make the static auth/contact pages sound like real backend features.
-- Do not add real secrets or private credentials.
-- Do not replace the established Astro + Tailwind + MDX stack without an explicit request.
+- 不要重新引入英文主文案，除非是技术名、工具名或文件名。
+- 不要把静态 Auth/Contact 页面写成真实后端能力。
+- 不要添加未在代码中体现的公开能力声明。
+- 不要添加真实密钥或私有凭据。
+- 没有明确请求时，不要替换 Astro + Tailwind + MDX 技术栈。

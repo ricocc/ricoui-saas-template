@@ -5,8 +5,8 @@ import Button from "@/components/ui/Button.astro";
 ---
 
 <Layout
-  title="Sign up - RicoFast"
-  description="Sign up template page for RicoFast."
+  title="注册 — RicoFast"
+  description="RicoFast 的注册页模板。"
 >
   <main class="site-container py-12 md:py-20">
     <section class="grid min-h-[calc(100vh-18rem)] items-center gap-8 lg:grid-cols-[minmax(420px,1.05fr)_minmax(0,0.95fr)]">
@@ -17,16 +17,16 @@ import Button from "@/components/ui/Button.astro";
       >
         <div class="rounded-2xl border border-neutral-200 bg-bg-secondary/85 p-6 shadow-[0_18px_60px_rgba(25,34,47,0.08)] backdrop-blur dark:border-neutral-700 dark:bg-bg-secondary-dark/85 dark:shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-8">
           <div class="mb-8">
-            <p class="text-xs font-medium uppercase tracking-[0.14em] text-primary dark:text-primary-light">Sign up</p>
-            <h1 class="mt-3 font-brand text-4xl tracking-normal text-neutral-800 dark:text-neutral-100">Create your account</h1>
+            <p class="text-xs font-medium uppercase tracking-[0.14em] text-primary dark:text-primary-light">注册</p>
+            <h1 class="mt-3 font-brand text-3xl tracking-normal text-neutral-800 dark:text-neutral-100">创建你的账号</h1>
             <p class="mt-3 text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-              Start with a clean account form and connect your own auth flow when ready.
+              准备上线时再接入你自己的 auth 流程。
             </p>
           </div>
 
-          <form id="sign-up-form" class="space-y-5">
+          <form id="sign-up-form" class="space-y-4">
             <div>
-              <label for="name" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Name</label>
+              <label for="name" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">姓名</label>
               <div class="relative">
                 <User class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400 dark:text-neutral-500" />
                 <input
@@ -35,14 +35,14 @@ import Button from "@/components/ui/Button.astro";
                   type="text"
                   autocomplete="name"
                   required
-                  placeholder="Your name"
+                  placeholder="你的姓名"
                   class="w-full rounded-lg border border-neutral-200 bg-bg-secondary px-11 py-3 text-neutral-800 transition-colors placeholder:text-neutral-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:border-neutral-700 dark:bg-bg-secondary-dark dark:text-neutral-100 dark:placeholder:text-neutral-500"
                 />
               </div>
             </div>
 
             <div>
-              <label for="email" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Email</label>
+              <label for="email" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">邮箱</label>
               <div class="relative">
                 <Mail class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400 dark:text-neutral-500" />
                 <input
@@ -58,7 +58,7 @@ import Button from "@/components/ui/Button.astro";
             </div>
 
             <div>
-              <label for="password" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Password</label>
+              <label for="password" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">密码</label>
               <div class="relative">
                 <Lock class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400 dark:text-neutral-500" />
                 <input
@@ -68,7 +68,7 @@ import Button from "@/components/ui/Button.astro";
                   autocomplete="new-password"
                   required
                   minlength="8"
-                  placeholder="At least 8 characters"
+                  placeholder="至少 8 个字符"
                   class="w-full rounded-lg border border-neutral-200 bg-bg-secondary px-11 py-3 text-neutral-800 transition-colors placeholder:text-neutral-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:border-neutral-700 dark:bg-bg-secondary-dark dark:text-neutral-100 dark:placeholder:text-neutral-500"
                 />
               </div>
@@ -82,27 +82,27 @@ import Button from "@/components/ui/Button.astro";
                 class="mt-1 h-4 w-4 rounded border-neutral-300 text-primary focus:ring-primary/30 dark:border-neutral-600 dark:bg-bg-secondary-dark"
               />
               <span>
-                I agree to the
-                <a href="javascript:void(0);" class="font-medium text-primary hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">terms</a>
-                and
-                <a href="javascript:void(0);" class="font-medium text-primary hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">privacy policy</a>.
+                我同意
+                <a href="javascript:void(0);" class="font-medium text-primary hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">服务条款</a>
+                和
+                <a href="javascript:void(0);" class="font-medium text-primary hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">隐私政策</a>。
               </span>
             </label>
 
             <div class="auth-submit">
               <Button url="javascript:void(0);" type="fill" className="w-full max-w-none justify-center">
-                Create account <ArrowRight size={16} />
+                创建账号 <ArrowRight size={16} />
               </Button>
             </div>
 
             <div id="sign-up-success" class="hidden rounded-lg border border-green-200 bg-green-50 p-3 text-center text-sm text-green-700 dark:border-green-800 dark:bg-green-900/20 dark:text-green-300">
-              Demo account created.
+              Demo 账号已创建。
             </div>
           </form>
 
           <div class="my-6 flex items-center gap-3">
             <div class="h-px flex-1 border-t border-dashed border-neutral-200 dark:border-neutral-700"></div>
-            <span class="text-xs text-neutral-400 dark:text-neutral-500">or</span>
+            <span class="text-xs text-neutral-400 dark:text-neutral-500">或</span>
             <div class="h-px flex-1 border-t border-dashed border-neutral-200 dark:border-neutral-700"></div>
           </div>
 
@@ -120,8 +120,8 @@ import Button from "@/components/ui/Button.astro";
           </div>
 
           <p class="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">
-            Already have an account?
-            <a href="/sign-in" class="font-medium text-primary transition-colors hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">Sign in</a>
+            已经有账号？
+            <a href="/sign-in" class="font-medium text-primary transition-colors hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">登录</a>
           </p>
         </div>
       </div>
@@ -133,13 +133,13 @@ import Button from "@/components/ui/Button.astro";
       >
         <div class="ml-auto max-w-md">
           <p class="mb-4 inline-flex rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-xs font-medium text-primary dark:border-primary-light/20 dark:bg-primary-light/10 dark:text-primary-light">
-            New workspace
+            新工作区
           </p>
-          <h1 class="font-brand text-5xl leading-tight tracking-normal text-neutral-800 dark:text-neutral-100">
-            Turn visitors into activated users.
+          <h1 class="font-brand text-4xl leading-tight tracking-normal text-neutral-800 dark:text-neutral-100">
+            让访客顺利进入产品。
           </h1>
           <p class="mt-5 text-base leading-8 text-neutral-600 dark:text-neutral-300">
-            A quiet registration page with room for provider buttons, policy links, and product context.
+            一个克制的注册页，预留第三方登录、协议链接和产品说明的位置。
           </p>
         </div>
 
@@ -150,8 +150,8 @@ import Button from "@/components/ui/Button.astro";
                 <CircleCheck size={16} />
               </span>
               <div>
-                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">Conversion-ready fields</h2>
-                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">Name, email, password, and policy consent are included.</p>
+                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">字段完整</h2>
+                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">姓名、邮箱、密码和协议勾选都已经包含。</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -159,8 +159,8 @@ import Button from "@/components/ui/Button.astro";
                 <Lock size={16} />
               </span>
               <div>
-                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">Static template flow</h2>
-                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">The submit state is local until an auth backend is connected.</p>
+                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">静态模板流程</h2>
+                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">提交状态是本地 demo，上线前需要接入 auth 后端。</p>
               </div>
             </div>
           </div>

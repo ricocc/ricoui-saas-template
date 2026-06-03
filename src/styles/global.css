@@ -1,8 +1,6 @@
-/* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-
+/* 目标字体为思源黑体；Noto Sans SC 作为可加载的 Web 字体 fallback。 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 @import "tailwindcss";
 
 /* Path relative to current CSS file */
@@ -11,9 +9,9 @@
 
 /* Define theme font mappings */
 @theme {
-  --font-brand: "Instrument Serif", ui-sans-serif, system-ui, Noto Sans SC, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-sans: "Inter", ui-sans-serif, system-ui, Noto Sans SC, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-body: "Inter", ui-sans-serif, system-ui, Noto Sans SC, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-brand: "Google Sans","Noto Sans SC", "思源黑体", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Google Sans","Noto Sans SC", "思源黑体", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-body: "Google Sans","Noto Sans SC", "思源黑体", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --max-screen: 1200px;
   --inner-screen: 800px;
 
@@ -83,7 +81,8 @@ html.dark {
 /* Add typography styles */
 @layer components {
   .font-brand{
-    font-weight: 400!important;
+    font-family: var(--font-brand);
+    font-weight: 500!important;
   }
   .prose {
     max-width: 65ch;
@@ -127,6 +126,7 @@ html.dark {
 }
 html,body{
   color: var(--color-text-secondary);
+  letter-spacing: 0.01em;
 }
 html.dark,html.dark body{
   color: var(--color-text-secondary-dark);

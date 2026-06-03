@@ -1,32 +1,15 @@
-# Pricing Page
+# 03 Pricing
 
-Sources:
+价格页是演示内容，不代表 RicoFast 真实收费。
 
-- `src/pages/pricing.astro`
-- `src/components/sections/Pricing.astro`
-- `src/components/ui/PricingToggle.astro`
+## 当前内容
 
-## Purpose
+- Free、Pro、Enterprise 三档示例套餐。
+- 月付 / 年付切换。
+- 套餐对比表。
+- 价格 FAQ。
+- CTA：免费开始、联系。
 
-The pricing page demonstrates a realistic SaaS pricing layout that template users can replace with their own plans.
+## 边界
 
-## Implemented Content
-
-- Page header.
-- Demo pricing note.
-- Free, Pro, and Enterprise cards.
-- Monthly/yearly pricing toggle.
-- Feature comparison content.
-- Pricing FAQ.
-- Bottom CTA.
-
-## Behavior
-
-`PricingToggle.astro` dispatches a custom event consumed by `Pricing.astro`. Prices, suffixes, and plan descriptions update locally without a backend.
-
-## QA
-
-- Verify monthly/yearly state changes update every plan.
-- Verify animation respects reduced-motion settings.
-- Verify plan cards stay readable on mobile.
-- Verify dark-mode card borders and text contrast.
+不要把示例价格写成真实商业承诺。上线项目应替换为自己的计费规则。

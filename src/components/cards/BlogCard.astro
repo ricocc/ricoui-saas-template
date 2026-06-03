@@ -12,7 +12,7 @@ const {
   link
 } = content;
 
-const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
+const formattedDate = new Date(publishDate).toLocaleDateString('zh-CN', {
   year: 'numeric',
   month: 'short',
   day: 'numeric'
@@ -43,7 +43,7 @@ const isHorizontal = layout === "horizontal";
     {img ? (
       <img
         src={img}
-        alt={img_alt || `Related to ${title}`}
+        alt={img_alt || `${title} 相关文章配图`}
         loading="lazy"
         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
@@ -80,7 +80,7 @@ const isHorizontal = layout === "horizontal";
 
     <!-- Article link -->
     <a class="absolute inset-0 z-10" href={postLink}>
-      <span class="sr-only">Read More About {title}</span>
+      <span class="sr-only">阅读 {title}</span>
     </a>
   </div>
 
@@ -131,7 +131,7 @@ const isHorizontal = layout === "horizontal";
         class="inline-flex items-center gap-2 text-sm font-semibold text-primary dark:text-primary-light transition-all duration-300 group/link"
       >
         <span class="relative">
-          Read More
+          阅读全文
           <span class="absolute bottom-0 left-0 w-0 h-0.25 bg-bg-secondary dark:bg-bg-secondary-light transition-all duration-300 group-hover/link:w-full"></span>
         </span>
         <svg

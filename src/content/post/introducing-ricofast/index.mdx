@@ -1,58 +1,57 @@
 ---
-title: "Introducing RicoFast"
-description: "Why we built another SaaS template and what makes this one different. A design-led foundation for indie hackers, AI tools, and open-source maintainers."
+title: "介绍 RicoFast"
+description: "为什么还要做一个 SaaS 模板，以及 RicoFast 和常见模板有什么不同。"
 publishDate: 2026-01-12
 read: 5
-tags: ["Announcement", "Product"]
+tags: ["发布", "产品"]
 img: "/assets/article-cover.jpg"
-img_alt: "RicoFast, a design-led SaaS template for Astro"
+img_alt: "RicoFast，一个面向 Astro 的高质感 SaaS 模板"
 featured: true
 ---
 
-When you start a new SaaS, the website is rarely the first thing on your mind. You want to ship the product. But three days in, you are still wrestling with hero spacing, picking a font that will not look generic, or wondering why your pricing page somehow looks worse than the throwaway one you made on a Sunday afternoon.
+开始做一个新的 SaaS 时，官网通常不是第一优先级。你想先把产品做出来。但很快你会发现，三天过去了，你还在调 Hero 的间距、挑一套不那么普通的字体，或者反复问自己：为什么价格页看起来还不如周末临时做的那一版？
 
-That is the gap **RicoFast** is built for.
+RicoFast 就是为这个阶段准备的。
 
-## A polished foundation, not a starter
+## 它不是 starter，而是一个完整起点
 
-There are plenty of SaaS templates out there. Most of them fall into one of two camps:
+市面上并不缺 SaaS 模板。问题在于很多模板会落到两个方向：
 
-- **Bare-bones starters** - a navbar, a hero, three feature cards, and not much else. You spend the next week building everything around it.
-- **Maximalist bundles** - dozens of sections, page variants, and themes. You spend the next week deleting things you will never use.
+- **骨架型 starter**：导航、Hero、三张功能卡，然后就结束了。真正上线前，你还要补大量页面和状态。
+- **大而全模板包**：几十个 section、各种主题、复杂配置。看起来很丰富，落地时大半都要删。
 
-RicoFast aims for the founders & startups. : core marketing pages, auth templates, content pages, utility pages, reusable sections you can mix and match, and a token-based design system that is documented well enough to extend with confidence.
+RicoFast 的取舍更直接：覆盖真实 SaaS 官网常用页面，提供可组合的 section、Auth 页面、Blog、Changelog、Elements 参考页，以及一套写进 `docs/DESIGN.md` 的 token 化设计系统。
 
-## What's in the box
+## 模板里有什么
 
-- **Home, Features, Pricing, Blog, Changelog, About, Contact, Elements, Sign in, Sign up, 404** - wired, responsive, and dark-mode ready
-- A reusable section system for hero areas, feature blocks, pricing cards, comparison tables, FAQ, tech stack, use cases, and final CTAs
-- MDX-powered blog and changelog with sample content
-- A documented design system in `docs/DESIGN.md` where colors, fonts, spacing, and motion rules are explained
-- An `/elements` reference page so you can inspect available UI before writing new CSS
+- Home、Features、Pricing、Blog、Changelog、About、Contact、Elements、Sign in、Sign up、404
+- Hero、功能区块、价格卡、对比表、FAQ、技术栈、使用场景和最终 CTA
+- 基于 MDX 的 Blog 和 Changelog 示例内容
+- 记录颜色、字体、间距和动效规则的 `docs/DESIGN.md`
+- 可直接查看组件和状态的 `/elements` 参考页
 
-## Built on Astro, not against it
+## 为什么选择 Astro
 
-We picked Astro deliberately. It ships zero JavaScript by default, which keeps a marketing site fast even as you add sections. When you need interactivity - a pricing toggle, a mobile menu, an accordion - you add it where it belongs instead of shipping a global runtime for every page.
+营销站需要快。Astro 默认零 JavaScript，只有需要交互的地方才加载脚本，比如价格切换、移动端菜单和 FAQ 折叠。这样页面在内容变多后仍然轻。
 
-The template uses Astro Content Layer for blog and changelog content. That gives the site a simple local-content workflow today and a clear path to external content sources later.
+内容部分使用 Astro Content Layer 管理 Blog 和 Changelog。现在可以用本地 MDX 维护内容，之后也能迁移到外部 Markdown 或 CMS。
 
-## Who it's for
+## 适合谁
 
-- Indie hackers launching their first product
-- AI and developer tool teams that need a credible site quickly
-- Open-source maintainers who want a product-quality project site
-- Design-conscious engineers who can read CSS but do not want to invent a design system from scratch
+- 正在发布第一个产品的独立开发者
+- 需要快速上线可信官网的 AI 工具团队
+- 做开发者工具、SDK、API 平台的团队
+- 想给开源项目做一个像产品站一样的主页的维护者
+- 能读懂 CSS，但不想从零搭设计系统的工程师
 
-## The road to v1.0
+## 走向 v1.0
 
-This article introduced RicoFast before the stable release. The preview line focused on three milestones:
+RicoFast 在稳定版前经历了几次小版本：
 
-1. **v0.1** - prove the core page set, content structure, and design tokens.
-2. **v0.2** - polish dark mode, motion, and product-preview framing.
-3. **v0.3** - move content to Astro Content Layer and tighten performance.
+1. **v0.1**：验证核心页面、内容结构和设计 tokens。
+2. **v0.2**：打磨暗黑模式、动效和产品预览框架。
+3. **v0.3**：迁移到 Astro Content Layer，并收紧性能跑分。
 
-The stable `v1.0` release now builds on that foundation with auth templates, refreshed utility pages, final navigation, and production-ready English sample content.
+现在的 `v1.0` 在这个基础上补齐 Auth 模板、工具页、导航和中文化后的示例内容。
 
-If you build something with it, [open an issue on GitHub](https://github.com/ricocc/ricoui-saas-template) and tell us what worked and what did not. The template gets better every time someone uses it for something we did not anticipate.
-
-- The RicoFast team
+如果你基于 RicoFast 做了项目，欢迎在 [GitHub](https://github.com/ricocc/ricoui-saas-template) 提 issue 说说哪里顺手、哪里别扭。模板会因为真实使用而变得更好。

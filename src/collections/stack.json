@@ -2,31 +2,31 @@
 	{
 		"id": 1,
 		"name": "Astro",
-		"desc": "Zero JS by default",
+		"desc": "默认零 JS",
 		"image": "/assets/stack/astro.jpg"
 	},
 	{
 		"id": 2,
 		"name": "Tailwind CSS",
-		"desc": "@theme tokens + utilities",
+		"desc": "@theme tokens + 原子类",
 		"image": "/assets/stack/tailwind.jpg"
 	},
 	{
 		"id": 3,
 		"name": "Node.js",
-		"desc": "Runtime & tooling",
+		"desc": "运行时与工具链",
 		"image": "/assets/stack/node.jpg"
 	},
 	{
 		"id": 4,
 		"name": "GitHub",
-		"desc": "Version control & CI",
+		"desc": "版本管理与 CI",
 		"image": "/assets/stack/figma.jpg"
 	},
 	{
 		"id": 5,
 		"name": "Cloudflare",
-		"desc": "Edge & CDN",
+		"desc": "边缘网络与 CDN",
 		"image": "/assets/stack/motion.jpg"
 	}
 ]

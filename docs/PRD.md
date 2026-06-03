@@ -1,40 +1,43 @@
 # RicoFast PRD
 
-> This PRD describes the current implemented RicoFast project.
+> 本 PRD 描述当前已实现的 RicoFast 项目范围。当前项目已调整为中文项目，界面和文档以中文为主，技术名、文件名和工具名保持英文。
 
-## Product Summary
+## 产品摘要
 
-RicoFast is a design-led SaaS website template built with Astro, Tailwind CSS v4, MDX, and a reusable component system. It helps indie makers, AI tool teams, developer platform teams, and open-source maintainers launch a polished marketing site quickly.
+RicoFast 是一个 design-led SaaS 官网模板，基于 Astro、Tailwind CSS v4、MDX 和可复用组件系统构建。它帮助独立开发者、AI 工具团队、开发者平台团队和开源维护者更快发布一个有设计完成度的产品站。
 
-The project is a static-first front-end template. It includes demo pricing, demo auth pages, demo contact behavior, MDX content, SEO setup, dark mode, and a documented design system.
+项目是 static-first 前端模板，不是完整后端 SaaS 产品。它包含演示价格、演示 Auth 页面、演示联系表单、MDX 内容、SEO 基础、暗黑模式和设计系统文档。
 
-## Positioning
+## 定位
 
-| Field | Current value |
+| 字段 | 当前值 |
 | --- | --- |
 | Product name | RicoFast |
 | Category | Astro SaaS website template |
-| Tagline | A design-led SaaS template for Astro |
-| Core promise | Ship a polished SaaS site in days, not weeks. |
-| Audience | Indie makers, AI/dev-tool teams, OSS maintainers |
+| Tagline | 面向 Astro 的高质感 SaaS 模板 |
+| Core promise | 几天内上线一个像样的 SaaS 官网 |
+| Audience | 独立开发者、AI/开发工具团队、OSS 维护者 |
 | Brand color | `#2d6dc3` |
 | Accent color | `#fad13b` |
+| Font | Source Han Sans SC / Noto Sans SC / 思源黑体 |
 | Contact email | `hello@ricoui.com` |
 | Repository | `https://github.com/ricocc/ricoui-saas-template` |
 
-## Implemented Scope
+## 已实现范围
 
-- Static SaaS marketing site built with Astro 6.4.
-- Tailwind CSS v4 design token system in `src/styles/global.css`.
-- Light and dark modes with persisted user preference.
-- MDX blog and changelog powered by Astro Content Layer.
-- Reusable section, UI, card, layout, and widget components.
-- SEO foundations: meta layout, Open Graph image, sitemap, RSS, robots.txt, canonical site URL support.
-- Demo contact form with local UI behavior.
-- Demo sign-in and sign-up pages.
-- Responsive layouts for mobile, tablet, and desktop.
+- 基于 Astro 6.4 的静态 SaaS 营销站。
+- `src/styles/global.css` 中的 Tailwind CSS v4 token 系统。
+- 全站中文文案和中文主 README。
+- 全站字体统一为思源黑体字体栈。
+- 支持浅色 / 深色模式，并持久化用户偏好。
+- 基于 Astro Content Layer 的 MDX Blog 和 Changelog。
+- 可复用 section、UI、card、layout 和 widget 组件。
+- SEO 基础：Meta、Open Graph、sitemap、RSS、robots.txt、canonical URL。
+- Demo 联系表单，仅有本地 UI 行为。
+- Demo 登录和注册页面。
+- 移动端、平板和桌面端响应式布局。
 
-## Tech Stack
+## 技术栈
 
 | Area | Implementation |
 | --- | --- |
@@ -49,318 +52,80 @@ The project is a static-first front-end template. It includes demo pricing, demo
 | Code quality | Biome |
 | Images | Static assets, `sharp` |
 
-## Routes
+## 路由
 
-| Route | Purpose | Source |
+| Route | 用途 | Source |
 | --- | --- | --- |
-| `/` | SaaS landing page | `src/pages/index.astro` |
-| `/features` | Feature overview | `src/pages/features.astro` |
-| `/pricing` | Demo pricing page | `src/pages/pricing.astro` |
-| `/blog` | Blog index | `src/pages/blog/index.astro` |
-| `/blog/[slug]` | Blog article pages | `src/pages/blog/[...slug].astro` |
-| `/blog/page/[page]` | Paginated blog archive | `src/pages/blog/page/[page].astro` |
-| `/changelog` | Release notes | `src/pages/changelog.astro` |
-| `/about` | Product story and values | `src/pages/about.astro` |
-| `/contact` | Demo contact page | `src/pages/contact.astro` |
-| `/elements` | Component and design-system reference | `src/pages/elements.astro` |
-| `/sign-in` | Sign-in template page | `src/pages/sign-in.astro` |
-| `/sign-up` | Sign-up template page | `src/pages/sign-up.astro` |
-| `/signin` | Alternate sign-in page currently present in repo | `src/pages/signin.astro` |
-| `/signup` | Alternate sign-up page currently present in repo | `src/pages/signup.astro` |
+| `/` | SaaS 首页 | `src/pages/index.astro` |
+| `/features` | 功能详情 | `src/pages/features.astro` |
+| `/pricing` | 价格示例页 | `src/pages/pricing.astro` |
+| `/blog` | Blog 列表 | `src/pages/blog/index.astro` |
+| `/blog/[slug]` | Blog 文章页 | `src/pages/blog/[...slug].astro` |
+| `/blog/page/[page]` | Blog 分页 | `src/pages/blog/page/[page].astro` |
+| `/changelog` | 版本记录 | `src/pages/changelog.astro` |
+| `/about` | 项目介绍 | `src/pages/about.astro` |
+| `/contact` | Demo 联系页 | `src/pages/contact.astro` |
+| `/elements` | 组件和设计系统参考 | `src/pages/elements.astro` |
+| `/sign-in` | 登录模板 | `src/pages/sign-in.astro` |
+| `/sign-up` | 注册模板 | `src/pages/sign-up.astro` |
+| `/signin` | 居中登录模板 | `src/pages/signin.astro` |
+| `/signup` | 居中注册模板 | `src/pages/signup.astro` |
 | `/rss.xml` | RSS feed | `src/pages/rss.xml.js` |
-| `/404` | Not-found page | `src/pages/404.astro` |
+| `/404` | 404 页面 | `src/pages/404.astro` |
 
-## Navigation
-
-Navigation is defined in `src/collections/menu.json`.
-
-Current top-level navigation:
-
-- Home
-- Pages dropdown
-- Elements
-- Contact
-
-Current Pages dropdown:
-
-- Features
-- Pricing
-- About
-- Blog
-- Changelog
-- Sign in
-- Sign up
-- 404
-
-Footer navigation is defined in `src/components/sections/Footer.astro`.
-
-Current footer groups:
-
-- Product: Features, Pricing, Changelog, Sign in, Sign up
-- Resources: Blog, Elements, 404, Docs, GitHub
-- Company: About, Contact
-- Legal: License
-
-## Page Requirements
+## 页面要求
 
 ### Home
 
-Source: `src/pages/index.astro`
-
-The home page presents RicoFast as a finished SaaS template. It includes:
-
-- Hero section.
-- Social proof/logo strip.
-- Problem cards.
-- Solution section.
-- Feature grid.
-- Product preview.
-- Use cases.
-- Tech stack.
-- Pricing preview.
-- FAQ.
-- Latest articles.
-- Final CTA.
+首页展示 RicoFast 的核心价值、问题场景、设计系统、功能、产品预览、使用场景、技术栈、价格示例、FAQ、最新文章和最终 CTA。
 
 ### Features
 
-Source: `src/pages/features.astro`
-
-The features page expands the core template capabilities into detailed sections. It should stay aligned with the home page feature language while giving visitors more implementation context.
+功能页展开页面结构、section 组件、MDX 内容、动效、性能和 token 化设计系统。
 
 ### Pricing
 
-Sources:
+价格页是模板示例内容，不代表 RicoFast 真实收费。包含 Free、Pro、Enterprise 示例套餐、计费切换、对比表、FAQ 和 CTA。
 
-- `src/pages/pricing.astro`
-- `src/components/sections/Pricing.astro`
+### Blog / Changelog
 
-The pricing page is demo content for template users. It includes Free, Pro, and Enterprise sample tiers, a billing toggle, comparison content, FAQ, and CTA.
-
-### Blog
-
-Sources:
-
-- `src/pages/blog/index.astro`
-- `src/pages/blog/[...slug].astro`
-- `src/pages/blog/page/[page].astro`
-- `src/content/post/`
-
-The blog renders MDX posts from the `post` collection, supports metadata and images, and uses `PostLayout.astro` for article pages.
-
-### Changelog
-
-Sources:
-
-- `src/pages/changelog.astro`
-- `src/content/changelog/`
-
-The changelog renders versioned MDX entries from the `changelog` collection.
-
-### About
-
-Source: `src/pages/about.astro`
-
-The about page explains the project story, values, and template philosophy.
-
-### Contact
-
-Source: `src/pages/contact.astro`
-
-The contact page provides a polished static/demo form and supporting contact context.
-
-### Elements
-
-Source: `src/pages/elements.astro`
-
-The elements page is the in-project reference for the component language and visual system.
+Blog 和 Changelog 都来自 MDX 内容集合，示例内容已改为中文。Blog 支持 frontmatter、图片、精选文章和分页。
 
 ### Auth Pages
 
-Sources:
+Auth 页面是静态模板屏幕，包含本地 demo 状态，不连接真实认证服务。
 
-- `src/pages/sign-in.astro`
-- `src/pages/sign-up.astro`
-- `src/pages/signin.astro`
-- `src/pages/signup.astro`
+### Contact
 
-The auth pages are static template screens. They include local demo states but do not connect to a real authentication provider.
+联系页提供静态表单和本地成功状态。上线前需要接入 Resend、Formspree、Cloudflare Forms 或自有 API。
 
-### 404
+## 内容集合
 
-Source: `src/pages/404.astro`
+Blog 目录：`src/content/post/`
 
-The 404 page provides a branded not-found experience and routes visitors back into the site.
+Changelog 目录：`src/content/changelog/`
 
-## Content Collections
+schema 定义在 `src/content.config.js`。英文技术字段如 `title`、`description`、`publishDate`、`featured` 保持不变。
 
-Content schemas are defined in `src/content.config.js`.
+## 设计系统
 
-### Blog Posts
-
-Location: `src/content/post/`
-
-Required frontmatter:
-
-```yaml
-title: string
-description: string
-publishDate: date
-```
-
-Optional frontmatter:
-
-```yaml
-read: number
-tags: string[]
-img: string
-img_alt: string
-featured: boolean
-```
-
-Current posts:
-
-- `introducing-ricofast`
-- `customize-your-saas-site`
-- `design-system-behind-ricofast`
-- `launching-v1-0`
-
-### Changelog Entries
-
-Location: `src/content/changelog/`
-
-Required frontmatter:
-
-```yaml
-title: string
-publishDate: date
-```
-
-Optional frontmatter:
-
-```yaml
-version: string
-description: string
-```
-
-Current entries:
-
-- `v1.0.0-stable-release.mdx`
-- `v0.3.0-content-system.mdx`
-- `v0.2.0-design-polish.mdx`
-- `v0.1.0-initial-preview.mdx`
-
-## Component System
-
-Current component groups:
-
-```text
-src/components/
-  cards/
-  elements/
-  home/
-  sections/
-  ui/
-  widgets/
-```
-
-Core reusable components:
-
-- `Header.astro`
-- `Footer.astro`
-- `HeroSection.astro`
-- `Pricing.astro`
-- `FAQ.astro`
-- `BlogSection.astro`
-- `Button.astro`
-- `Badge.astro`
-- `AccordionItem.astro`
-- `PricingToggle.astro`
-- `BrowserFrame.astro`
-- `Logo.astro`
-- `BlogCard.astro`
-- `TechStackCard.astro`
-- `PageHeader.astro`
-- `SectionHeader.astro`
-- `Pagination.astro`
-- `Toc.astro`
-- `ToTop.astro`
-- `TrackGa.astro`
-- `OptimizedImage.astro`
-
-## Design System
-
-Primary sources:
+主要文件：
 
 - `src/styles/global.css`
 - `docs/DESIGN.md`
 - `tailwind.config.mjs`
 
-Current design rules:
+当前规则：
 
-- Light-first interface with class-based dark mode.
-- Primary blue and accent gold are the key brand colors.
-- `Instrument Serif` is used for display headings.
-- `Inter` is used for body text and UI text.
-- `--max-screen` is `1200px`.
-- `--inner-screen` is `800px`.
-- Motion should be subtle and respect `prefers-reduced-motion`.
-- Reusable page containers use `.site-container` and `.inner-container`.
+- 全站字体使用 `Source Han Sans SC`, `Noto Sans SC`, `思源黑体`。
+- 主色为 `#2d6dc3`，强调色为 `#fad13b`。
+- 浅色页面底为 `#fdfaf5`，深色页面底为 `#0b1220`。
+- 动效保持克制，并遵循 `prefers-reduced-motion`。
+- 常规 section 使用 `.site-container`，窄内容使用 `.inner-container`。
 
-## SEO And Analytics
+## 构建和 QA
 
-Current implementation:
-
-- `src/layouts/Meta.astro`
-- `src/components/widgets/Meta.astro`
-- `src/components/widgets/TrackGa.astro`
-- `src/pages/rss.xml.js`
-- `@astrojs/sitemap`
-- `public/robots.txt`
-- `public/og.jpg`
-
-Environment variables:
-
-```env
-PUBLIC_SITE_URL=https://your-domain.com
-PUBLIC_GA4_ID=
-PUBLIC_UMAMI_ID=
-```
-
-`PUBLIC_GA4_ID` and `PUBLIC_UMAMI_ID` are optional.
-
-## Project Structure
-
-```text
-docs/
-  DESIGN.md
-  PLAN.md
-  PRD.md
-  plan/
-public/
-  assets/
-  rico/
-  favicon.png
-  og.jpg
-  robots.txt
-src/
-  assets/js/main.js
-  collections/
-  components/
-  config/site.js
-  content/
-  content.config.js
-  layouts/
-  pages/
-  styles/
-astro.config.mjs
-package.json
-tailwind.config.mjs
-```
-
-## Build And QA
-
-Supported commands:
+支持命令：
 
 ```bash
 pnpm dev
@@ -370,18 +135,18 @@ pnpm check
 pnpm astro
 ```
 
-Release quality is verified by:
+发布前建议验证：
 
 - `pnpm build`
 - `pnpm check`
-- Manual route review for all pages listed in this PRD.
-- Manual light/dark mode review.
-- Responsive review at mobile, tablet, and desktop widths.
-- Sitemap and RSS output review after setting `PUBLIC_SITE_URL`.
+- 主要页面人工浏览
+- 浅色 / 深色模式
+- 移动端和桌面端布局
+- 设置 `PUBLIC_SITE_URL` 后检查 sitemap 和 RSS
 
-## Related Docs
+## 相关文档
 
-- `docs/DESIGN.md` - design system.
-- `docs/PLAN.md` - concise project overview.
-- `docs/plan/` - page-level implementation notes.
-- `README.md` and `README-zh.md` - user-facing setup docs.
+- `docs/DESIGN.md`：设计系统。
+- `docs/PLAN.md`：项目概览。
+- `docs/plan/`：页面级记录。
+- `README.md`：中文主文档。

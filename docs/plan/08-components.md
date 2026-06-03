@@ -1,51 +1,17 @@
-# Component Map
+# 08 Components
 
-Source directory: `src/components/`
+组件应优先沿用现有结构。
 
-## Current Groups
+## 组件组
 
-| Group | Purpose |
-| --- | --- |
-| `cards/` | Repeated card components such as blog and tech-stack cards |
-| `elements/` | Generic structural elements such as page and section headers |
-| `home/` | Home-page-specific hero component |
-| `sections/` | Larger page sections such as header, footer, pricing, FAQ, blog section |
-| `ui/` | Small reusable UI primitives |
-| `widgets/` | Page utilities such as table of contents, pagination, analytics, and back-to-top |
+- `sections/`：页面级 section，如 Header、Footer、Pricing、FAQ。
+- `ui/`：小型复用组件，如 Button、Badge、BrowserFrame、PricingToggle。
+- `cards/`：重复卡片，如 BlogCard、TechStackCard。
+- `widgets/`：页面工具，如 Toc、Pagination、ToTop。
+- `elements/`：PageHeader、SectionHeader、SeparatorLine。
 
-## Core Components
+## 规则
 
-- `cards/BlogCard.astro`
-- `cards/TechStackCard.astro`
-- `elements/PageHeader.astro`
-- `elements/SectionHeader.astro`
-- `elements/SeparatorLine.astro`
-- `home/HeroSection.astro`
-- `sections/Header.astro`
-- `sections/Footer.astro`
-- `sections/Pricing.astro`
-- `sections/FAQ.astro`
-- `sections/BlogSection.astro`
-- `ui/AccordionItem.astro`
-- `ui/AnimatedText.astro`
-- `ui/Badge.astro`
-- `ui/BrowserFrame.astro`
-- `ui/Button.astro`
-- `ui/Logo.astro`
-- `ui/PricingToggle.astro`
-- `ui/TopBg.astro`
-- `widgets/ActionBar.astro`
-- `widgets/Meta.astro`
-- `widgets/OptimizedImage.astro`
-- `widgets/Pagination.astro`
-- `widgets/Toc.astro`
-- `widgets/ToTop.astro`
-- `widgets/TrackGa.astro`
-
-## Rules
-
-- Use existing components before adding new ones.
-- Keep props simple and aligned with current usage.
-- Preserve dark-mode styles.
-- Use tokens from `global.css`.
-- Use Lucide icons through `@lucide/astro` when available.
+- 中文可见文案写在页面或数据数组中。
+- 组件 API 和文件名保留英文。
+- 新组件必须兼容浅色和深色模式。

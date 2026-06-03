@@ -10,7 +10,7 @@ const entries = allEntries.sort(
 );
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
+  return date.toLocaleDateString("zh-CN", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -20,12 +20,12 @@ function formatDate(date: Date): string {
 
 <Layout
   title="Changelog — RicoFast"
-  description="Track improvements, new releases, and updates."
+  description="查看 RicoFast 的版本更新、改进和发布记录。"
 >
   <section class="site-container my-12">
     <PageHeader
       title="Changelog"
-      description="Track improvements and new releases."
+      description="查看版本更新、改进和发布记录。"
     />
   </section>
 
@@ -52,7 +52,7 @@ function formatDate(date: Date): string {
               </time>
             </div>
 
-            <h2 class="text-xl font-semibold text-neutral-800 dark:text-neutral-100 mb-4">
+            <h2 class="text-md font-semibold text-neutral-800 dark:text-neutral-100 mb-4">
               {entry.data.title}
             </h2>
 
@@ -64,7 +64,7 @@ function formatDate(date: Date): string {
 
         {entries.length === 0 && (
           <p class="text-center text-neutral-400 dark:text-neutral-500 py-12">
-            No changelog entries yet.
+            暂无 Changelog 条目。
           </p>
         )}
       </div>

@@ -7,22 +7,22 @@ const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   product: [
-    { name: "Features", url: "/features" },
-    { name: "Pricing", url: "/pricing" },
+    { name: "功能", url: "/features" },
+    { name: "价格", url: "/pricing" },
     { name: "Changelog", url: "/changelog" },
-    { name: "Sign in", url: "/sign-in" },
-    { name: "Sign up", url: "/sign-up" },
+    { name: "登录", url: "/sign-in" },
+    { name: "注册", url: "/sign-up" },
   ],
   resources: [
-    { name: "Blog", url: "/blog" },
+    { name: "博客", url: "/blog" },
     { name: "Elements", url: "/elements" },
     { name: "404", url: "/404" },
     { name: "Docs", url: siteConfig.social.github + "#readme" },
     { name: "GitHub", url: siteConfig.social.github },
   ],
   company: [
-    { name: "About", url: "/about" },
-    { name: "Contact", url: "/contact" },
+    { name: "关于", url: "/about" },
+    { name: "联系", url: "/contact" },
   ],
   legal: [
     { name: "License (MIT)", url: siteConfig.social.github + "/blob/main/LICENSE" },
@@ -39,7 +39,7 @@ const templateVersion = "v1.0.0";
       <div class="max-w-sm">
         <Logo />
         <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
-          A polished SaaS template built with Astro and Tailwind CSS. Open-source, fast, and ready for production.
+          一个基于 Astro 和 Tailwind CSS 的高质感 SaaS 模板。开源、轻量，适合快速搭建产品官网。
         </p>
       </div>
 
@@ -47,7 +47,7 @@ const templateVersion = "v1.0.0";
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-12">
         <!-- Product -->
         <div>
-          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">Product</h4>
+          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">产品</h4>
           <ul class="space-y-3">
             {footerLinks.product.map((link) => (
               <li>
@@ -61,7 +61,7 @@ const templateVersion = "v1.0.0";
 
         <!-- Resources -->
         <div>
-          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">Resources</h4>
+          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">资源</h4>
           <ul class="space-y-3">
             {footerLinks.resources.map((link) => (
               <li>
@@ -75,7 +75,7 @@ const templateVersion = "v1.0.0";
 
         <!-- Company -->
         <div>
-          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">Company</h4>
+          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">项目</h4>
           <ul class="space-y-3">
             {footerLinks.company.map((link) => (
               <li>
@@ -89,7 +89,7 @@ const templateVersion = "v1.0.0";
 
         <!-- Legal -->
         <div>
-          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">Legal</h4>
+          <h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">协议</h4>
           <ul class="space-y-3">
             {footerLinks.legal.map((link) => (
               <li>
@@ -108,7 +108,7 @@ const templateVersion = "v1.0.0";
       <p class="text-sm text-neutral-400 dark:text-neutral-500">
         © {currentYear}
         <a href={siteConfig.url || " "} target="_blank" class="hover:text-primary dark:hover:text-primary-light transition-colors">{siteConfig.author || " "}</a>.
-        Released under the MIT License.
+        基于 MIT License 发布。
       </p>
 
       <div class="flex items-center gap-4">

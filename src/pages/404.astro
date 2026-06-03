@@ -5,29 +5,29 @@ import { ArrowLeft, Compass, House, Mail, Search, ShieldAlert } from "@lucide/as
 import { siteConfig } from "@/config/site";
 ---
 
-<PageLayout title="Page Not Found - RicoFast" description="The page you're looking for doesn't exist.">
+<PageLayout title="页面未找到 — RicoFast" description="你访问的页面不存在。">
   <section class="site-container py-14 md:py-24">
     <div class="grid min-h-[62vh] items-center gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1fr)]">
       <div data-aos="fade-up-xs" data-aos-once="true">
         <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary dark:border-primary-light/20 dark:bg-primary-light/10 dark:text-primary-light">
           <ShieldAlert size={14} />
-          Error 404
+          404 错误
         </p>
 
-        <h1 class="max-w-2xl font-brand text-5xl leading-[1.04] tracking-normal text-neutral-800 dark:text-neutral-100 md:text-6xl">
-          This route does not have a page yet.
+        <h1 class="max-w-2xl font-brand text-3xl leading-[1.04] tracking-normal text-neutral-800 dark:text-neutral-100 md:text-4xl">
+          这个路径还没有对应页面。
         </h1>
 
         <p class="mt-5 max-w-xl text-base leading-8 text-neutral-600 dark:text-neutral-300">
-          The link may be outdated, mistyped, or still waiting to be built. Start from a known page, or send us the broken URL so we can trace it.
+          链接可能已经过期、输入有误，或者这个页面还没来得及创建。你可以先回到已知页面，也可以把损坏链接发给我们排查。
         </p>
 
         <div class="mt-7 flex flex-wrap gap-3">
           <Button url="/" type="fill">
-            <ArrowLeft size={16} /> Back to Home
+            <ArrowLeft size={16} /> 返回首页
           </Button>
           <Button url={`mailto:${siteConfig.mail}?subject=Broken%20link%20on%20RicoFast`}>
-            <Mail size={16} /> Report link
+            <Mail size={16} /> 反馈链接
           </Button>
         </div>
 
@@ -51,7 +51,7 @@ import { siteConfig } from "@/config/site";
                 <span class="h-3 w-3 rounded-full bg-accent"></span>
                 <span class="h-3 w-3 rounded-full bg-primary"></span>
               </div>
-              <span class="text-xs font-medium text-neutral-400 dark:text-neutral-500">route scan</span>
+              <span class="text-xs font-medium text-neutral-400 dark:text-neutral-500">路由扫描</span>
             </div>
 
             <div class="rounded-xl border border-dashed border-primary/25 bg-bg-primary/60 p-4 dark:border-primary-light/20 dark:bg-bg-primary-dark/60">
@@ -60,7 +60,7 @@ import { siteConfig } from "@/config/site";
                   <Search size={19} />
                 </div>
                 <div class="min-w-0">
-                  <p class="text-xs font-medium uppercase tracking-[0.14em] text-neutral-400 dark:text-neutral-500">Requested path</p>
+                  <p class="text-xs font-medium uppercase tracking-[0.14em] text-neutral-400 dark:text-neutral-500">请求路径</p>
                   <p id="missing-path" class="mt-1 truncate text-sm font-medium text-neutral-800 dark:text-neutral-100">/unknown-route</p>
                 </div>
               </div>
@@ -84,15 +84,15 @@ import { siteConfig } from "@/config/site";
             <div class="grid gap-3 text-sm">
               <div class="flex items-center justify-between rounded-lg border border-neutral-200 bg-white/70 px-3 py-2 dark:border-neutral-700 dark:bg-neutral-900/40">
                 <span class="text-neutral-500 dark:text-neutral-400">DNS</span>
-                <span class="font-medium text-green-600 dark:text-green-300">reachable</span>
+                <span class="font-medium text-green-600 dark:text-green-300">可访问</span>
               </div>
               <div class="flex items-center justify-between rounded-lg border border-neutral-200 bg-white/70 px-3 py-2 dark:border-neutral-700 dark:bg-neutral-900/40">
-                <span class="text-neutral-500 dark:text-neutral-400">Page route</span>
-                <span class="font-medium text-red-500 dark:text-red-300">missing</span>
+                <span class="text-neutral-500 dark:text-neutral-400">页面路由</span>
+                <span class="font-medium text-red-500 dark:text-red-300">未找到</span>
               </div>
               <div class="flex items-center justify-between rounded-lg border border-neutral-200 bg-white/70 px-3 py-2 dark:border-neutral-700 dark:bg-neutral-900/40">
-                <span class="text-neutral-500 dark:text-neutral-400">Next step</span>
-                <span class="font-medium text-primary dark:text-primary-light">choose a known path</span>
+                <span class="text-neutral-500 dark:text-neutral-400">下一步</span>
+                <span class="font-medium text-primary dark:text-primary-light">选择已有路径</span>
               </div>
             </div>
           </div>

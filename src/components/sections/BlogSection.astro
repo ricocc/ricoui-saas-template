@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button.astro";
 import AnimatedText from "@/components/ui/AnimatedText.astro";
 // 定义组件接收的属性
 const {
-  title = "Latest Articles",
+  title = "最新文章",
   description = "",
   limit = 3,
   listPage = false,
@@ -77,7 +77,7 @@ const featuredPostWithLink = featuredPost ? {
   <section class="mb-16">
     <div class="site-container">
       <h2 class="text-3xl font-brand mb-6 text-neutral-800 dark:text-white">
-            <AnimatedText delay={0.75} stagger={0.08} content="Featured" />
+            <AnimatedText delay={0.75} stagger={0.08} content="精选文章" />
       </h2>
       <div class=" dark:from-neutral-900 dark:to-neutral-800 p-1 rounded-2xl ">
         <BlogCard
@@ -126,7 +126,7 @@ const featuredPostWithLink = featuredPost ? {
   {/* "View All Articles" 按钮 - 仅在非列表页且启用时显示 */}
   {!listPage && showViewAllButton && (
     <div class="flex justify-center mt-12 mb-12">
-      <Button url="/blog" className="w-full max-w-60">View All Articles</Button>
+      <Button url="/blog" className="w-full max-w-60">查看全部文章</Button>
     </div>
   )}
 </section>

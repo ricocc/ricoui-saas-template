@@ -1,51 +1,51 @@
 ---
-title: "Stable release"
+title: "稳定版发布"
 publishDate: 2026-05-18
 version: "v1.0.0"
-description: "The final stable RicoFast release: SaaS polish, auth templates, refreshed utility pages, and production-ready content."
+description: "RicoFast 稳定版：SaaS 页面打磨、Auth 模板、工具页更新和可直接参考的内容。"
 ---
 
-## Why v1.0
+## 为什么是 v1.0
 
-The `v0.x` line proved the foundation: layout, content, design tokens, dark mode, and performance. `v1.0` is the point where RicoFast becomes a stable SaaS website template instead of a moving preview.
+`v0.x` 版本已经验证布局、内容、设计 tokens、暗黑模式和性能。`v1.0` 是 RicoFast 从预览模板变成稳定 SaaS 官网模板的节点。
 
-This release focuses on consistency. The demo brand, page copy, content model, navigation, and utility pages now tell the same story.
+这个版本重点是统一。示例品牌、页面文案、内容模型、导航和工具页现在讲的是同一个故事。
 
-## What changed
+## 主要变化
 
-### Brand and story
+### 品牌与叙事
 
-- Unified the demo brand as **RicoFast** across pages, metadata, blog posts, and changelog entries
-- Reworked page copy around a single audience: English-speaking SaaS teams, indie hackers, AI tool builders, and open-source maintainers
-- Replaced hard-coded early-preview language with stable `v1.0` release language
+- 在页面、元信息、Blog 和 Changelog 中统一使用 RicoFast
+- 重新围绕中文 SaaS 团队、独立开发者、AI 工具和开源维护者整理文案
+- 清理早期预览版残留表述，统一到稳定版语境
 
-### Page and route coverage
+### 页面与路由
 
-- Added static auth templates for `/sign-in` and `/sign-up`
-- Refreshed the 404 page with clearer recovery actions and a stronger visual state
-- Completed Header and Footer links for Sign in, Sign up, and 404
-- Kept core marketing pages, auth templates, content pages, and utility pages wired through the same layout system
+- 新增 `/sign-in` 和 `/sign-up` 静态 Auth 模板
+- 更新 404 页面，让恢复动作更清楚
+- Header 和 Footer 补齐登录、注册和 404 入口
+- 保持营销页、Auth 页面、内容页和工具页都由同一套 layout 系统组织
 
-### Content polish
+### 内容打磨
 
-- Reframed the release history as `v0.1`, `v0.2`, `v0.3`, and final `v1.0`
-- Reworked sample blog posts so they read like production-ready English content, not placeholder copy
-- Preserved the verified Lighthouse 95+ claim across Performance, Accessibility, Best Practices, and SEO
-- Removed stale roadmap language that implied newer post-1.0 versions already existed
+- 用 `v0.1`、`v0.2`、`v0.3` 和 `v1.0` 重新梳理发布历史
+- 把示例 Blog 改成更接近真实项目文档的中文内容
+- 保留 Lighthouse 95+ 的验证口径
+- 移除暗示未来版本已存在的旧 roadmap 文案
 
-### Compatibility
+### 兼容性
 
-- No new runtime dependency is required for the stable content set
-- Existing forks can keep their page structure and update content incrementally
-- Teams upgrading from an earlier preview should review `src/config/site.js`, `src/styles/global.css`, and `src/content/`
+- 稳定版内容不引入新的运行时依赖
+- 已 fork 的项目可以保留页面结构，逐步替换内容
+- 从早期预览版升级时，建议重点检查 `src/config/site.js`、`src/styles/global.css` 和 `src/content/`
 
-## Upgrade notes
+## 升级提示
 
-If you forked a `v0.x` preview:
+如果你 fork 过 `v0.x` 预览版：
 
-1. Run `pnpm install`
-2. Review `src/content/post/` and `src/content/changelog/` for the new release story
-3. Update any custom links pointing to `/blog/launching-v1-2`; the stable release article now lives at `/blog/launching-v1-0`
-4. Re-check your own copy against the final `v1.0` page set
+1. 运行 `pnpm install`
+2. 检查 `src/content/post/` 和 `src/content/changelog/` 中的新内容结构
+3. 更新指向旧文章 slug 的自定义链接
+4. 按最终页面集重新检查自己的中文文案
 
-RicoFast `v1.0` is the version to build from.
+RicoFast `v1.0` 是建议用来开新项目的版本。

@@ -5,8 +5,8 @@ import Button from "@/components/ui/Button.astro";
 ---
 
 <Layout
-  title="Sign in - RicoFast"
-  description="Sign in template page for RicoFast."
+  title="登录 — RicoFast"
+  description="RicoFast 的登录页模板。"
 >
   <main class="site-container py-12 md:py-20">
     <section class="grid min-h-[calc(100vh-18rem)] items-center gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,1.05fr)]">
@@ -17,13 +17,13 @@ import Button from "@/components/ui/Button.astro";
       >
         <div class="max-w-md">
           <p class="mb-4 inline-flex rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-xs font-medium text-primary dark:border-primary-light/20 dark:bg-primary-light/10 dark:text-primary-light">
-            Account access
+            账号访问
           </p>
-          <h1 class="font-brand text-5xl leading-tight tracking-normal text-neutral-800 dark:text-neutral-100">
-            Welcome back to your workspace.
+          <h1 class="font-brand text-4xl leading-tight tracking-normal text-neutral-800 dark:text-neutral-100">
+            欢迎回到你的工作区。
           </h1>
           <p class="mt-5 text-base leading-8 text-neutral-600 dark:text-neutral-300">
-            A polished sign in screen for SaaS products, dashboards, and customer portals.
+            一个适合 SaaS 产品、仪表盘和客户门户的登录页示例。
           </p>
         </div>
 
@@ -34,8 +34,8 @@ import Button from "@/components/ui/Button.astro";
                 <CircleCheck size={16} />
               </span>
               <div>
-                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">Responsive by default</h2>
-                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">Works as a focused single-column flow on mobile.</p>
+                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">默认响应式</h2>
+                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">移动端会收束为单列流程，专注完成登录。</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -43,8 +43,8 @@ import Button from "@/components/ui/Button.astro";
                 <Lock size={16} />
               </span>
               <div>
-                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">Ready to connect</h2>
-                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">Replace the demo handler with your auth provider or API.</p>
+                <h2 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100">方便接入</h2>
+                <p class="mt-1 text-sm leading-6 text-neutral-500 dark:text-neutral-400">把 demo 提交逻辑替换成你的 auth provider 或 API 即可。</p>
               </div>
             </div>
           </div>
@@ -58,16 +58,16 @@ import Button from "@/components/ui/Button.astro";
       >
         <div class="rounded-2xl border border-neutral-200 bg-bg-secondary/85 p-6 shadow-[0_18px_60px_rgba(25,34,47,0.08)] backdrop-blur dark:border-neutral-700 dark:bg-bg-secondary-dark/85 dark:shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-8">
           <div class="mb-8">
-            <p class="text-xs font-medium uppercase tracking-[0.14em] text-primary dark:text-primary-light">Sign in</p>
-            <h1 class="mt-3 font-brand text-4xl tracking-normal text-neutral-800 dark:text-neutral-100">Access your account</h1>
+            <p class="text-xs font-medium uppercase tracking-[0.14em] text-primary dark:text-primary-light">登录</p>
+            <h1 class="mt-3 font-brand text-3xl tracking-normal text-neutral-800 dark:text-neutral-100">访问你的账号</h1>
             <p class="mt-3 text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-              Use your email address or continue with a connected provider.
+              使用邮箱登录，或者继续使用已连接的第三方账号。
             </p>
           </div>
 
-          <form id="sign-in-form" class="space-y-5">
+          <form id="sign-in-form" class="space-y-4">
             <div>
-              <label for="email" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Email</label>
+              <label for="email" class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">邮箱</label>
               <div class="relative">
                 <Mail class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400 dark:text-neutral-500" />
                 <input
@@ -84,9 +84,9 @@ import Button from "@/components/ui/Button.astro";
 
             <div>
               <div class="mb-2 flex items-center justify-between gap-4">
-                <label for="password" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300">Password</label>
+                <label for="password" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300">密码</label>
                 <a href="javascript:void(0);" class="text-sm font-medium text-primary transition-colors hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">
-                  Forgot password?
+                  忘记密码？
                 </a>
               </div>
               <div class="relative">
@@ -97,7 +97,7 @@ import Button from "@/components/ui/Button.astro";
                   type="password"
                   autocomplete="current-password"
                   required
-                  placeholder="Enter your password"
+                  placeholder="输入你的密码"
                   class="w-full rounded-lg border border-neutral-200 bg-bg-secondary px-11 py-3 text-neutral-800 transition-colors placeholder:text-neutral-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:border-neutral-700 dark:bg-bg-secondary-dark dark:text-neutral-100 dark:placeholder:text-neutral-500"
                 />
               </div>
@@ -109,23 +109,23 @@ import Button from "@/components/ui/Button.astro";
                 name="remember"
                 class="h-4 w-4 rounded border-neutral-300 text-primary focus:ring-primary/30 dark:border-neutral-600 dark:bg-bg-secondary-dark"
               />
-              Remember me for 30 days
+              30 天内保持登录
             </label>
 
             <div class="auth-submit">
               <Button url="javascript:void(0);" type="fill" className="w-full max-w-none justify-center">
-                Sign in <ArrowRight size={16} />
+                登录 <ArrowRight size={16} />
               </Button>
             </div>
 
             <div id="sign-in-success" class="hidden rounded-lg border border-green-200 bg-green-50 p-3 text-center text-sm text-green-700 dark:border-green-800 dark:bg-green-900/20 dark:text-green-300">
-              Demo sign in complete.
+              Demo 登录完成。
             </div>
           </form>
 
           <div class="my-6 flex items-center gap-3">
             <div class="h-px flex-1 border-t border-dashed border-neutral-200 dark:border-neutral-700"></div>
-            <span class="text-xs text-neutral-400 dark:text-neutral-500">or</span>
+            <span class="text-xs text-neutral-400 dark:text-neutral-500">或</span>
             <div class="h-px flex-1 border-t border-dashed border-neutral-200 dark:border-neutral-700"></div>
           </div>
 
@@ -143,8 +143,8 @@ import Button from "@/components/ui/Button.astro";
           </div>
 
           <p class="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">
-            New to RicoFast?
-            <a href="/sign-up" class="font-medium text-primary transition-colors hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">Create an account</a>
+            第一次使用 RicoFast？
+            <a href="/sign-up" class="font-medium text-primary transition-colors hover:text-primary-strong dark:text-primary-light dark:hover:text-primary-light-dark">创建账号</a>
           </p>
         </div>
       </div>

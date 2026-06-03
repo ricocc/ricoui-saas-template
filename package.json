@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "1.0.0",
 	"packageManager": "pnpm@9.14.2",
-	"description": "A design-led SaaS website template built with Astro, Tailwind CSS v4, MDX, and a reusable component system.",
+	"description": "一个基于 Astro、Tailwind CSS v4、MDX 和可复用组件系统构建的中文 SaaS 官网模板。",
 	"keywords": [
 		"astro",
 		"astro-template",

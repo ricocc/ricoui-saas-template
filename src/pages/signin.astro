@@ -6,8 +6,8 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
 ---
 
 <Layout
-  title="Sign in — RicoFast"
-  description="Sign in to your RicoFast account to access your projects and dashboard."
+  title="登录 — RicoFast"
+  description="登录 RicoFast，访问你的项目和仪表盘。"
 >
   <section class="site-container py-12 md:py-20 flex items-center justify-center min-h-[calc(100vh-8rem)]">
     <div class="w-full max-w-md" data-aos="fade-up-xs" data-aos-once="true">
@@ -18,13 +18,13 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
           <a href="/" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-bg-primary dark:bg-bg-primary-dark border border-dashed border-primary/30 dark:border-neutral-700 mb-4">
             <img src="/assets/logo.png" alt={siteConfig.title} width="32" height="32" class="w-8 h-8 rounded-full" />
           </a>
-          <h1 class="text-3xl md:text-4xl font-brand text-neutral-800 dark:text-neutral-100 mb-1.5">Welcome back</h1>
-          <p class="text-sm text-neutral-500 dark:text-neutral-400">Sign in to continue to {siteConfig.title}</p>
+          <h1 class="text-3xl md:text-4xl font-brand text-neutral-800 dark:text-neutral-100 mb-1.5">欢迎回来</h1>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">登录后继续使用 {siteConfig.title}</p>
         </div>
 
         <!-- Demo notice -->
         <div class="mb-6 px-3 py-2.5 rounded-lg border border-dashed border-primary/20 dark:border-primary/30 bg-primary/5 text-[11px] leading-relaxed text-neutral-600 dark:text-neutral-300 text-center">
-          <strong class="text-primary">Demo template.</strong> Wire up Auth.js, Clerk, Supabase, or your own backend before going live.
+          <strong class="text-primary">Demo 模板。</strong> 上线前请接入 Auth.js、Clerk、Supabase，或你自己的后端。
         </div>
 
         <!-- Social providers -->
@@ -47,14 +47,14 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
         <!-- Divider -->
         <div class="relative flex items-center my-5">
           <div class="flex-1 border-t border-dashed border-neutral-200 dark:border-neutral-700"></div>
-          <span class="px-3 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-400 dark:text-neutral-500">or with email</span>
+          <span class="px-3 text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-400 dark:text-neutral-500">或使用邮箱</span>
           <div class="flex-1 border-t border-dashed border-neutral-200 dark:border-neutral-700"></div>
         </div>
 
         <!-- Form -->
         <form id="signin-form" class="space-y-4" novalidate>
           <div>
-            <label for="email" class="block text-xs font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Email</label>
+            <label for="email" class="block text-xs font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">邮箱</label>
             <div class="relative">
               <Mail class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 dark:text-neutral-500 pointer-events-none" />
               <input
@@ -71,8 +71,8 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
 
           <div>
             <div class="flex items-center justify-between mb-1.5">
-              <label for="password" class="block text-xs font-medium text-neutral-700 dark:text-neutral-300">Password</label>
-              <a href="#" class="text-xs text-primary hover:text-primary-strong dark:text-primary-light transition-colors">Forgot?</a>
+              <label for="password" class="block text-xs font-medium text-neutral-700 dark:text-neutral-300">密码</label>
+              <a href="#" class="text-xs text-primary hover:text-primary-strong dark:text-primary-light transition-colors">忘记了？</a>
             </div>
             <div class="relative">
               <Lock class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 dark:text-neutral-500 pointer-events-none" />
@@ -82,10 +82,10 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
                 name="password"
                 required
                 autocomplete="current-password"
-                placeholder="Enter your password"
+                placeholder="输入你的密码"
                 class="auth-input pl-10 pr-10"
               />
-              <button type="button" id="toggle-pw" aria-label="Show password" class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-md text-neutral-400 hover:text-primary dark:text-neutral-500 dark:hover:text-primary-light transition-colors">
+              <button type="button" id="toggle-pw" aria-label="显示密码" class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-md text-neutral-400 hover:text-primary dark:text-neutral-500 dark:hover:text-primary-light transition-colors">
                 <Eye class="w-4 h-4 pw-eye" />
                 <EyeOff class="w-4 h-4 pw-eye-off hidden" />
               </button>
@@ -94,25 +94,25 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
 
           <label class="flex items-center gap-2 cursor-pointer select-none">
             <input type="checkbox" id="remember" class="auth-checkbox" />
-            <span class="text-xs text-neutral-600 dark:text-neutral-400">Keep me signed in</span>
+            <span class="text-xs text-neutral-600 dark:text-neutral-400">保持登录</span>
           </label>
 
           <div class="signin-submit pt-1">
             <Button type="fill" url="javascript:void(0);" className="w-full justify-center">
-              Sign in <ArrowRight size={16} />
+              登录 <ArrowRight size={16} />
             </Button>
           </div>
 
           <div id="signin-success" class="hidden p-3 rounded-lg bg-green-50 dark:bg-green-900/20 border border-dashed border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 text-xs text-center">
-            Signed in — this is a template demo. No real auth happens.
+            已登录。这是模板 demo，不会发生真实认证。
           </div>
         </form>
       </div>
 
       <!-- Switch -->
       <p class="text-center text-sm text-neutral-500 dark:text-neutral-400 mt-6">
-        New to {siteConfig.title}?
-        <a href="/signup" class="text-primary hover:text-primary-strong dark:text-primary-light font-medium transition-colors ml-1">Create an account</a>
+        第一次使用 {siteConfig.title}？
+        <a href="/signup" class="text-primary hover:text-primary-strong dark:text-primary-light font-medium transition-colors ml-1">创建账号</a>
       </p>
     </div>
   </section>
@@ -196,7 +196,7 @@ import { Mail, Lock, ArrowRight, GitFork, Eye, EyeOff } from "@lucide/astro";
     pw.type = isPw ? 'text' : 'password';
     toggle.querySelector('.pw-eye')?.classList.toggle('hidden', isPw);
     toggle.querySelector('.pw-eye-off')?.classList.toggle('hidden', !isPw);
-    toggle.setAttribute('aria-label', isPw ? 'Hide password' : 'Show password');
+    toggle.setAttribute('aria-label', isPw ? '隐藏密码' : '显示密码');
   });
 
   // Demo submit

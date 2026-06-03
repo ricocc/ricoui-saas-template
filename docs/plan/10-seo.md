@@ -1,41 +1,16 @@
-# SEO And Meta
+# 10 SEO
 
-Sources:
+SEO 元信息主要来自 `src/config/site.js` 和各页面的 `Layout` props。
 
-- `astro.config.mjs`
-- `src/config/site.js`
-- `src/layouts/Meta.astro`
-- `src/components/widgets/Meta.astro`
-- `src/components/widgets/TrackGa.astro`
-- `src/pages/rss.xml.js`
-- `public/robots.txt`
-- `public/og.jpg`
+## 当前规则
 
-## Current SEO Features
+- 默认 title 和 description 已中文化。
+- keywords 使用中文 SaaS / Astro / Tailwind 等关键词。
+- Blog 和 Changelog 内容已改为中文。
+- 日期格式使用 `zh-CN`。
 
-- Page-level title and description props through layouts.
-- Site-level metadata in `src/config/site.js`.
-- Open Graph image at `public/og.jpg`.
-- RSS feed at `/rss.xml`.
-- Sitemap integration through `@astrojs/sitemap`.
-- Robots file in `public/robots.txt`.
-- Optional analytics through public environment variables.
+## 上线前
 
-## Environment Variables
-
-```env
-PUBLIC_SITE_URL=https://your-domain.com
-PUBLIC_GA4_ID=
-PUBLIC_UMAMI_ID=
-```
-
-`PUBLIC_SITE_URL` should be set before deployment so canonical URLs, RSS, and sitemap output point to the production domain.
-
-## QA
-
-- Verify every page has a meaningful title.
-- Verify every page has a meaningful description.
-- Verify `/rss.xml` renders blog posts.
-- Verify sitemap generation during production build.
-- Verify `public/og.jpg` exists.
-- Verify analytics scripts are omitted when IDs are empty.
+- 设置 `PUBLIC_SITE_URL`。
+- 替换 `public/og.jpg`。
+- 检查 `rss.xml` 和 sitemap 输出。

@@ -8,37 +8,37 @@ import { siteConfig } from "@/config/site";
 import { Check, X, ArrowRight } from "@lucide/astro";
 
 const comparisonFeatures = [
-  { name: "Projects", free: "1", pro: "Unlimited", enterprise: "Unlimited" },
-  { name: "Page templates", free: "Basic", pro: "Full", enterprise: "Full + Custom" },
-  { name: "Components", free: "Core", pro: "Full library", enterprise: "Full + Custom" },
-  { name: "Customization", free: "Limited", pro: "Full", enterprise: "Advanced" },
-  { name: "Animations", free: "Basic AOS", pro: "Full motion.js", enterprise: "Full + Custom" },
-  { name: "Support", free: "Community", pro: "Email (1 biz day)", enterprise: "Priority (same day)" },
-  { name: "Custom domain", free: false, pro: true, enterprise: true },
-  { name: "Team seats", free: "1", pro: "3", enterprise: "10+" },
+  { name: "项目数量", free: "1", pro: "不限", enterprise: "不限" },
+  { name: "页面模板", free: "基础", pro: "完整", enterprise: "完整 + 定制" },
+  { name: "组件", free: "核心组件", pro: "完整组件库", enterprise: "完整 + 定制" },
+  { name: "自定义能力", free: "有限", pro: "完整", enterprise: "高级" },
+  { name: "动效", free: "基础 AOS", pro: "完整 motion.js", enterprise: "完整 + 定制" },
+  { name: "支持", free: "社区", pro: "邮件（1 个工作日）", enterprise: "优先（当天）" },
+  { name: "自定义域名", free: false, pro: true, enterprise: true },
+  { name: "团队席位", free: "1", pro: "3", enterprise: "10+" },
   { name: "SSO + audit log", free: false, pro: false, enterprise: true },
   { name: "SLA", free: false, pro: false, enterprise: "99.9%" },
 ];
 
 const faqItems = [
-  { question: "Is there a free trial on Pro?", answer: "Yes — Pro includes a 7-day free trial. No credit card required to start; we'll only ask for billing details when the trial ends." },
-  { question: "What's your refund policy?", answer: "14-day money-back guarantee on all paid plans, no questions asked. Email hello@ricoui.com within 14 days of the charge and we'll process the refund within 2 business days." },
-  { question: "Can I upgrade or downgrade later?", answer: "Anytime. Upgrades take effect immediately and we prorate the difference. Downgrades take effect at the end of the current billing period, so you keep paid features until then." },
-  { question: "How does team billing work?", answer: "Pro includes 3 seats and Enterprise starts at 10 seats. Additional seats are $9/seat/month on Pro and $19/seat/month on Enterprise, billed on the same cycle as your main subscription." },
+  { question: "Pro 有免费试用吗？", answer: "有。Pro 示例中包含 7 天免费试用，开始时不需要信用卡；试用结束后再补充账单信息。" },
+  { question: "退款规则怎么写比较合适？", answer: "示例采用 14 天无理由退款。实际项目请根据你的产品、地区法规和支付服务商规则调整。" },
+  { question: "后面能升级或降级吗？", answer: "示例逻辑是随时升级，立即生效；降级则在当前计费周期结束后生效，用户在到期前仍保留已付能力。" },
+  { question: "团队席位如何计费？", answer: "示例中 Pro 包含 3 个席位，Enterprise 从 10 个席位起。真实上线时请替换为你自己的计费模型。" },
 ];
 ---
 
 <Layout
-  title="Pricing — RicoFast"
-  description="Simple, transparent pricing. Choose a plan that fits your stage."
+  title="价格 — RicoFast"
+  description="简单透明的价格示例，按产品阶段选择套餐。"
 >
   <section class="site-container my-12">
     <PageHeader
-      title="Simple, transparent pricing"
-      description="Choose a plan that fits your stage. Upgrade anytime as you grow."
+      title="简单透明的价格示例"
+      description="按产品阶段选择套餐，后续增长时再升级。"
     />
     <p class="text-center text-xs text-neutral-400 dark:text-neutral-500 mt-6 italic">
-      Demo pricing — replace with your own plans. The RicoFast template itself is free and MIT-licensed.
+      这是演示价格区块，上线时请替换为你的真实套餐。RicoFast 模板本身基于 MIT 协议免费使用。
     </p>
   </section>
 
@@ -48,12 +48,12 @@ const faqItems = [
 
   <!-- Feature Comparison -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
-    <h2 class="text-3xl font-brand text-center mb-8">Compare plans</h2>
+    <h2 class="text-3xl font-brand text-center mb-8">套餐对比</h2>
     <div class="max-w-4xl mx-auto overflow-x-auto">
       <table class="w-full">
         <thead>
           <tr class="border-b border-dashed border-neutral-200 dark:border-neutral-700">
-            <th class="text-left py-4 pr-8 text-sm font-medium text-neutral-500">Feature</th>
+            <th class="text-left py-4 pr-8 text-sm font-medium text-neutral-500">功能</th>
             <th class="text-center py-4 px-4 text-sm font-medium text-neutral-500">Free</th>
             <th class="text-center py-4 px-4 text-sm font-medium text-primary">Pro</th>
             <th class="text-center py-4 px-4 text-sm font-medium text-neutral-500">Enterprise</th>
@@ -87,7 +87,7 @@ const faqItems = [
 
   <!-- Pricing FAQ -->
   <section class="py-16 md:py-24 site-container">
-    <h2 class="text-3xl font-brand text-center mb-8">Pricing FAQ</h2>
+    <h2 class="text-3xl font-brand text-center mb-8">价格常见问题</h2>
     <div class="max-w-2xl mx-auto" data-aos="fade-up-xs" data-aos-once="true">
       {faqItems.map((item, index) => (
         <AccordionItem question={item.question} answer={item.answer} index={index} />
@@ -98,16 +98,16 @@ const faqItems = [
   <!-- CTA -->
   <section class="py-16 md:py-24 site-container" data-aos="fade-up-xs" data-aos-once="true">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-brand mb-4">Not sure which plan?</h2>
+      <h2 class="text-3xl md:text-4xl font-brand mb-4">还不确定选哪一档？</h2>
       <p class="text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed">
-        Start on Free, upgrade when you outgrow it. Most teams switch to Pro within their first month.
+        先从 Free 开始，等项目真的需要更多能力时再升级。模板里保留了完整结构，方便你替换成自己的业务规则。
       </p>
       <div class="flex flex-wrap justify-center gap-3">
         <Button url={siteConfig.social.github} type="fill" className="text-lg px-8 py-3">
-          Start free <ArrowRight size={18} />
+          免费开始 <ArrowRight size={18} />
         </Button>
         <Button url="/contact" className="text-lg px-8 py-3">
-          Talk to sales
+          联系我们
         </Button>
       </div>
     </div>

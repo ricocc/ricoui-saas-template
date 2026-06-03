@@ -12,8 +12,8 @@ interface Props {
 }
 
 const {
-  title = "Simple, transparent pricing",
-  description = "Choose a plan that fits your stage. Upgrade anytime as you grow.",
+  title = "简单透明的价格示例",
+  description = "按产品阶段选择套餐，后续增长时再升级。",
   showHeader = true,
 } = Astro.props;
 
@@ -22,58 +22,58 @@ const plans = [
     name: "Free",
     monthlyPrice: "$0",
     yearlyPrice: "$0",
-    monthlyDescription: "For makers exploring a new idea on the side.",
-    yearlyDescription: "Stay free forever — annual billing won't cost you a cent.",
-    monthlySuffix: "/ month",
-    yearlySuffix: "/ month, billed yearly",
+    monthlyDescription: "适合正在验证新想法的个人项目。",
+    yearlyDescription: "长期免费，年付也不会产生费用。",
+    monthlySuffix: "/ 月",
+    yearlySuffix: "/ 月，按年计费",
     features: [
-      { text: "1 active project", included: true },
-      { text: "Core component library", included: true },
-      { text: "MDX content support", included: true },
-      { text: "Self-host only", included: true },
-      { text: "Community support", included: true },
-      { text: "Email support", included: false },
+      { text: "1 个活跃项目", included: true },
+      { text: "核心组件库", included: true },
+      { text: "MDX 内容支持", included: true },
+      { text: "自托管部署", included: true },
+      { text: "社区支持", included: true },
+      { text: "邮件支持", included: false },
     ],
-    cta: "Get started",
+    cta: "开始使用",
     popular: false,
   },
   {
     name: "Pro",
     monthlyPrice: "$19",
     yearlyPrice: "$15",
-    monthlyDescription: "For indie makers shipping their first real product.",
-    yearlyDescription: "Save 20% — best for makers committing to the long haul.",
-    monthlySuffix: "/ month",
-    yearlySuffix: "/ month, billed yearly",
+    monthlyDescription: "适合准备发布第一个正式产品的独立开发者。",
+    yearlyDescription: "年付节省 20%，适合长期维护的产品。",
+    monthlySuffix: "/ 月",
+    yearlySuffix: "/ 月，按年计费",
     features: [
-      { text: "Unlimited projects", included: true },
-      { text: "Full component library", included: true },
-      { text: "Advanced layout system", included: true },
-      { text: "Custom domains", included: true },
-      { text: "Built-in animations", included: true },
-      { text: "Email support (1 biz day)", included: true },
-      { text: "Quarterly office hours", included: true },
+      { text: "不限项目数量", included: true },
+      { text: "完整组件库", included: true },
+      { text: "高级页面布局系统", included: true },
+      { text: "自定义域名", included: true },
+      { text: "内置动效", included: true },
+      { text: "邮件支持（1 个工作日内）", included: true },
+      { text: "季度答疑时间", included: true },
     ],
-    cta: "Start free trial",
+    cta: "开始免费试用",
     popular: true,
   },
   {
     name: "Enterprise",
     monthlyPrice: "$49",
     yearlyPrice: "$39",
-    monthlyDescription: "For teams scaling beyond a single founder.",
-    yearlyDescription: "Save 20% on annual — plus a dedicated onboarding session.",
-    monthlySuffix: "/ month",
-    yearlySuffix: "/ month, billed yearly",
+    monthlyDescription: "适合已经从个人项目进入团队协作的产品。",
+    yearlyDescription: "年付节省 20%，并包含一次专属 onboarding。",
+    monthlySuffix: "/ 月",
+    yearlySuffix: "/ 月，按年计费",
     features: [
-      { text: "Everything in Pro", included: true },
-      { text: "Team collaboration (10+ seats)", included: true },
-      { text: "SSO + audit log", included: true },
-      { text: "Custom integrations", included: true },
-      { text: "Priority support (same day)", included: true },
+      { text: "包含 Pro 的全部能力", included: true },
+      { text: "团队协作（10+ 席位）", included: true },
+      { text: "SSO + 审计日志", included: true },
+      { text: "定制集成", included: true },
+      { text: "优先支持（当天响应）", included: true },
       { text: "99.9% SLA", included: true },
     ],
-    cta: "Contact sales",
+    cta: "联系销售",
     popular: false,
   },
 ];
@@ -109,7 +109,7 @@ const plans = [
             <div class="popular-badge absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
               <span class="popular-badge__pill">
                 <Sparkles class="w-3.5 h-3.5" stroke-width={2.25} />
-                <span class="popular-badge__label font-brand">Most Popular</span>
+                <span class="popular-badge__label font-brand">最受欢迎</span>
               </span>
             </div>
           )}

@@ -1,48 +1,18 @@
-# Home Page
+# 01 Home
 
-Source: `src/pages/index.astro`
+首页用于说明 RicoFast 的核心价值：几天内上线一个像样的 SaaS 官网。
 
-## Purpose
+## 当前结构
 
-The home page introduces RicoFast as a complete SaaS website template and routes visitors toward the template repository, feature details, pricing examples, and content.
+- Hero：中文主张、GitHub CTA、产品数据预览。
+- Logo strip：上线时替换为客户 Logo。
+- Problem cards：解释从零搭建、模板感和系统漂移问题。
+- Solution：强调 token 化设计系统。
+- Feature grid：页面结构、section、MDX、性能、动效和定制能力。
+- Product preview：仪表盘 mock。
+- Use cases：AI 工具、开发者工具、设计工具、Micro SaaS、开源项目、数据产品。
+- Tech stack、Pricing、FAQ、Blog、Final CTA。
 
-## Implemented Sections
+## 文案规则
 
-1. Hero: `src/components/home/HeroSection.astro`
-2. Social proof/logo strip
-3. Problem cards
-4. Solution statement
-5. Feature grid
-6. Browser-style product preview
-7. Use cases
-8. Tech stack
-9. Pricing preview: `src/components/sections/Pricing.astro`
-10. FAQ: `src/components/sections/FAQ.astro`
-11. Latest articles: `src/components/sections/BlogSection.astro`
-12. Final CTA
-
-## Content Notes
-
-- Main promise: ship a polished SaaS site in days, not weeks.
-- Audience: indie makers, AI tools, developer tools, design tools, micro SaaS, open-source projects, analytics products.
-- Pricing on the home page is demo content for users to replace.
-
-## Key Components
-
-- `Layout.astro`
-- `HeroSection.astro`
-- `SectionHeader.astro`
-- `BrowserFrame.astro`
-- `TechStackCard.astro`
-- `Pricing.astro`
-- `FAQ.astro`
-- `BlogSection.astro`
-- `Button.astro`
-
-## QA
-
-- Check hero and browser preview in light/dark mode.
-- Check responsive stacking at 375px and 768px.
-- Check pricing toggle interaction.
-- Check FAQ accordion interaction.
-- Check latest articles render from `src/content/post/`.
+中文表达优先，避免直译腔；Astro、Tailwind、MDX、Lighthouse、GitHub 等技术名保留英文。

@@ -1,37 +1,18 @@
-# Elements Page
+# 07 Elements
 
-Source: `src/pages/elements.astro`
+Elements 页面是组件和设计系统的在线参考。
 
-## Purpose
-
-The Elements page is the visual reference for RicoFast components and design tokens.
-
-## Implemented Areas
-
-The page demonstrates the current UI language, including:
+## 内容
 
 - Colors
 - Typography
 - Buttons
-- Badges
+- Badges & Tags
 - Cards
-- Forms
-- Layout examples
-- Motion examples
-- Accordion behavior
+- Form Elements
+- Layout Elements
+- Motion & Animation
+- Accordion / FAQ
 - Icons
 
-## Related Files
-
-- `src/styles/global.css`
-- `docs/DESIGN.md`
-- `src/components/ui/*`
-- `src/components/elements/*`
-- `src/components/sections/FAQ.astro`
-
-## QA
-
-- Verify examples match real tokens from `global.css`.
-- Verify examples work in dark mode.
-- Verify form controls have visible focus states.
-- Verify no example text overflows on mobile.
+说明文字以中文为主，组件分类、token、图标名等开发标识保留英文。

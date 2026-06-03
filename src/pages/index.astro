@@ -18,39 +18,39 @@ import {
 
 // FAQ data
 const faqItems = [
-  { question: "Is this template free?", answer: "Yes. RicoFast is MIT-licensed and free for both personal and commercial use. Fork it, ship with it, sell what you build on top of it — no attribution required." },
-  { question: "Do I need to know Astro to use it?", answer: "Basic HTML/CSS familiarity is enough. The template is structured so the first 90% of customization happens in three places: site.js, global.css tokens, and content directories. Most users ship without writing any new Astro components." },
-  { question: "Can I customize the design system?", answer: "Yes. Colors, fonts, spacing, and border radii are all CSS custom properties defined in src/styles/global.css. The full token reference lives in docs/DESIGN.md so you always know what to change." },
-  { question: "Where can I deploy it?", answer: "Anywhere that hosts static sites — Vercel, Netlify, Cloudflare Pages, GitHub Pages, AWS S3, or your own server. The build outputs a plain dist/ directory. Vercel and Netlify have one-click setup." },
-  { question: "How fast is it really?", answer: "Lighthouse 95+ across Performance, Accessibility, Best Practices, and SEO on a fresh install. Astro ships zero JS by default — interactive bits load only where needed." },
-  { question: "Is there support?", answer: "Yes — open an issue on GitHub. The repo is actively maintained and community contributions are welcome. The Pro/Enterprise tiers shown on the Pricing page are demo content for the template itself, not a paid plan for RicoFast." },
+  { question: "这个模板可以免费用吗？", answer: "可以。RicoFast 使用 MIT 协议，个人项目和商业项目都能使用。你可以 fork、改造、上线，也可以基于它做自己的产品，不需要署名。" },
+  { question: "不熟 Astro 能用吗？", answer: "可以。会基础 HTML/CSS 就足够。主要定制集中在三个地方：site.js、global.css 的 tokens，以及 content 目录。大多数页面只需要改文案和数据数组。" },
+  { question: "设计系统能改吗？", answer: "能。颜色、字体、间距和圆角都在 src/styles/global.css 里以 CSS 自定义属性维护；完整 token 说明在 docs/DESIGN.md，改动范围很清楚。" },
+  { question: "可以部署到哪里？", answer: "任何静态托管平台都可以，比如 Vercel、Netlify、Cloudflare Pages、GitHub Pages、AWS S3，或者你自己的服务器。构建产物就是 dist/ 目录。" },
+  { question: "性能跑分怎么样？", answer: "全新安装后，首页在 Performance、Accessibility、Best Practices 和 SEO 上都有 Lighthouse 95+ 基线。Astro 默认零 JS，交互只在需要的地方加载。" },
+  { question: "如果遇到问题怎么办？", answer: "可以在 GitHub 提 issue。Pricing 页里的 Pro/Enterprise 是给模板展示用的示例套餐，并不是 RicoFast 本身的付费方案。" },
 ];
 
 // Features data
 const features = [
-  { icon: "/assets/icon/structure.png",  title: "Clean page structure", desc: "9 pre-built pages — Home, Features, Pricing, Blog, Changelog, About, Contact, Elements, 404 — wired and responsive out of the box." },
-  { icon: "/assets/icon/components.png", title: "Reusable sections", desc: "15+ modular section components — Hero, FeatureGrid, Pricing, FAQ, Steps, FinalCTA — composable with no layout conflicts." },
-  { icon: "/assets/icon/document.png",   title: "MDX-powered content", desc: "Blog and changelog driven by Astro 6 Content Layer. Import components inside Markdown. No CMS needed." },
-  { icon: "/assets/icon/fast.png",       title: "Lightweight and fast", desc: "Zero JS by default. Lighthouse 95+ on Performance, Accessibility, Best Practices, and SEO from a fresh install." },
-  { icon: "/assets/icon/motion.png",     title: "Built-in motion", desc: "Scroll reveals via AOS, orchestrated entrances via motion.js. Honors prefers-reduced-motion." },
-  { icon: "/assets/icon/customize.png",  title: "Easy to customize", desc: "~30 CSS custom properties drive every color and font. Rebrand in minutes by editing one file." },
+  { icon: "/assets/icon/structure.png", title: "页面结构清楚", desc: "预置首页、功能、价格、博客、Changelog、关于、联系、Elements 和 404，响应式布局已经接好。" },
+  { icon: "/assets/icon/components.png", title: "区块可复用", desc: "15+ 模块化 section，覆盖 Hero、FeatureGrid、Pricing、FAQ、Steps、FinalCTA 等常见 SaaS 页面场景。" },
+  { icon: "/assets/icon/document.png", title: "MDX 内容系统", desc: "Blog 和 Changelog 基于 Astro Content Layer，Markdown 中可以引入组件，不依赖 CMS 也能维护内容。" },
+  { icon: "/assets/icon/fast.png", title: "轻量且快速", desc: "Astro 默认零 JS，全新安装就具备 Lighthouse 95+ 的性能、可访问性和 SEO 基线。" },
+  { icon: "/assets/icon/motion.png", title: "内置克制动效", desc: "AOS 负责滚动入场，motion.js 用于需要编排的动效，并遵循 prefers-reduced-motion。" },
+  { icon: "/assets/icon/customize.png", title: "改品牌很直接", desc: "约 30 个 CSS tokens 管理颜色、字体和基础视觉，只改一个文件就能完成第一轮品牌替换。" },
 ];
 
 // Problem cards data
 const problems = [
-  { icon: "/assets/icon/clock.png",   title: "Starting fresh slows you down", desc: "Every SaaS needs the same 12 sections. Rebuilding them for every project costs weeks you should spend on the product." },
-  { icon: "/assets/icon/battery.png", title: "Generic templates devalue work", desc: "Most free templates look like templates. Your product deserves a site that feels deliberate, not stamped out." },
-  { icon: "/assets/icon/bell.png",    title: "Unstable systems break with growth", desc: "Ad-hoc colors, magic numbers, drift between pages — small inconsistencies compound until every change risks breaking something else." },
+  { icon: "/assets/icon/clock.png", title: "从零搭官网太耗时", desc: "大多数 SaaS 官网都需要类似的区块。每个项目都重做一遍，会把本该投入产品的时间吃掉。" },
+  { icon: "/assets/icon/battery.png", title: "普通模板容易显得廉价", desc: "大部分模板缺少设计。产品需要的是有判断、有节奏的页面，而不是随手拼出来的外壳。" },
+  { icon: "/assets/icon/bell.png", title: "没有系统会越改越乱", desc: "配色、间距、页面之间的排版细节，早期看不明显，后期每次改动都可能引发连锁问题。" },
 ];
 
 // Use cases
 const useCases = [
-  { icon: Bot, label: "AI tools", desc: "Credible launch site from day one" },
-  { icon: Code, label: "Developer tools", desc: "API docs, SDK landing, dev platforms" },
-  { icon: PenTool, label: "Design tools", desc: "Creative apps and design systems" },
-  { icon: Rocket, label: "Micro SaaS", desc: "Indie projects and side hustles" },
-  { icon: GitFork, label: "Open-source", desc: "Project sites and community hubs" },
-  { icon: ChartNoAxesColumnIncreasing, label: "Analytics", desc: "Dashboards and data tools" },
+  { icon: Bot, label: "AI 工具", desc: "发布第一天就有可信官网" },
+  { icon: Code, label: "开发者工具", desc: "API、SDK、平台型产品" },
+  { icon: PenTool, label: "设计工具", desc: "创作应用与设计系统" },
+  { icon: Rocket, label: "Micro SaaS", desc: "独立产品和副业项目" },
+  { icon: GitFork, label: "开源项目", desc: "项目主页和社区页面" },
+  { icon: ChartNoAxesColumnIncreasing, label: "数据产品", desc: "仪表盘、分析和数据工具" },
 ];
 
 
@@ -67,9 +67,9 @@ const logos = [
 ---
 
 <Layout
-  title="RicoFast — A design-led SaaS template for Astro"
-  description="Ship your SaaS site in days, not weeks. A clean, fast, and modular open-source template built with Astro and Tailwind CSS."
-  keywords="saas template, astro template, tailwind template, startup website, indie hacker"
+  title="RicoFast — 面向 Astro 的高质感 SaaS 模板"
+  description="几天内上线一个像样的 SaaS 官网。RicoFast 是基于 Astro 和 Tailwind CSS 的模块化开源模板。"
+  keywords="SaaS 模板, Astro 模板, Tailwind CSS 模板, 创业官网, 独立开发"
 >
 
   <!-- 1. Hero -->
@@ -77,7 +77,7 @@ const logos = [
 
   <!-- 2. Logo / Social Proof -->
   <section class="py-12 md:py-16 lg:py-24 site-container" data-aos="fade-up-xs" data-aos-once="true"  data-aos-delay="650" >
-    <p class="text-center text-sm text-neutral-400 dark:text-neutral-500 mb-6">Drop in your customer logos when you launch</p>
+    <p class="text-center text-sm text-neutral-400 dark:text-neutral-500 mb-6">上线时把这里换成你的客户 Logo</p>
     <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 opacity-60">
       {logos.map((logo) => (
         <div class="flex items-center gap-2 px-4 py-2 border border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg">
@@ -90,7 +90,7 @@ const logos = [
 
   <!-- 3. Problem -->
   <section class="py-16 md:py-24 site-container">
-    <SectionHeader title="Most SaaS sites start with the wrong problems" description="The hard part isn't building features. It's building a site that doesn't feel generic, doesn't drift apart over time, and doesn't take a month of weekends." />
+    <SectionHeader title="优秀的设计事半功倍" description="难点不只是把功能列出来，而是让页面不模板化、不越改越散，也不占掉你一个月的周末。" />
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
       {problems.map((problem, i) => (
         <div
@@ -117,10 +117,7 @@ const logos = [
   <!-- 4. Solution -->
   <section class="py-8 md:py-12 site-container" data-aos="fade-up-xs" data-aos-once="true">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-brand mb-4">A design system, not just a template</h2>
-      <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-        RicoFast is built on a documented token system — colors, type scale, spacing, motion — so every page you add stays coherent with the ones already shipped. Less arbitration, fewer regressions, more time on the product.
-      </p>
+      <SectionHeader title="它是一套可延展的设计系统" description="RicoFast 把颜色、字号、间距和动效都收进 token，并写进文档。你后续新增页面时，不需要反复讨论细节，也更不容易把视觉系统改散。" />
     </div>
     <div class="mt-10 md:mt-12 flex flex-wrap justify-center items-end gap-4 sm:gap-6 md:gap-8">
       {[
@@ -138,7 +135,7 @@ const logos = [
         >
           <img
             src={`/assets/folder/${folder.file}`}
-            alt={`${folder.name} folder`}
+            alt={`${folder.name} 文件夹`}
             width="128"
             height="128"
             class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto drop-shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-105 hover:drop-shadow-lg"
@@ -152,7 +149,7 @@ const logos = [
 
   <!-- 5. Features Grid -->
   <section class="py-16 md:py-24 site-container">
-    <SectionHeader title="Everything you need, nothing you don't" description="A focused set of features built for real SaaS sites. No bloat, no half-finished add-ons." />
+    <SectionHeader title="高质量的模板代码" description="围绕真实 SaaS 官网整理的一组功能：页面、组件、内容、动效和部署基础。没有臃肿的半成品扩展。" />
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
       {features.map((feature, i) => (
         <div
@@ -182,7 +179,7 @@ const logos = [
 
   <!-- 6. Product Preview -->
   <section class="py-16 md:py-24 site-container" data-aos="fade-up-sm" data-aos-once="true">
-    <SectionHeader title="A full layout system, not just sections" description="Hero, features, pricing, dashboards, settings — every page is composed from the same token system, so the whole product feels coherent." />
+    <SectionHeader title="完整页面系统，而不是零散 section" description="Hero、功能、价格、仪表盘、设置页都来自同一套 token。页面可以扩展，整体质感不会散。" />
     <div class="mt-8 max-w-4xl mx-auto" data-aos="fade-up-sm" data-aos-once="true" data-aos-delay="300">
       <BrowserFrame url="app.ricoui.com/dashboard">
         <div class="flex h-[300px] md:h-[400px]">
@@ -213,12 +210,12 @@ const logos = [
             <div class="flex items-center justify-between gap-3">
               <div class="flex items-center gap-3">
                 <div>
-                  <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 leading-none">Overview</h3>
-                  <p class="text-[10px] text-neutral-400 mt-1">Last 30 days</p>
+                  <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 leading-none">概览</h3>
+                  <p class="text-[10px] text-neutral-400 mt-1">最近 30 天</p>
                 </div>
                 <span class="hidden md:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/5">
                   <span class="app-live-dot relative w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  <span class="text-[9px] uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-medium">Live</span>
+                  <span class="text-[9px] uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-medium">实时</span>
                 </span>
               </div>
               <div class="flex items-center gap-2">
@@ -230,8 +227,8 @@ const logos = [
             <!-- Stat row -->
             <div class="grid grid-cols-3 gap-2 md:gap-3">
               {[
-                { label: "Revenue", value: "$48.2k", delta: "+22.1%" },
-                { label: "New users", value: "1,284", delta: "+8.4%" },
+                { label: "收入", value: "$48.2k", delta: "+22.1%" },
+                { label: "新增用户", value: "1,284", delta: "+8.4%" },
                 { label: "MRR", value: "$12.6k", delta: "+5.2%" },
               ].map((s, i) => (
                 <div
@@ -248,9 +245,9 @@ const logos = [
             <!-- Table mock -->
             <div class="flex-1 rounded-md border border-primary/10 dark:border-neutral-700 bg-bg-primary/40 dark:bg-neutral-800/40 overflow-hidden">
               <div class="grid grid-cols-12 gap-2 px-3 py-2 border-b border-primary/10 dark:border-neutral-700 text-[9px] uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-                <span class="col-span-5">Customer</span>
-                <span class="col-span-3">Plan</span>
-                <span class="col-span-2">Status</span>
+                <span class="col-span-5">客户</span>
+                <span class="col-span-3">套餐</span>
+                <span class="col-span-2">状态</span>
                 <span class="col-span-2 text-right">MRR</span>
               </div>
               {[1, 2, 3, 4].map((i) => (
@@ -269,7 +266,7 @@ const logos = [
                   <div class="col-span-2">
                     <div class="inline-flex items-center gap-1">
                       <div class={`w-1.5 h-1.5 rounded-full ${i === 3 ? 'bg-amber-400' : 'bg-emerald-400'}`}></div>
-                      <span class="text-[9px] text-neutral-500 dark:text-neutral-400">{i === 3 ? 'Trial' : 'Active'}</span>
+                      <span class="text-[9px] text-neutral-500 dark:text-neutral-400">{i === 3 ? '试用' : '活跃'}</span>
                     </div>
                   </div>
                   <div class="col-span-2 text-right text-[10px] font-medium text-neutral-700 dark:text-neutral-200">${[148, 89, 49, 290][i - 1]}</div>
@@ -279,13 +276,13 @@ const logos = [
           </div>
         </div>
       </BrowserFrame>
-      <p class="text-center text-xs text-neutral-400 dark:text-neutral-500 mt-4">Replace this mock with your own product screenshot — see <code class="text-primary">src/pages/index.astro</code>.</p>
+      <p class="text-center text-xs text-neutral-400 dark:text-neutral-500 mt-4">把这个示例替换成你的产品截图，位置在 <code class="text-primary">src/pages/index.astro</code>。</p>
     </div>
   </section>
 
   <!-- 7. Use Cases -->
   <section class="py-16 md:py-24 site-container">
-    <SectionHeader title="Made for different kinds of SaaS" description="Whether you're shipping an AI tool, a developer platform, or an indie side project — the layout system adapts to your product." />
+    <SectionHeader title="适合不同类型的 SaaS 产品" description="无论是 AI 工具、开发者平台，还是独立开发的副业项目，这套页面结构都能快速贴合你的产品。" />
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-8" >
       {useCases.map((uc, i) => (
         <div
@@ -308,7 +305,7 @@ const logos = [
 
   <!-- 9. Tech Stack -->
   <section class="py-16 md:py-24 site-container" data-aos="fade-up-sm" data-aos-once="true">
-    <SectionHeader title="Built with modern tools" />
+    <SectionHeader title="基于现代前端工具构建" />
     <div class="mt-8" data-aos="fade-up-sm" data-aos-once="true" data-aos-delay="300">
       <TechStackCard />
     </div>
@@ -316,36 +313,36 @@ const logos = [
 
   <!-- 10. Pricing -->
   <Pricing
-    title="Free template, real pricing examples"
-    description="RicoFast itself is MIT-licensed and free. The 3-tier layout below is reference content — swap in your own plans when you launch."
+    title="看看价格如何设计"
+    description="RicoFast 本身基于 MIT 协议免费使用。下面的三档价格是示例内容，上线时替换成你的产品套餐即可。"
   />
 
   <div class="w-full border-b border-dashed border-neutral-200 dark:border-neutral-700 my-4 site-container"></div>
 
   <!-- 11. FAQ -->
   <FAQ
-    title="Frequently asked questions"
+    title="常见问题"
     items={faqItems}
   />
 
   <!-- 12. Latest Articles -->
   <div class="py-16 md:py-24">
-    <BlogSection title="Latest articles" />
+    <BlogSection title="最新文章" />
   </div>
 
   <!-- 13. Final CTA -->
   <section class="py-12 md:py-20 site-container  rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10" data-aos="fade-up-xs" data-aos-once="true">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-brand mb-4" data-aos="fade-up-xs" data-aos-once="true" data-aos-delay="200" >Start building your SaaS today</h2>
+      <h2 class="text-3xl md:text-4xl font-brand mb-4" data-aos="fade-up-xs" data-aos-once="true" data-aos-delay="200" >今天就开始搭你的 SaaS 官网</h2>
       <p class="text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed" data-aos="fade-up-xs" data-aos-once="true" data-aos-delay="300">
-        Clone the template, replace the content, ship to production. Three steps to a live site.
+        克隆模板，替换内容，部署上线。先把官网跑起来，再把细节慢慢打磨好。
       </p>
       <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up-xs" data-aos-once="true" data-aos-delay="400">
         <Button url={siteConfig.social.github} type="fill" className="text-lg px-8 py-3" target="_blank">
-          Get Template <ArrowRight size={18} />
+          获取模板 <ArrowRight size={18} />
         </Button>
         <Button url="/features" className="text-lg px-8 py-3">
-          View Features
+          查看功能
         </Button>
       </div>
     </div>

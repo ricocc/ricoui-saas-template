@@ -1,102 +1,72 @@
 ---
-title: "The design system behind RicoFast"
-description: "Tokens, type scale, dashed borders, and why we chose Instrument Serif. A look under the hood at the decisions that make the template feel coherent."
+title: "RicoFast 背后的设计系统"
+description: "从 tokens、字号层级、虚线边框到思源黑体，看看 RicoFast 如何保持页面一致性。"
 publishDate: 2026-04-22
 read: 10
-tags: ["Design", "Deep dive"]
+tags: ["设计", "深度解析"]
 img: "/assets/article-cover.jpg"
-img_alt: "Design tokens and typography in RicoFast"
+img_alt: "RicoFast 的设计 tokens 和排版系统"
 ---
 
-A template that looks good in the first screenshot is easy. A template that still looks good after you have replaced half the content is harder. That is the difference a design system makes.
+一个模板在第一张截图里好看并不难。难的是，用户替换了一半内容之后，它仍然看起来像一个完整产品。这就是设计系统的价值。
 
-This post walks through the decisions behind RicoFast's design system: what we chose, what we rejected, and why.
+## 字体：统一使用思源黑体
 
-## Type - two fonts, one job each
-
-Most SaaS templates pick a single sans-serif and call it a day. We use **two** fonts, and they have separate jobs:
-
-| Font | Role | Where |
-|------|------|-------|
-| Instrument Serif | Display | Hero titles, section headlines, page H1s, and `.font-brand` only |
-| Inter | Everything else | Body, navigation, labels, buttons, captions |
-
-Instrument Serif is the personality. It gives the template an editorial edge without making the interface feel precious. Inter is the work font, optimized for small-screen reading where most of the actual work happens.
-
-The rule is enforced in `global.css`:
+这个中文版本里，RicoFast 不再使用英文模板常见的 serif + sans 搭配，而是统一使用思源黑体字体栈：
 
 ```css
 @theme {
-  --font-brand: "Instrument Serif", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-}
-
-.font-brand {
-  font-family: var(--font-brand);
-  font-weight: 400;
+  --font-brand: "Source Han Sans SC", "Noto Sans SC", "思源黑体", sans-serif;
+  --font-sans: "Source Han Sans SC", "Noto Sans SC", "思源黑体", sans-serif;
+  --font-body: "Source Han Sans SC", "Noto Sans SC", "思源黑体", sans-serif;
 }
 ```
 
-Instrument Serif stays at weight 400. Heavy display weights make it clumsy, and restraint is part of the system.
+原因很简单：中文产品站更需要稳定、清晰、耐读。标题和正文使用同一字体族，只通过字重、字号和间距拉开层级，页面会更统一。
 
-## Color - one accent, one canvas
+## 颜色：一个主色，一个强调色
 
-The full palette has thirty-plus tokens, but the core identity comes from three colors:
+核心视觉由三类颜色支撑：
 
 ```css
---color-primary: #2d6dc3;    /* links, headings, CTA */
---color-accent: #fad13b;     /* badges and highlights, used sparingly */
---color-bg-primary: #fdfaf5; /* warm page canvas */
+--color-primary: #2d6dc3;
+--color-accent: #fad13b;
+--color-bg-primary: #fdfaf5;
 ```
 
-The canvas is the most opinionated choice. A warm `#fdfaf5` instead of pure white makes the template feel designed without adding decoration.
+`#fdfaf5` 不是纯白，它让页面有一点温度，但不会抢内容。暗黑模式使用 `#0b1220`，比纯黑更柔和，也和主蓝色在观感上更接近。
 
-Dark mode flips the canvas to `#0b1220`: a deep navy, not black. Pure black against a warm-white site feels abrupt; the navy sits in the same hue family as the primary blue, which makes the transition feel intentional.
+## 间距：基于 4px 的节奏
 
-## Spacing - base 4, no surprises
-
-Everything is a multiple of 4px:
+模板里的间距基本来自 4px 倍数：
 
 ```text
 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128
 ```
 
-Sections usually use `py-16 md:py-24`. Cards use `p-6` for compact layouts or `p-10` when they need more air. The page max-width is 1200px, and inner content is 800px.
+常规 section 使用 `py-16 md:py-24`，卡片常用 `p-6`。主容器宽度为 1200px，文章内容宽度为 800px。这样做的好处是，新增区块时不必重新发明间距。
 
-These numbers are not arbitrary. They create a rhythm that lets sections breathe without making spacing decisions feel random.
+## 边框：虚线让结构更轻
 
-## Borders - dashed, primary-tinted
-
-Most templates default to solid neutral borders. RicoFast leans on dashed borders for dividers and quiet structure:
+RicoFast 很多分隔线使用 dashed border：
 
 ```html
 <div class="w-full border-b border-dashed border-neutral-200"></div>
 ```
 
-Dashed lines are softer. On a content-dense SaaS site with many sections, that matters.
+虚线比实线更轻，适合 section 很多的 SaaS 页面。卡片边框则使用轻微的 `primary/10` 品牌色，让边缘也带一点系统感。
 
-Cards use a subtle `primary/10` tint so even the edges carry a hint of brand color.
+## 动效：克制，不做装饰
 
-## Motion - subtle, purposeful, never decorative
+模板里主要有两类动效：
 
-Two animation systems coexist:
+- **AOS**：用于滚动入场。
+- **motion.js**：用于需要时间线编排的场景。
 
-- **AOS (Animate On Scroll)** - used for scroll reveals such as `data-aos="fade-up-sm"`.
-- **motion.js** - reserved for orchestrated entrances, including the hero text stagger via `AnimatedText`.
+原则是：动效要解释状态、强调层级或提供反馈。如果只是为了“看起来有东西在动”，就不该加。
 
-The rules are simple:
+## 为什么这些约束重要
 
-- Use 200-300ms for interactions and 400-800ms for scroll reveals.
-- Prefer `transform` and `opacity` over layout properties.
-- Use `data-aos-once="true"` when the element should reveal only once.
-- Every animation should communicate entrance, state change, or feedback.
+好的模板不是把所有可能性都塞进去，而是提供一组不容易出错的默认判断。你换掉 Hero 文案、改主色、加新页面时，系统仍然能托住整体质量。
 
-No section needs motion just because it looks empty. If motion does not explain or confirm something, it should be removed.
-
-## Why all of this matters
-
-A design system is a series of small constraints that make a template look intentional. When you fork RicoFast, replace the hero copy, swap the primary color, and add new sections, the system still holds because the underlying decisions about type pairing, spacing rhythm, and motion vocabulary are doing the heavy lifting.
-
-You do not have to be a designer to ship a designed product. You just have to avoid breaking the system.
-
-The full reference lives at [`docs/DESIGN.md`](https://github.com/ricocc/ricoui-saas-template/blob/main/docs/DESIGN.md). Read it once before your first major change; it is the cheat sheet for everything in the template.
+完整参考在 [`docs/DESIGN.md`](https://github.com/ricocc/ricoui-saas-template/blob/main/docs/DESIGN.md)。第一次做大改前，建议先读一遍。

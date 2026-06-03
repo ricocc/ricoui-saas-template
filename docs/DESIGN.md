@@ -1,113 +1,101 @@
 # RicoFast Design System
 
+本文档描述 RicoFast 当前实现的视觉系统。项目已中文化，所有 UI 字体统一使用思源黑体字体栈；`DESIGN.md`、tokens、组件名、工具名等英文标识保持英文，方便开发时查找。
 
-This document describes the current visual system implemented in the RicoFast project.
+## 设计方向
 
-## Design Direction
+RicoFast 使用克制、清晰的 SaaS 产品站风格：
 
-RicoFast uses a calm SaaS/product-site aesthetic:
-
-- Warm light canvas.
-- Blue primary accent.
-- Gold highlight accent.
-- Editorial display typography.
-- Dashed separators and restrained card borders.
-- Subtle motion, never heavy animation.
-- Full support for class-based dark mode.
+- 温暖浅色页面底。
+- 蓝色主品牌色。
+- 金色强调色。
+- 统一的思源黑体排版。
+- 虚线分隔和轻量卡片边框。
+- 克制动效，不做装饰性堆叠。
+- 支持 class-based dark mode。
 
 ## Source Files
 
-- `src/styles/global.css` - tokens, global styles, dark mode variables.
-- `tailwind.config.mjs` - Tailwind content scanning and dark mode strategy.
-- `src/layouts/Layout.astro` - global layout, CSS imports, dark-mode boot script.
-- `src/assets/js/main.js` - dark-mode toggle, sticky header, mobile menu, AOS initialization.
+- `src/styles/global.css`：tokens、全局样式、暗黑模式变量。
+- `tailwind.config.mjs`：Tailwind 扫描范围和 dark mode 策略。
+- `src/layouts/Layout.astro`：全局布局、样式导入、dark mode 启动脚本。
+- `src/assets/js/main.js`：dark mode、Header、移动端菜单、AOS 初始化。
 
 ## Color Tokens
 
-Defined in `src/styles/global.css`.
-
 ### Brand
 
-| Token | Value | Usage |
+| Token | Value | 用途 |
 | --- | --- | --- |
-| `--color-primary` | `#2d6dc3` | Brand color, links, CTAs, headings |
-| `--color-primary-strong` | `#0066ff` | Hover and emphasis |
-| `--color-primary-light` | `#8fb9ff` | Light accents |
-| `--color-accent` | `#fad13b` | Badges, highlights |
-| `--color-accent-light` | `#faeb75` | Softer accent states |
+| `--color-primary` | `#2d6dc3` | 品牌色、链接、CTA、标题 |
+| `--color-primary-strong` | `#0066ff` | hover 和强调 |
+| `--color-primary-light` | `#8fb9ff` | 浅色强调 |
+| `--color-accent` | `#fad13b` | badge、高亮 |
+| `--color-accent-light` | `#faeb75` | 柔和强调状态 |
 
 ### Background
 
-| Token | Value | Usage |
+| Token | Value | 用途 |
 | --- | --- | --- |
-| `--color-bg-primary` | `#fdfaf5` | Light page canvas |
-| `--color-bg-secondary` | `#fff` | Cards and panels |
-| `--color-bg-primary-light` | `#faf9f5` | Article surfaces |
-| `--color-bg-primary-deep` | `#fefcf4` | Warm nested surfaces |
-| `--color-bg-primary-dark` | `#0b1220` | Dark page canvas |
-| `--color-bg-secondary-dark` | `#0f1b2d` | Dark cards and panels |
+| `--color-bg-primary` | `#fdfaf5` | 浅色页面底 |
+| `--color-bg-secondary` | `#fff` | 卡片和面板 |
+| `--color-bg-primary-light` | `#faf9f5` | 内容表面 |
+| `--color-bg-primary-dark` | `#0b1220` | 深色页面底 |
+| `--color-bg-secondary-dark` | `#0f1b2d` | 深色卡片和面板 |
 
 ### Text
 
-| Token | Value | Usage |
+| Token | Value | 用途 |
 | --- | --- | --- |
-| `--color-text-primary` | `#2d6dc3` | Light-mode headings |
-| `--color-text-secondary` | `#3f4a5a` | Light-mode body text |
-| `--color-text-tertiary` | `#7a6550` | Muted metadata |
-| `--color-text-primary-dark` | `#3884eb` | Dark-mode headings |
-| `--color-text-secondary-dark` | `#c5cedb` | Dark-mode body text |
-| `--color-text-tertiary-dark` | `#9bb3d7` | Dark-mode muted metadata |
-
-### Neutral Scale
-
-The project defines `--color-neutral-50` through `--color-neutral-950` for borders, body text, muted labels, placeholders, and dark surfaces.
+| `--color-text-primary` | `#2d6dc3` | 浅色标题 |
+| `--color-text-secondary` | `#3f4a5a` | 浅色正文 |
+| `--color-text-tertiary` | `#7a6550` | 辅助信息 |
+| `--color-text-primary-dark` | `#3884eb` | 深色标题 |
+| `--color-text-secondary-dark` | `#c5cedb` | 深色正文 |
+| `--color-text-tertiary-dark` | `#9bb3d7` | 深色辅助信息 |
 
 ## Typography
 
-Fonts are imported in `src/styles/global.css`.
+字体在 `src/styles/global.css` 中导入和声明。
 
-| Token | Font | Usage |
+| Token | Font | 用途 |
 | --- | --- | --- |
-| `--font-brand` | Instrument Serif | Display headings, hero titles, large section headings |
-| `--font-sans` | Inter | Body text, UI labels, navigation, buttons |
-| `--font-body` | Inter | Body text |
+| `--font-brand` | Source Han Sans SC / Noto Sans SC / 思源黑体 | 展示标题、Hero、section 标题 |
+| `--font-sans` | Source Han Sans SC / Noto Sans SC / 思源黑体 | 正文、UI、导航、按钮 |
+| `--font-body` | Source Han Sans SC / Noto Sans SC / 思源黑体 | 正文 |
 
-Rules:
+规则：
 
-- Use `font-brand` only for display text.
-- Use `font-sans` for UI and long-form content.
-- Do not use negative letter spacing as a default style.
-- Keep compact UI headings smaller than hero headings.
+- 全站字体使用思源黑体字体栈。
+- 标题通过字号和字重建立层级，不再依赖 serif 字体。
+- 不使用负 letter spacing 作为默认样式。
+- 紧凑 UI 内的标题不要使用 Hero 级别字号。
 
 ## Layout Tokens
 
-| Token/Class | Value | Usage |
+| Token/Class | Value | 用途 |
 | --- | --- | --- |
-| `--max-screen` | `1200px` | Main site width |
-| `--inner-screen` | `800px` | Articles and narrow content |
-| `.site-container` | max width + horizontal padding | Page sections |
-| `.inner-container` | inner max width + padding | Narrow content |
+| `--max-screen` | `1200px` | 主站宽度 |
+| `--inner-screen` | `800px` | 文章和窄内容 |
+| `.site-container` | max width + horizontal padding | 页面 section |
+| `.inner-container` | inner max width + padding | 窄内容 |
 
 ## Dark Mode
 
-Dark mode is class-based.
-
-- Tailwind config: `darkMode: "class"`.
-- Initial state is applied inline in `Layout.astro` before page paint.
-- Preference is stored in `localStorage` under `dark_mode`.
-- Toggle behavior lives in `src/assets/js/main.js`.
-- Dark color overrides live in `html.dark` inside `global.css`.
+- Tailwind config: `darkMode: "class"`。
+- 初始状态在 `Layout.astro` 中提前执行，避免页面闪烁。
+- 用户偏好存储在 `localStorage.dark_mode`。
+- 切换逻辑在 `src/assets/js/main.js`。
+- 颜色覆盖在 `global.css` 的 `html.dark` 中维护。
 
 ## Motion
 
-Current motion system:
+- AOS 全局导入并在 `src/assets/js/main.js` 初始化。
+- 自定义 AOS 样式在 `src/styles/aos-custom.css`。
+- 产品预览、价格切换等局部动效使用组件级 CSS。
+- 动效必须遵循 `prefers-reduced-motion`。
 
-- AOS is imported globally and initialized in `src/assets/js/main.js`.
-- Custom AOS behavior lives in `src/styles/aos-custom.css`.
-- Component-level CSS animations are used for product previews and pricing motion.
-- Motion should respect `prefers-reduced-motion`.
-
-Common attributes:
+常用属性：
 
 ```html
 data-aos="fade-up-xs"
@@ -116,70 +104,32 @@ data-aos-once="true"
 
 ## Core Components
 
-| Component | Path | Role |
+| Component | Path | 作用 |
 | --- | --- | --- |
-| Header | `src/components/sections/Header.astro` | Main navigation |
-| Footer | `src/components/sections/Footer.astro` | Footer navigation and social links |
-| HeroSection | `src/components/home/HeroSection.astro` | Home hero |
-| Pricing | `src/components/sections/Pricing.astro` | Pricing cards and billing toggle |
-| FAQ | `src/components/sections/FAQ.astro` | Accordion FAQ section |
-| BlogSection | `src/components/sections/BlogSection.astro` | Blog previews and lists |
-| Button | `src/components/ui/Button.astro` | CTA and link buttons |
-| Badge | `src/components/ui/Badge.astro` | Small labels |
-| AccordionItem | `src/components/ui/AccordionItem.astro` | FAQ item |
-| PricingToggle | `src/components/ui/PricingToggle.astro` | Monthly/yearly toggle |
-| BrowserFrame | `src/components/ui/BrowserFrame.astro` | Browser-style product frame |
-| Logo | `src/components/ui/Logo.astro` | Brand mark |
-| PageHeader | `src/components/elements/PageHeader.astro` | Page-level header |
-| SectionHeader | `src/components/elements/SectionHeader.astro` | Section title and description |
-| BlogCard | `src/components/cards/BlogCard.astro` | Blog listing card |
-| TechStackCard | `src/components/cards/TechStackCard.astro` | Technology grid |
+| Header | `src/components/sections/Header.astro` | 主导航 |
+| Footer | `src/components/sections/Footer.astro` | Footer 导航和社交链接 |
+| HeroSection | `src/components/home/HeroSection.astro` | 首页 Hero |
+| Pricing | `src/components/sections/Pricing.astro` | 价格卡和计费切换 |
+| FAQ | `src/components/sections/FAQ.astro` | FAQ 折叠区块 |
+| BlogSection | `src/components/sections/BlogSection.astro` | Blog 预览和列表 |
+| Button | `src/components/ui/Button.astro` | CTA 和链接按钮 |
+| Badge | `src/components/ui/Badge.astro` | 小标签 |
+| AccordionItem | `src/components/ui/AccordionItem.astro` | FAQ 项 |
+| PricingToggle | `src/components/ui/PricingToggle.astro` | 月付 / 年付切换 |
+| BrowserFrame | `src/components/ui/BrowserFrame.astro` | 浏览器风格产品框 |
 
 ## UI Rules
 
-- Use existing components before creating new ones.
-- Use Lucide icons via `@lucide/astro` when an icon is needed.
-- Use `Button.astro` for primary and secondary CTAs.
-- Use `BrowserFrame.astro` for browser or product-preview mockups.
-- Keep cards restrained: subtle borders, low shadow, clean spacing.
-- Maintain light and dark mode styles for every new surface.
-- Prefer token values over one-off hex colors.
-- Keep form controls accessible with labels, focus states, and clear success/error states.
-
-## Page Design Patterns
-
-### Marketing Sections
-
-Use:
-
-- `.site-container`
-- `SectionHeader`
-- responsive grids
-- dashed separators when separating major areas
-
-### Article Pages
-
-Use:
-
-- `PostLayout.astro`
-- `src/styles/article.css`
-- `src/styles/article-enhancements.css`
-- optional `Toc.astro`
-
-### Auth Pages
-
-Use:
-
-- centered form card
-- brand mark
-- clear demo notice
-- provider buttons
-- local success state
-- dark-mode-safe input styling
+- 优先使用现有组件，不急着新增抽象。
+- 需要图标时优先使用 `@lucide/astro`。
+- CTA 使用 `Button.astro`。
+- 产品预览使用 `BrowserFrame.astro`。
+- 卡片保持克制：轻边框、低阴影、清楚间距。
+- 新表面必须同时考虑浅色和深色模式。
+- 优先使用 token，不在组件中随手写新颜色。
+- 表单控件必须有 label、focus state 和清楚的成功/错误状态。
 
 ## Assets
-
-Current asset groups:
 
 - `public/og.jpg`
 - `public/favicon.png`
@@ -187,8 +137,7 @@ Current asset groups:
 - `public/assets/icon/*`
 - `public/assets/folder/*`
 - `public/assets/stack/*`
-- `public/assets/blog/cover.jpg`
 - `public/assets/article-cover.jpg`
 - `public/rico/*`
 
-Replace these when adapting RicoFast to a real product.
+适配真实产品时，请替换这些品牌和内容资产。

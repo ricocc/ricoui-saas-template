@@ -22,7 +22,7 @@ const getPageLink = (pageNum: number): string => {
 };
 ---
 
-<nav aria-label="Pagination" class="flex justify-center mt-12">
+<nav aria-label="分页" class="flex justify-center mt-12">
   <ul class="flex items-center gap-1">
     <!-- 上一页按钮 -->
     {currentPage > 1 ? (
@@ -30,7 +30,7 @@ const getPageLink = (pageNum: number): string => {
         <a
           href={getPageLink(currentPage - 1)}
           class="flex items-center justify-center w-10 h-10 rounded-md border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-          aria-label="Go to previous page"
+          aria-label="上一页"
         >
           <span class="sr-only">上一页</span>
           <svg
@@ -79,7 +79,7 @@ const getPageLink = (pageNum: number): string => {
           <a
             href={getPageLink(1)}
             class="flex items-center justify-center w-10 h-10 rounded-md border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-            aria-label="Go to page 1"
+            aria-label="第 1 页"
           >
             1
           </a>
@@ -105,7 +105,7 @@ const getPageLink = (pageNum: number): string => {
               ? "bg-primary text-white border-primary dark:bg-primary dark:border-primary"
               : "border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
           ]}
-          aria-label={`Go to page ${pageNum}`}
+          aria-label={`第 ${pageNum} 页`}
           aria-current={pageNum === currentPage ? "page" : undefined}
         >
           {pageNum}
@@ -127,7 +127,7 @@ const getPageLink = (pageNum: number): string => {
           <a
             href={getPageLink(totalPages)}
             class="flex items-center justify-center w-10 h-10 rounded-md border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-            aria-label={`Go to page ${totalPages}`}
+            aria-label={`第 ${totalPages} 页`}
           >
             {totalPages}
           </a>
@@ -141,7 +141,7 @@ const getPageLink = (pageNum: number): string => {
         <a
           href={getPageLink(currentPage + 1)}
           class="flex items-center justify-center w-10 h-10 rounded-md border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-          aria-label="Go to next page"
+          aria-label="下一页"
         >
           <span class="sr-only">下一页</span>
           <svg

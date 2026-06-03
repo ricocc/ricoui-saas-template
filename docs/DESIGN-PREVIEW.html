@@ -1,1243 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rico UI — Retro-Futuristic Design System</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-
-:root{
-  --primary:#2d6dc3;
-  --primary-light:#5a8fd8;
-  --secondary:#8a7fff;
-  --tertiary:#dfe6f3;
-  --neutral:#3f4a5a;
-  --surface:#fdfaf5;
-  --bg:#f7f4ed;
-  --text:#3f4a5a;
-  --inverse:#ffffff;
-  --error:#d64545;
-  --border:#ddd8cc;
-  --border-light:rgba(45,109,195,.1);
-  --shadow-sm:rgba(81,74,163,0.1) -2px 4px 12px 0px;
-  --shadow-md:rgba(0,0,0,0.1) 0px 10px 15px -3px,rgba(0,0,0,0.1) 0px 4px 6px -4px;
-  --shadow-btn:rgba(0,0,0,0.1) 0px 2px 3px 0px;
-  --glow:rgba(45,109,195,.35);
-  --glow-strong:rgba(45,109,195,.55);
-  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;--r-full:9999px;
-  --mono:'JetBrains Mono','Inter Mono',monospace;
-}
-
-::selection{background:var(--tertiary);color:var(--primary)}
-html{scroll-behavior:smooth}
-
-body{
-  font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  font-size:16px;
-  line-height:24px;
-  -webkit-font-smoothing:antialiased;
-  position:relative;
-}
-
-/* noise overlay */
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9999;
-  opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat:repeat;
-  background-size:180px;
-}
-
-/* scanline overlay */
-body::after{
-  content:'';
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9998;
-  background:repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,0,0,.012) 2px,
-    rgba(0,0,0,.012) 4px
-  );
-}
-
-.page{
-  max-width:1240px;
-  margin:0 auto;
-  padding:48px 28px 100px;
-}
-
-/* ── NAV ── */
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 8px 44px;
-}
-
-.nav-logo{
-  font-family:'Instrument Serif',serif;
-  font-size:26px;
-  color:var(--neutral);
-  text-decoration:none;
-  letter-spacing:-.3px;
-  position:relative;
-}
-
-.nav-logo span{
-  color:var(--primary);
-  text-shadow:0 0 20px var(--glow);
-}
-
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.nav-tag{
-  font-family:var(--mono);
-  font-size:10px;
-  font-weight:400;
-  color:var(--primary);
-  background:rgba(45,109,195,.08);
-  padding:6px 14px;
-  border-radius:var(--r-full);
-  letter-spacing:.04em;
-  border:1px solid rgba(45,109,195,.12);
-}
-
-.nav-version{
-  font-family:var(--mono);
-  font-size:10px;
-  color:var(--neutral);
-  opacity:.3;
-}
-
-/* ── BENTO GRID ── */
-.bento{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  grid-auto-rows:minmax(180px,auto);
-  gap:14px;
-}
-
-/* ── TILE BASE ── */
-.tile{
-  border-radius:var(--r-xl);
-  padding:32px;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s cubic-bezier(.22,1,.36,1);
-  will-change:transform;
-}
-
-.tile::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .4s ease;
-  background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(45,109,195,.04),transparent 40%);
-}
-
-.tile:hover{
-  transform:scale(1.015) translateY(-2px);
-  box-shadow:0 8px 30px rgba(45,109,195,.1),0 2px 8px rgba(0,0,0,.06);
-}
-
-.tile:hover::after{opacity:1}
-
-.tile-label{
-  font-family:var(--mono);
-  font-size:10px;
-  font-weight:400;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  opacity:.4;
-  margin-bottom:10px;
-}
-
-.tile-title{
-  font-family:'Instrument Serif',serif;
-  font-weight:400;
-  color:var(--neutral);
-  line-height:1.15;
-}
-
-.tile-desc{
-  font-size:13px;
-  line-height:20px;
-  margin-bottom: 12px;
-  opacity:.55;
-  margin-top:8px;
-}
-
-/* ── HERO TILE ── */
-.tile-hero{
-  grid-column:span 2;
-  grid-row:span 2;
-  background:#1a1f2e;
-  color:#fff;
-  padding:48px 44px;
-  min-height:440px;
-  border:1px solid rgba(138,127,255,.15);
-}
-
-.tile-hero .tile-title{
-  font-size:clamp(34px,4.2vw,48px);
-  color:#fff;
-  line-height:1.08;
-  letter-spacing:-.5px;
-  max-width:400px;
-}
-
-.tile-hero .tile-title em{
-  font-style:italic;
-  background:linear-gradient(135deg,var(--secondary),var(--primary-light));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-.tile-hero .tile-desc{
-  color:rgba(255,255,255,.65);
-  font-weight: 400;
-  font-size:14px;
-  line-height:22px;
-  max-width:340px;
-}
-
-.tile-hero-grid{
-  position:absolute;
-  right:-20px;
-  top:40px;
-  width:320px;
-  height:320px;
-  background-image:
-    linear-gradient(rgba(138,127,255,.07) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(138,127,255,.07) 1px,transparent 1px);
-  background-size:28px 28px;
-  border-radius:20px;
-  mask-image:radial-gradient(ellipse at 70% 40%,rgba(0,0,0,.7),transparent 70%);
-  -webkit-mask-image:radial-gradient(ellipse at 70% 40%,rgba(0,0,0,.7),transparent 70%);
-  animation:grid-pulse 8s ease-in-out infinite;
-}
-
-@keyframes grid-pulse{
-  0%,100%{opacity:.8}
-  50%{opacity:1}
-}
-
-.tile-hero-orb{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(60px);
-  pointer-events:none;
-}
-
-.tile-hero-orb.orb-1{
-  width:200px;height:200px;
-  background:radial-gradient(circle,rgba(138,127,255,.3),transparent 70%);
-  right:40px;bottom:50px;
-  animation:float-orb 6s ease-in-out infinite;
-}
-
-.tile-hero-orb.orb-2{
-  width:120px;height:120px;
-  background:radial-gradient(circle,rgba(45,109,195,.25),transparent 70%);
-  right:120px;top:60px;
-  animation:float-orb 8s ease-in-out infinite reverse;
-}
-
-@keyframes float-orb{
-  0%,100%{transform:translate(0,0)}
-  33%{transform:translate(10px,-15px)}
-  66%{transform:translate(-8px,10px)}
-}
-
-.hero-bottom{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  margin-top:auto;
-  padding-top:16px;
-  position:relative;
-  z-index:2;
-}
-
-.hero-tag{
-  font-family:var(--mono);
-  font-size:10px;
-  color:var(--secondary);
-  background:rgba(138,127,255,.1);
-  padding:4px 10px;
-  border-radius:var(--r-full);
-  border:1px solid rgba(138,127,255,.15);
-  letter-spacing:.03em;
-}
-
-.hero-tagline{
-  font-size:12px;
-  letter-spacing: .5px;
-  font-weight: 400;
-  color:rgba(255,255,255,.5);
-  font-style:italic;
-  font-family:'Instrument Serif',serif;
-}
-
-/* ── COLOR TILES ── */
-.tile-colors{
-  grid-column:span 2;
-  background:#fff;
-  border:1px solid var(--border);
-}
-
-.color-row{
-  display:flex;
-  gap:10px;
-  margin-top:auto;
-  padding-top:20px;
-}
-
-.color-dot{
-  flex:1;
-  aspect-ratio:1;
-  border-radius:var(--r-lg);
-  position:relative;
-  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;
-  cursor:default;
-}
-
-.color-dot:hover{
-  transform:scale(1.12) translateY(-2px);
-  box-shadow:0 4px 16px rgba(0,0,0,.12);
-}
-
-.color-dot-label{
-  position:absolute;
-  bottom:-20px;
-  left:50%;
-  transform:translateX(-50%);
-  font-family:var(--mono);
-  font-size:9px;
-  font-weight:400;
-  color:var(--neutral);
-  opacity:.45;
-  white-space:nowrap;
-}
-
-.tile-color-accent{
-  background:linear-gradient(155deg,#2d6dc3,#2d6dc3);
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  border:1px solid rgba(90,143,216,.3);
-  position:relative;
-  overflow:hidden;
-}
-
-.tile-color-accent::before{
-  content:'';
-  position:absolute;
-  width:140px;height:140px;
-  background:radial-gradient(circle,rgba(138,127,255,.3),transparent 70%);
-  border-radius:50%;
-  top:-30px;right:-30px;
-  filter:blur(30px);
-}
-
-.tile-color-accent .big-hex{
-  font-family:var(--mono);
-  font-size:24px;
-  font-weight:300;
-  letter-spacing:1px;
-  opacity:.8;
-  margin-top:10px;
-  position:relative;
-}
-
-.tile-color-accent .tile-label{color:rgba(255,255,255,.75)}
-.tile-color-accent .tile-title{color:#fff;font-size:22px;position:relative}
-
-.tile-surface{
-  background:var(--surface);
-  border:1px solid var(--border);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.surface-lines{
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  margin-top:16px;
-}
-
-.surface-line{
-  height:6px;
-  border-radius:var(--r-full);
-  background:linear-gradient(90deg,var(--tertiary),rgba(138,127,255,.12));
-}
-
-.surface-line:nth-child(1){width:85%;opacity:.9}
-.surface-line:nth-child(2){width:62%;opacity:.55}
-.surface-line:nth-child(3){width:40%;opacity:.25}
-
-.surface-hex{
-  margin-top:12px;
-  font-family:var(--mono);
-  font-size:11px;
-  opacity:.35;
-}
-
-/* ── TYPOGRAPHY TILE ── */
-.tile-type{
-  grid-column:span 2;
-  background:#fff;
-  border:1px solid var(--border);
-}
-
-.type-samples{margin-top:auto}
-
-.type-line{
-  border-bottom:1px solid rgba(0,0,0,.05);
-  padding:10px 0;
-  display:flex;
-  align-items:baseline;
-  gap:16px;
-}
-
-.type-line:last-child{border-bottom:none}
-
-.type-line-label{
-  font-family:var(--mono);
-  font-size:9px;
-  font-weight:400;
-  color:var(--primary);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  flex:0 0 70px;
-  opacity:.7;
-}
-
-.type-line-sample-serif{
-  font-family:'Instrument Serif',serif;
-  font-weight:400;
-  color:var(--neutral);
-}
-
-.type-line-sample-sans{
-  font-family:'Inter',sans-serif;
-  font-weight:400;
-  color:var(--neutral);
-}
-
-.tile-fonts{
-  grid-column:span 2;
-  background:linear-gradient(155deg,#f4f1e8 0%,#eaecf2 50%,#dde2ed 100%);
-  border:1px solid var(--border);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:44px 40px;
-  position:relative;
-  overflow:hidden;
-}
-
-.tile-fonts::before{
-  content:'Aa';
-  position:absolute;
-  right:-10px;
-  top:-20px;
-  font-family:'Instrument Serif',serif;
-  font-size:180px;
-  color:rgba(45,109,195,.04);
-  line-height:1;
-  pointer-events:none;
-}
-
-.font-demo-serif{
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(36px,5vw,52px);
-  font-weight:400;
-  line-height:1.08;
-  color:var(--neutral);
-  letter-spacing:-.5px;
-  margin-bottom:20px;
-  position:relative;
-}
-
-.font-demo-serif em{
-  font-style:italic;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-.font-demo-sans{
-  font-family:'Inter',sans-serif;
-  font-size:14px;
-  line-height:22px;
-  color:var(--neutral);
-  opacity:.55;
-  max-width:400px;
-}
-
-.font-pair-label{
-  display:inline-flex;
-  gap:10px;
-  margin-top:20px;
-}
-
-.font-pill{
-  font-family:var(--mono);
-  font-size:10px;
-  font-weight:400;
-  padding:5px 12px;
-  border-radius:var(--r-full);
-  background:rgba(45,109,195,.08);
-  color:var(--primary);
-  border:1px solid rgba(45,109,195,.1);
-}
-
-/* ── SPACING TILE ── */
-.tile-spacing{
-  background:#fff;
-  border:1px solid var(--border);
-  grid-column:span 2;
-}
-
-.spacer-visual{
-  display:flex;
-  align-items:flex-end;
-  gap:14px;
-  margin-top:auto;
-  height:90px;
-  padding-top:12px;
-}
-
-.spacer-col{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:5px;
-  flex:1;
-}
-
-.spacer-bar{
-  width:100%;
-  border-radius:5px;
-  opacity:.5;
-  transition:opacity .3s;
-  background:linear-gradient(180deg,var(--primary),var(--secondary));
-}
-
-.spacer-col:hover .spacer-bar{opacity:.85}
-
-.spacer-name{
-  font-family:var(--mono);
-  font-size:9px;
-  font-weight:400;
-  color:var(--primary);
-  text-transform:uppercase;
-  letter-spacing:.04em;
-}
-
-.spacer-px{
-  font-family:var(--mono);
-  font-size:9px;
-  color:var(--neutral);
-  opacity:.35;
-}
-
-/* ── RADIUS TILE ── */
-.tile-radius{
-  background:#fff;
-  border:1px solid var(--border);
-}
-
-.radius-visual{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:auto;
-  justify-content:center;
-}
-
-.r-box{
-  width:42px;height:42px;
-  background:var(--tertiary);
-  border:1.5px solid var(--primary);
-  transition:all .3s cubic-bezier(.22,1,.36,1);
-  cursor:default;
-  position:relative;
-}
-
-.r-box:hover{
-  transform:scale(1.12);
-  background:var(--primary);
-  box-shadow:0 0 16px var(--glow);
-}
-
-.r-group{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:5px;
-}
-
-.r-label{
-  font-family:var(--mono);
-  font-size:9px;
-  color:var(--neutral);
-  opacity:.4;
-}
-
-/* ── SHADOW TILE ── */
-.tile-shadow{
-  background:#fff;
-  border:1px solid var(--border);
-}
-
-.shadow-visual{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex:1;
-}
-
-.shadow-box{
-  width:80px;height:80px;
-  background:#fff;
-  border-radius:var(--r-lg);
-  transition:all .4s cubic-bezier(.22,1,.36,1);
-  border:1px solid var(--border);
-}
-
-.tile-shadow:hover .shadow-box{
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 16px 40px rgba(45,109,195,.12),0 4px 12px rgba(0,0,0,.06);
-}
-
-/* ── BUTTON TILE ── */
-.tile-buttons{
-  grid-column:span 2;
-  background:#1a1f2e;
-  color:#fff;
-  padding:40px;
-  border:1px solid rgba(138,127,255,.12);
-}
-
-.btn-group{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  align-items:center;
-  margin-top:auto;
-}
-
-.btn-bento-primary{
-  background:linear-gradient(135deg,var(--primary),#1e4f8f);
-  color:#f7f9fc;
-  border:none;
-  border-radius:var(--r-md);
-  padding:14px 28px;
-  font-family:'Inter',sans-serif;
-  font-size:14px;
-  font-weight:500;
-  cursor:pointer;
-  transition:all .25s ease;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 0 20px rgba(45,109,195,.2);
-}
-
-.btn-bento-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 30px rgba(45,109,195,.35),0 4px 12px rgba(0,0,0,.2);
-}
-
-.btn-bento-primary:active{transform:translateY(0)}
-
-.btn-bento-outline{
-  background:transparent;
-  color:rgba(255,255,255,.75);
-  border:1.5px solid rgba(255,255,255,.18);
-  border-radius:var(--r-md);
-  padding:14px 28px;
-  font-family:'Inter',sans-serif;
-  font-size:14px;
-  font-weight:500;
-  cursor:pointer;
-  transition:all .25s ease;
-}
-
-.btn-bento-outline:hover{
-  border-color:rgba(138,127,255,.4);
-  color:#fff;
-  box-shadow:0 0 20px rgba(138,127,255,.1);
-}
-
-.btn-bento-link{
-  background:none;
-  border:none;
-  color:rgba(255,255,255,.5);
-  font-family:'Inter',sans-serif;
-  font-size:14px;
-  font-weight:400;
-  cursor:pointer;
-  text-decoration:none;
-  transition:all .2s;
-}
-
-.btn-bento-link:hover{
-  color:var(--secondary);
-  text-shadow:0 0 12px rgba(138,127,255,.3);
-}
-
-/* ── CARD TILE ── */
-.tile-cards{
-  grid-column:span 2;
-  background:#fff;
-  border:1px solid var(--border);
-}
-
-.cards-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:auto;
-}
-
-.mini-card{
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:var(--r-sm);
-  padding:14px;
-  transition:all .3s cubic-bezier(.22,1,.36,1);
-}
-
-.mini-card:hover{
-  transform:translateY(-3px);
-  box-shadow:var(--shadow-sm);
-  border-color:rgba(45,109,195,.15);
-}
-
-.mini-card-img{
-  width:100%;
-  height:56px;
-  border-radius:6px;
-  margin-bottom:10px;
-  position:relative;
-  overflow:hidden;
-}
-
-.mini-card-img::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,.5));
-}
-
-.mini-card-title{
-  font-family:'Instrument Serif',serif;
-  font-size:15px;
-  color:var(--neutral);
-  margin-bottom:3px;
-}
-
-.mini-card-meta{
-  font-family:var(--mono);
-  font-size:10px;
-  color:var(--neutral);
-  opacity:.4;
-}
-
-/* ── FEATURED PREVIEW TILE ── */
-.tile-featured{
-  grid-column:span 2;
-  background:linear-gradient(155deg,#e8ecf4 0%,#c9d6ea 40%,#b0c4de 100%);
-  border:1px solid rgba(45,109,195,.15);
-  min-height:260px;
-  position:relative;
-}
-
-.tile-featured .tile-title{color:var(--neutral);font-size:22px}
-
-.featured-grid-lines{
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(45,109,195,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(45,109,195,.05) 1px,transparent 1px);
-  background-size:32px 32px;
-  pointer-events:none;
-}
-
-.featured-glow{
-  position:absolute;
-  width:200px;height:200px;
-  background:radial-gradient(circle,rgba(138,127,255,.2),transparent 70%);
-  border-radius:50%;
-  filter:blur(50px);
-  right:20px;top:10px;
-  pointer-events:none;
-}
-
-.featured-chips{
-  display:flex;
-  gap:8px;
-  margin-top:auto;
-  flex-wrap:wrap;
-  position:relative;
-  z-index:2;
-}
-
-.featured-chip{
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.5);
-  border-radius:var(--r-full);
-  padding:6px 14px;
-  font-size:12px;
-  font-weight:500;
-  color:var(--neutral);
-  box-shadow:var(--shadow-sm);
-  display:flex;
-  align-items:center;
-  gap:6px;
-  transition:all .25s ease;
-}
-
-.featured-chip:hover{
-  box-shadow:0 0 16px var(--glow);
-  border-color:rgba(45,109,195,.2);
-}
-
-.featured-chip .dot{
-  width:6px;height:6px;
-  border-radius:50%;
-  background:var(--primary);
-  box-shadow:0 0 8px var(--glow);
-}
-
-/* ── DO'S & DON'TS ── */
-.tile-dos{
-  background:linear-gradient(155deg,#f6faf4,#edf4e9);
-  border:1px solid #cddcc6;
-}
-
-.tile-donts{
-  background:linear-gradient(155deg,#fef4f4,#fce6e6);
-  border:1px solid #f0d0d0;
-}
-
-.guide-list{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-  margin-top:auto;
-}
-
-.guide-list li{
-  font-size:12px;
-  line-height:18px;
-  padding-left:20px;
-  position:relative;
-  color:var(--neutral);
-  opacity:.7;
-}
-
-.tile-dos .guide-list li::before{
-  content:'✓';
-  position:absolute;left:0;
-  color:#3a7d33;font-weight:600;font-size:11px;
-}
-
-.tile-donts .guide-list li::before{
-  content:'✕';
-  position:absolute;left:0;
-  color:var(--error);font-weight:600;font-size:11px;
-}
-
-/* ── FOOTER ── */
-.bento-footer{
-  margin-top:48px;
-  text-align:center;
-  padding:32px 0;
-  border-top:1px solid var(--border);
-}
-
-.bento-footer p{
-  font-family:'Instrument Serif',serif;
-  font-size:16px;
-  color:var(--neutral);
-  opacity:.3;
-}
-
-.bento-footer p span{
-  color:var(--primary);
-  text-shadow:0 0 12px var(--glow);
-}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .bento{grid-template-columns:repeat(2,1fr)}
-  .tile-hero{grid-column:span 2;grid-row:span 1;min-height:320px}
-  .tile-hero-grid,.tile-hero-orb{display:none}
-  .page{padding:24px 16px 60px}
-  .tile-hero::before{display:none}
-}
-
-@media(max-width:580px){
-  .bento{grid-template-columns:1fr}
-  .tile-hero,.tile-colors,.tile-type,.tile-fonts,.tile-spacing,
-  .tile-buttons,.tile-cards,.tile-featured{grid-column:span 1}
-  .tile-hero .tile-title{font-size:30px}
-  .font-demo-serif{font-size:32px}
-  .cards-row{grid-template-columns:1fr}
-  .spacer-visual{gap:6px}
-  .spacer-col{flex:none;width:18%}
-  .btn-group{flex-direction:column;align-items:flex-start}
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RicoFast Design Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font: "Source Han Sans SC", "Noto Sans SC", "思源黑体", ui-sans-serif, system-ui, sans-serif;
+      --primary: #2d6dc3;
+      --primary-strong: #0066ff;
+      --accent: #fad13b;
+      --bg: #fdfaf5;
+      --panel: #fff;
+      --text: #2c3542;
+      --muted: #677487;
+      --border: #dfe4ed;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+    header {
+      padding-bottom: 36px;
+      border-bottom: 1px dashed var(--border);
+    }
+    h1 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 16px;
+      color: var(--primary);
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+    p { margin: 0; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid color-mix(in srgb, var(--primary) 12%, var(--border));
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .swatch {
+      height: 88px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(0,0,0,.04);
+    }
+    .token {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .section { margin-top: 48px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 10px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .button.primary { background: var(--primary); color: #fff; }
+    .button.secondary { border: 1px solid var(--border); color: var(--text); background: #fff; }
+    .note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: #fff9d9;
+      border-radius: 8px;
+      color: #604f00;
+    }
+  </style>
 </head>
 <body>
+  <main>
+    <header>
+      <h1>RicoFast 设计预览</h1>
+      <p>当前中文版本统一使用思源黑体字体栈：Source Han Sans SC / Noto Sans SC / 思源黑体。</p>
+    </header>
 
-<div class="page">
-
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="#" class="nav-logo">Rico <span>UI</span></a>
-    <div class="nav-right">
-      <span class="nav-version">v0.1</span>
-      <span class="nav-tag">Retro-Futuristic System</span>
-    </div>
-  </nav>
-
-  <!-- BENTO GRID -->
-  <div class="bento">
-
-    <!-- 1. HERO -->
-    <div class="tile tile-hero">
-      <div class="tile-hero-grid"></div>
-      <div class="tile-hero-orb orb-1"></div>
-      <div class="tile-hero-orb orb-2"></div>
-      <div style="position:relative;z-index:2">
-        <div class="tile-label" style="color:rgba(138,127,255,.5)">Design System</div>
-        <div class="tile-title" style="color:#fff">
-          Where yesterday's<br>elegance meets<br><em>tomorrow's</em> pixels
-        </div>
+    <section class="section">
+      <h2>品牌色</h2>
+      <div class="grid">
+        <div class="card"><div class="swatch" style="background:#2d6dc3"></div><strong>Primary</strong><div class="token">--color-primary</div></div>
+        <div class="card"><div class="swatch" style="background:#0066ff"></div><strong>Primary Strong</strong><div class="token">--color-primary-strong</div></div>
+        <div class="card"><div class="swatch" style="background:#fad13b"></div><strong>Accent</strong><div class="token">--color-accent</div></div>
+        <div class="card"><div class="swatch" style="background:#fdfaf5"></div><strong>Canvas</strong><div class="token">--color-bg-primary</div></div>
       </div>
-      <div style="position:relative;z-index:2">
-        <p class="tile-desc" style="color:rgba(255,255,255,.5);max-width:320px">
-          A design system that bridges the warmth of classic editorial craft with the precision of forward-looking digital interfaces.
-        </p>
-        <div class="hero-bottom">
-          <span class="hero-tag">8 color tokens</span>
-          <span class="hero-tag">7 type levels</span>
-          <span class="hero-tagline">— built for ricoui</span>
-        </div>
+    </section>
+
+    <section class="section">
+      <h2>排版</h2>
+      <div class="card">
+        <h1 style="font-size:48px">几天内上线一个像样的 SaaS 官网</h1>
+        <p style="margin-top:12px">标题、正文和 UI 使用同一套中文字体，通过字号、字重和间距建立层级。</p>
       </div>
-    </div>
+    </section>
 
-    <!-- 2. PRIMARY COLOR -->
-    <div class="tile tile-color-accent">
-      <div class="tile-label">Primary</div>
-      <div class="tile-title">Signal Blue</div>
-      <div class="big-hex">#2d6dc3</div>
-    </div>
-
-    <!-- 3. SURFACE -->
-    <div class="tile tile-surface">
-      <div class="tile-label">Surface</div>
-      <div class="tile-title" style="font-size:20px">Vintage Paper</div>
-      <p class="tile-desc">Warm, lived-in, timeless</p>
-      <div class="surface-lines">
-        <div class="surface-line"></div>
-        <div class="surface-line"></div>
-        <div class="surface-line"></div>
+    <section class="section">
+      <h2>组件状态</h2>
+      <div class="card">
+        <p>按钮保持清楚的主次关系，卡片使用低对比边框和克制阴影。</p>
+        <div class="button-row">
+          <a class="button primary" href="#">主按钮</a>
+          <a class="button secondary" href="#">次按钮</a>
+        </div>
+        <div class="note">此文件是静态设计预览，实际 tokens 以 `src/styles/global.css` 和 `docs/DESIGN.md` 为准。</div>
       </div>
-      <div class="surface-hex">#fdfaf5</div>
-    </div>
-
-    <!-- 4. COLOR PALETTE -->
-    <div class="tile tile-colors">
-      <div class="tile-label">Foundation</div>
-      <div class="tile-title" style="font-size:24px">Palette</div>
-      <p class="tile-desc">Retro warmth. Futuristic precision.</p>
-      <div class="color-row">
-        <div class="color-dot" style="background:var(--primary)"><span class="color-dot-label">Primary</span></div>
-        <div class="color-dot" style="background:var(--secondary)"><span class="color-dot-label">Electric</span></div>
-        <div class="color-dot" style="background:var(--tertiary)"><span class="color-dot-label">Mist</span></div>
-        <div class="color-dot" style="background:var(--neutral)"><span class="color-dot-label">Ink</span></div>
-        <div class="color-dot" style="background:var(--surface);border:1px solid var(--border)"><span class="color-dot-label">Paper</span></div>
-        <div class="color-dot" style="background:var(--inverse);border:1px solid var(--border)"><span class="color-dot-label">White</span></div>
-        <div class="color-dot" style="background:var(--success)"><span class="color-dot-label">Signal</span></div>
-        <div class="color-dot" style="background:var(--error)"><span class="color-dot-label">Alert</span></div>
-      </div>
-    </div>
-
-    <!-- 5. FONT SHOWCASE -->
-    <div class="tile tile-fonts">
-      <div class="tile-label">Typography</div>
-      <div class="font-demo-serif">
-        Classic serif,<br><em>electric</em> soul
-      </div>
-      <p class="font-demo-sans">
-        Instrument Serif carries the weight of tradition. Inter speaks the language of tomorrow. Together, they create a dialogue across eras.
-      </p>
-      <div class="font-pair-label">
-        <span class="font-pill">Instrument Serif</span>
-        <span class="font-pill">Inter</span>
-      </div>
-    </div>
-
-    <!-- 6. TYPE SCALE -->
-    <div class="tile tile-type">
-      <div class="tile-label">Type Scale</div>
-      <div class="tile-title" style="font-size:24px">Rhythm & Hierarchy</div>
-      <div class="type-samples">
-        <div class="type-line">
-          <span class="type-line-label">Display</span>
-          <span class="type-line-sample-serif" style="font-size:30px;line-height:1">Timeless</span>
-        </div>
-        <div class="type-line">
-          <span class="type-line-label">Head Lg</span>
-          <span class="type-line-sample-serif" style="font-size:23px;line-height:1.2">Heritage</span>
-        </div>
-        <div class="type-line">
-          <span class="type-line-label">Head Md</span>
-          <span class="type-line-sample-serif" style="font-size:18px;line-height:1.2">Craft</span>
-        </div>
-        <div class="type-line">
-          <span class="type-line-label">Body</span>
-          <span class="type-line-sample-sans" style="font-size:14px">Clean, readable text that bridges analog warmth and digital clarity</span>
-        </div>
-        <div class="type-line">
-          <span class="type-line-label">Label</span>
-          <span class="type-line-sample-sans" style="font-size:12px;font-weight:500">NAVIGATION · ANNOTATIONS · METADATA</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7. SPACING -->
-    <div class="tile tile-spacing">
-      <div class="tile-label">Layout</div>
-      <div class="tile-title" style="font-size:24px">Breathing Room</div>
-      <p class="tile-desc">Space is a design choice — generous, deliberate, editorial</p>
-      <div class="spacer-visual">
-        <div class="spacer-col">
-          <div class="spacer-bar" style="height:8px"></div>
-          <span class="spacer-name">xs</span>
-          <span class="spacer-px">6</span>
-        </div>
-        <div class="spacer-col">
-          <div class="spacer-bar" style="height:22px"></div>
-          <span class="spacer-name">sm</span>
-          <span class="spacer-px">16</span>
-        </div>
-        <div class="spacer-col">
-          <div class="spacer-bar" style="height:36px"></div>
-          <span class="spacer-name">md</span>
-          <span class="spacer-px">24</span>
-        </div>
-        <div class="spacer-col">
-          <div class="spacer-bar" style="height:50px"></div>
-          <span class="spacer-name">lg</span>
-          <span class="spacer-px">32</span>
-        </div>
-        <div class="spacer-col">
-          <div class="spacer-bar" style="height:76px"></div>
-          <span class="spacer-name">xl</span>
-          <span class="spacer-px">64</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 8. RADIUS -->
-    <div class="tile tile-radius">
-      <div class="tile-label">Shapes</div>
-      <div class="tile-title" style="font-size:20px">Soft Geometry</div>
-      <p class="tile-desc"></p>
-      <div class="radius-visual">
-        <div class="r-group">
-          <div class="r-box" style="border-radius:0"></div>
-          <span class="r-label">sharp</span>
-        </div>
-        <div class="r-group">
-          <div class="r-box" style="border-radius:8px"></div>
-          <span class="r-label">8</span>
-        </div>
-        <div class="r-group">
-          <div class="r-box" style="border-radius:12px"></div>
-          <span class="r-label">12</span>
-        </div>
-        <div class="r-group">
-          <div class="r-box" style="border-radius:16px"></div>
-          <span class="r-label">16</span>
-        </div>
-        <div class="r-group">
-          <div class="r-box" style="border-radius:22px"></div>
-          <span class="r-label">24</span>
-        </div>
-        <div class="r-group">
-          <div class="r-box" style="border-radius:50%"></div>
-          <span class="r-label">pill</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 9. SHADOW -->
-    <div class="tile tile-shadow">
-      <div class="tile-label">Elevation</div>
-      <div class="tile-title" style="font-size:20px">Weightless Lift</div>
-      <p class="tile-desc">Depth without heaviness</p>
-      <div class="shadow-visual">
-        <div class="shadow-box" style="box-shadow:var(--shadow-sm)"></div>
-      </div>
-    </div>
-
-    <!-- 10. BUTTONS -->
-    <div class="tile tile-buttons">
-      <div style="position:relative;z-index:2">
-        <div class="tile-label" style="color:rgba(138,127,255,.4)">Interactive</div>
-        <div class="tile-title" style="color:#fff;font-size:24px">Touch Points</div>
-        <p class="tile-desc" style="color:rgba(255,255,255,.55)">Where analog intent meets digital response</p>
-      </div>
-      <div class="btn-group" style="position:relative;z-index:2">
-        <button class="btn-bento-primary">Primary Action</button>
-        <button class="btn-bento-outline">Secondary</button>
-        <a href="#" class="btn-bento-link">Explore More →</a>
-      </div>
-    </div>
-
-    <!-- 11. CARDS -->
-    <div class="tile tile-cards">
-      <div class="tile-label">Components</div>
-      <div class="tile-title" style="font-size:24px">Contain & Frame</div>
-      <p class="tile-desc">Flat surfaces that let content breathe</p>
-      <div class="cards-row">
-        <div class="mini-card">
-          <div class="mini-card-img" style="background:linear-gradient(135deg,#e4e8f0,#c4d0e4)"></div>
-          <div class="mini-card-title">Foundations</div>
-          <div class="mini-card-meta">tokens · colors · type</div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-card-img" style="background:linear-gradient(135deg,#eae7de,#d8d4ca)"></div>
-          <div class="mini-card-title">Components</div>
-          <div class="mini-card-meta">buttons · cards · nav</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 12. FEATURED PREVIEW -->
-    <div class="tile tile-featured">
-      <div class="featured-grid-lines"></div>
-      <div class="featured-glow"></div>
-      <div style="position:relative;z-index:2">
-        <div class="tile-label">Showcase</div>
-        <div class="tile-title">Work in Context</div>
-        <p class="tile-desc" style="max-width:340px">Large-scale visuals framed with floating annotations — gallery meets interface.</p>
-      </div>
-      <div class="featured-chips">
-        <div class="featured-chip"><span class="dot"></span>UI Design</div>
-        <div class="featured-chip"><span class="dot"></span>Adaptive</div>
-        <div class="featured-chip"><span class="dot"></span>Concept → Ship</div>
-      </div>
-    </div>
-
-    <!-- 13. DO'S -->
-    <div class="tile tile-dos">
-      <div class="tile-label" style="color:#3a7d33">Guidelines</div>
-      <div class="tile-title" style="font-size:20px;color:#3a7d33">Embrace ✓</div>
-      <ul class="guide-list">
-        <li>Serif for personality, sans for clarity</li>
-        <li>Warm backgrounds as a signature</li>
-        <li>One blue accent, used with intention</li>
-        <li>Generous whitespace as design</li>
-        <li>Let work speak louder than chrome</li>
-      </ul>
-    </div>
-
-    <!-- 14. DON'TS -->
-    <div class="tile tile-donts">
-      <div class="tile-label" style="color:var(--error)">Guidelines</div>
-      <div class="tile-title" style="font-size:20px;color:var(--error)">Avoid ✕</div>
-      <ul class="guide-list">
-        <li>Multiple competing accent colors</li>
-        <li>Bold weights on serif headings</li>
-        <li>Dense, dashboard-like grids</li>
-        <li>Heavy borders or thick outlines</li>
-        <li>Glossy, skeuomorphic surfaces</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-  <div class="bento-footer">
-    <p>Rico <span>UI</span> — where analog craft meets digital precision</p>
-  </div>
-
-</div>
-
-<script>
-  // Mouse glow tracking
-  document.querySelectorAll('.tile').forEach(tile => {
-    tile.addEventListener('mousemove', e => {
-      const r = tile.getBoundingClientRect();
-      tile.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      tile.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
-
-  // Stagger entrance
-  const tiles = document.querySelectorAll('.tile');
-  tiles.forEach((tile, i) => {
-    tile.style.opacity = '0';
-    tile.style.transform = 'translateY(28px) scale(.98)';
-    tile.style.transition = `opacity .6s cubic-bezier(.22,1,.36,1) ${i * 55}ms, transform .6s cubic-bezier(.22,1,.36,1) ${i * 55}ms`;
-  });
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0) scale(1)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
-
-  tiles.forEach(t => observer.observe(t));
-</script>
-
+    </section>
+  </main>
 </body>
 </html>

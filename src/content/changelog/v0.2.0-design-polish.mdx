@@ -1,28 +1,28 @@
 ---
-title: "Design polish and motion tuning"
+title: "设计打磨与动效调整"
 publishDate: 2026-02-15
 version: "v0.2.0"
-description: "Dark mode contrast, motion tuning, and the reusable BrowserFrame component."
+description: "优化暗黑模式对比度、动效节奏，并抽出 BrowserFrame 组件。"
 ---
 
-## Improvements
+## 改进
 
-- **Dark mode contrast pass** - lifted `--color-text-secondary-dark` from `#a8b5c8` to `#c5cedb` for better body-copy readability at 14-16px sizes
-- **Primary in dark mode** - brightened `--color-primary-dark` from `#3478d4` to `#3884eb` so links stay readable against the deep navy canvas
-- **Softer card edges** - dark-mode card borders moved from `neutral-800` to `neutral-700`
-- **AnimatedText tuning** - tightened the hero text entrance timing and reduced first-paint overhead
-- **AOS staggering** - standardized reveal sequences around predictable delay steps
+- **暗黑模式对比度**：提升正文在 14-16px 字号下的可读性
+- **深色主色**：让链接和 CTA 在深色背景上更清楚
+- **卡片边缘**：深色卡片边框从 `neutral-800` 调整到 `neutral-700`
+- **AnimatedText 调整**：收紧 Hero 文本入场节奏，减少首屏负担
+- **AOS 节奏统一**：让滚动入场的延迟更可预测
 
-## New component
+## 新组件
 
-- **`BrowserFrame.astro`** - the Mac-style window chrome around product previews, extracted into a reusable component with `url`, `variant`, and `className` props
+- **`BrowserFrame.astro`**：用于产品预览的浏览器外框，支持 `url`、`variant` 和 `className` props
 
-## Fixes
+## 修复
 
-- Header z-index conflict with FAQ accordion on mobile Safari
-- `prefers-reduced-motion` handling for text entrances
-- TOC sticky offset on wide article layouts
+- 移动端 Safari 中 Header 和 FAQ 折叠项的 z-index 问题
+- `prefers-reduced-motion` 下的文本入场处理
+- 宽屏文章页 TOC 的 sticky 偏移
 
-## Release status
+## 发布状态
 
-`v0.2` made the template feel more coherent, but the content architecture and final SaaS story were still being shaped for `v1.0`.
+`v0.2` 让模板更完整，但内容架构和最终 SaaS 叙事仍在为 `v1.0` 做准备。

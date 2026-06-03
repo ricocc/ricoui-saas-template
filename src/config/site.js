@@ -1,5 +1,4 @@
-// Get site URL from environment variable, use default value if not set
-// Note: Please set the correct PUBLIC_SITE_URL in .env file after first deployment
+// 从环境变量读取站点地址；首次部署后请在 .env 中设置正确的 PUBLIC_SITE_URL。
 const SITE_URL = import.meta.env.PUBLIC_SITE_URL || 'https://ricoui.com';
 
 export const siteConfig = {
@@ -13,13 +12,13 @@ export const siteConfig = {
 		campaign: "navigation",
 	},
 	meta:{
-		title: "RicoFast — A design-led SaaS template for Astro",
-		description: "A polished, open-source SaaS template built with Astro and Tailwind CSS. Modular sections, dark mode, and a documented design system.",
-		keywords: "saas template, astro template, tailwind template, startup website, landing page, indie hacker",
+		title: "RicoFast — 面向 Astro 的高质感 SaaS 模板",
+		description: "一个基于 Astro 和 Tailwind CSS 的开源 SaaS 网站模板，内置模块化页面、暗黑模式和完整设计系统文档。",
+		keywords: "SaaS 模板, Astro 模板, Tailwind CSS 模板, 创业产品官网, 开源模板, 独立开发",
 		image: `${SITE_URL}/og.jpg`,
 		twitterHandle: "",
 	},
-	// social links
+	// 社交链接
 	social:{
 		twitter: "http://x.com/ricouii/",
 		twitterName: "RicoUI",

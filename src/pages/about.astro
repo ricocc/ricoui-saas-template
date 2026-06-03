@@ -9,39 +9,39 @@ import { ArrowRight, Heart, Code, Users, GitBranch, GitFork } from "@lucide/astr
 const timeline = [
   {
     version: "v0.1",
-    date: "May 2026",
-    title: "First sketches",
-    desc: "Started as a side project — a designer-built SaaS template that didn't look like a template. Hero, three feature cards, a pricing page. ",
+    date: "2026 年 5 月",
+    title: "第一版草图",
+    desc: "最早只是一个副项目：做一个由设计师主导、但不那么模板味的 SaaS 模板。先从 Hero、三张功能卡和价格页开始。",
   },
   {
     version: "v0.2",
-    date: "May 2026",
-    title: "Initial public release",
-    desc: "Nine pages, fifteen sections, dark mode, MDX blog and changelog. Released on GitHub under MIT. First wave of forks and bug reports — most of them turned into v1.1 features.",
+    date: "2026 年 5 月",
+    title: "首次公开发布",
+    desc: "9 个页面、15 个 section、暗黑模式、MDX Blog 和 Changelog。以 MIT 协议发布到 GitHub，第一批 fork 和 issue 帮助我们把模板打磨到可用状态。",
   },
   {
     version: "v0.3",
-    date: "May 2026",
-    title: "Content layer + polish",
-    desc: "Migrated to Astro Content Layer API. Tightened dark mode contrast, cut cold-build time by 30%, added the BrowserFrame reusable component. See the launch post for details.",
+    date: "2026 年 5 月",
+    title: "内容系统与视觉打磨",
+    desc: "迁移到 Astro Content Layer API，优化暗黑模式对比度，减少冷启动构建时间，并抽出 BrowserFrame 作为复用组件。",
   },
   {
     version: "v1.0",
-    date: "May 2026",
-    title: "Story-first refresh",
-    desc: "Refocused around a coherent virtual brand to make the demo feel like a real product. Cleaned portfolio leftovers, rewrote section copy, upgraded every visual placeholder.",
+    date: "2026 年 5 月",
+    title: "围绕产品故事重写",
+    desc: "把示例内容重新收束到 RicoFast 这个虚拟品牌上，让演示站更像真实产品，而不是一组零散页面。",
   },
 ];
 ---
 
 <Layout
-  title="About — RicoFast"
-  description="Learn about RicoFast, a design-led SaaS template built with Astro and Tailwind CSS."
+  title="关于 — RicoFast"
+  description="了解 RicoFast：一个基于 Astro 和 Tailwind CSS 的高质感 SaaS 模板。"
 >
   <section class="site-container my-12">
     <PageHeader
-      title="A template that doesn't feel like one"
-      description="Built for makers who care about how their product is presented. Open-source under MIT — fork it, ship with it, sell what you build on top."
+      title="一个尽量不像模板的模板"
+      description="为重视产品呈现方式的开发者和团队准备。MIT 开源协议，可以 fork、上线，也可以基于它做商业项目。"
     />
   </section>
 
@@ -50,16 +50,16 @@ const timeline = [
 
       <!-- Why we built it -->
       <div data-aos="fade-up-xs" data-aos-once="true">
-        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-4">Why we built RicoFast</h2>
+        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-4">为什么做 RicoFast</h2>
         <div class="space-y-4 text-neutral-600 dark:text-neutral-300 leading-relaxed">
           <p>
-            Most open-source SaaS templates fall into one of two camps. Some are bare-bones starters — a hero, three feature cards, a pricing page — and you spend the next two weeks rebuilding everything else. Others are maximalist bundles with eighty sections you'll never use, four color themes you'll never pick, and a build pipeline you don't fully understand.
+            很多开源 SaaS 模板会落在两个极端：一种只是骨架，给你一个 Hero、三张功能卡和价格页，剩下的还得自己补；另一种堆满几十个 section、几套主题和复杂配置，看起来全面，真正落地时却要删掉一半。
           </p>
           <p>
-            RicoFast is made for founders & startups. Nine pages that cover what a real SaaS site actually needs. Fifteen-plus section components you mix and match. A documented design system that holds together even after you swap the content. Restraint over bloat.
+            RicoFast 更适合创始人、独立开发者和早期团队。它提供真实 SaaS 官网常用的页面、15+ 可组合 section，以及一套写进文档的设计系统。你可以替换内容，但页面不会因为改了文案就失去整体感。
           </p>
           <p>
-            We picked Astro because zero JavaScript by default keeps marketing sites fast, even as you add sections. We picked Tailwind v4 because the new <code class="text-primary">@theme</code> token system makes rebranding a one-file edit. We picked Instrument Serif + Inter because the pairing gives the template editorial weight without being precious about it.
+            我们选择 Astro，是因为营销站应该默认很快；选择 Tailwind v4，是因为 <code class="text-primary">@theme</code> 让品牌替换更直接。字体统一使用思源黑体，让中文正文、标题和 UI 保持一致。
           </p>
         </div>
       </div>
@@ -68,27 +68,27 @@ const timeline = [
 
       <!-- Values -->
       <div data-aos="fade-up-xs" data-aos-delay="100" data-aos-once="true">
-        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-6">What we care about</h2>
+        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-6">我们在意什么</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="p-5 rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700">
             <Code class="w-5 h-5 text-primary mb-3" />
-            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">Clean code</h3>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400">Readable, maintainable, and well-structured. Every component follows the same conventions.</p>
+            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">代码清楚</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">结构可读、便于维护，组件尽量遵循同一套写法。</p>
           </div>
           <div class="p-5 rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700">
             <Users class="w-5 h-5 text-primary mb-3" />
-            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">User-first design</h3>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400">Accessibility and usability are non-negotiable. Every component is tested in both light and dark mode.</p>
+            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">体验优先</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">可访问性和可用性不是后补项。组件需要同时适配浅色和深色模式。</p>
           </div>
           <div class="p-5 rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700">
             <Heart class="w-5 h-5 text-primary mb-3" />
-            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">Thoughtful craft</h3>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400">Spacing, typography, and motion are deliberate, not default. The details add up.</p>
+            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">细节有判断</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">间距、排版和动效都应该有理由，而不是套默认值。</p>
           </div>
           <div class="p-5 rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700">
             <GitBranch class="w-5 h-5 text-primary mb-3" />
-            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">Open by default</h3>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400">MIT-licensed, no vendor lock-in, no attribution required. Roadmap shaped by what people actually build.</p>
+            <h3 class="text-sm font-semibold text-neutral-800 dark:text-neutral-100 mb-1">默认开放</h3>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">MIT 协议、无供应商绑定、无需署名。后续方向由真实使用场景推动。</p>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@ const timeline = [
 
       <!-- Timeline -->
       <div data-aos="fade-up-xs" data-aos-delay="100" data-aos-once="true">
-        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-6">How we got here</h2>
+        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-6">一路怎么走到现在</h2>
         <div class="relative">
           <div class="absolute left-3 md:left-4 top-1.5 bottom-1.5 w-px bg-neutral-200 dark:bg-neutral-700"></div>
           <ol class="space-y-8">
@@ -120,18 +120,18 @@ const timeline = [
 
       <!-- Open source -->
       <div data-aos="fade-up-xs" data-aos-delay="100" data-aos-once="true">
-        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-4">Open source</h2>
+        <h2 class="text-2xl font-brand text-neutral-800 dark:text-neutral-100 mb-4">开源</h2>
         <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6">
-          RicoFast is MIT-licensed on GitHub. Open issues, send PRs, suggest features. The roadmap is steered by what people are actually trying to ship.
+          RicoFast 在 GitHub 上以 MIT 协议开源。你可以提交 issue、发 PR、提出功能建议。我们更关心真实项目里遇到的问题，而不是凭空堆功能。
         </p>
       </div>
 
       <div class="flex flex-wrap gap-4" data-aos="fade-up-xs" data-aos-delay="200" data-aos-once="true">
         <Button url={siteConfig.social.github} type="fill" target="_blank">
-          <GitFork size={16} /> Star on GitHub <ArrowRight size={16} />
+          <GitFork size={16} /> 在 GitHub 点 Star <ArrowRight size={16} />
         </Button>
         <Button url="/changelog">
-          View Changelog
+          查看 Changelog
         </Button>
       </div>
     </article>

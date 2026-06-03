@@ -1,23 +1,23 @@
-# RicoFast Project Overview
+# RicoFast 项目概览
 
-> Last updated: 2026-05-30
+> 最后更新：2026-06-02
 
-RicoFast is a static-first SaaS website template built with Astro, Tailwind CSS v4, MDX, and a reusable design system.
+RicoFast 是一个 static-first SaaS 官网模板，基于 Astro、Tailwind CSS v4、MDX 和可复用组件系统构建。当前项目已调整为中文项目，界面文案和文档以中文为主，技术名、文件名和工具名保留英文。
 
-## Positioning
+## 定位
 
-A polished SaaS template for products that need to look credible from day one.
+一个面向中文 SaaS、AI 工具、开发者工具和开源项目的高质感官网模板。
 
-## Target Users
+## 目标用户
 
-- Indie makers
-- Startup founders
-- AI product teams
-- Developer tool teams
-- Open-source maintainers
-- Designers and engineers building product launch sites
+- 独立开发者
+- 早期创业团队
+- AI 产品团队
+- 开发者工具团队
+- 开源项目维护者
+- 需要快速发布产品站的设计师和工程师
 
-## Tech Stack
+## 技术栈
 
 - Astro 6.4
 - Vite 7.3
@@ -29,41 +29,41 @@ A polished SaaS template for products that need to look credible from day one.
 - Lucide icons
 - Astro RSS and sitemap integrations
 
-## Implemented Pages
+## 已实现页面
 
-| Page | Route | Purpose |
+| 页面 | 路由 | 用途 |
 | --- | --- | --- |
-| Home | `/` | Full SaaS landing page |
-| Features | `/features` | Feature overview |
-| Pricing | `/pricing` | Demo pricing page |
-| Blog | `/blog` | MDX blog index |
-| Blog detail | `/blog/[slug]` | MDX article pages |
-| Changelog | `/changelog` | Release notes |
-| About | `/about` | Project story and values |
-| Contact | `/contact` | Demo contact form |
-| Elements | `/elements` | Component and design reference |
-| Sign in | `/sign-in` | Auth template page |
-| Sign up | `/sign-up` | Auth template page |
+| Home | `/` | SaaS 官网首页 |
+| Features | `/features` | 功能详情 |
+| Pricing | `/pricing` | 价格示例页 |
+| Blog | `/blog` | MDX 文章列表 |
+| Blog detail | `/blog/[slug]` | MDX 文章详情 |
+| Changelog | `/changelog` | 版本记录 |
+| About | `/about` | 项目介绍与价值观 |
+| Contact | `/contact` | Demo 联系表单 |
+| Elements | `/elements` | 组件与设计系统参考 |
+| Sign in | `/sign-in` | Auth 登录模板 |
+| Sign up | `/sign-up` | Auth 注册模板 |
 | RSS | `/rss.xml` | Blog RSS feed |
-| 404 | `/404` | Not-found page |
+| 404 | `/404` | 页面未找到 |
 
-The repository also currently includes `/signin` and `/signup` alternate auth pages.
+仓库中还保留 `/signin` 与 `/signup` 两个居中卡片版本。
 
-## Main Customization Files
+## 主要定制文件
 
-- `src/config/site.js` - site identity, metadata, social links.
-- `src/styles/global.css` - design tokens, global styles, dark mode variables.
-- `src/collections/menu.json` - navigation.
-- `src/collections/social.json` - social data.
-- `src/collections/stack.json` - tech stack data.
-- `src/content/post/` - blog posts.
-- `src/content/changelog/` - changelog entries.
-- `public/` - logo, favicon, OG image, and static assets.
+- `src/config/site.js`：站点信息、SEO、社交链接。
+- `src/styles/global.css`：设计 tokens、思源黑体字体栈、暗黑模式变量。
+- `src/collections/menu.json`：导航。
+- `src/collections/social.json`：社交数据。
+- `src/collections/stack.json`：技术栈数据。
+- `src/content/post/`：Blog MDX。
+- `src/content/changelog/`：Changelog MDX。
+- `public/`：logo、favicon、OG 图和静态资源。
 
-## Documentation Map
+## 文档地图
 
-- `docs/PRD.md` - complete current product requirements.
-- `docs/DESIGN.md` - design system reference.
-- `docs/plan/` - page-level notes.
-- `README.md` - English setup and usage guide.
-- `README-zh.md` - Chinese setup and usage guide.
+- `docs/PRD.md`：当前产品范围。
+- `docs/DESIGN.md`：设计系统参考。
+- `docs/plan/`：页面级记录。
+- `README.md`：中文主文档。
+- `README-zh.md`：旧中文入口兼容文件。

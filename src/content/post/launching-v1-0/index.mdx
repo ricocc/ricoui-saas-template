@@ -1,75 +1,58 @@
 ---
-title: "Launching v1.0 - stable SaaS template, final content, and Lighthouse 95+"
-description: "RicoFast v1.0 is the stable release: a polished SaaS template with auth pages, production-ready content, and a verified Lighthouse 95+ baseline."
+title: "发布 v1.0：稳定版 SaaS 模板"
+description: "RicoFast v1.0 是稳定版本：包含 Auth 页面、完整示例内容和 Lighthouse 95+ 基线。"
 publishDate: 2026-05-18
 read: 7
 tags: ["Release", "Changelog"]
 img: "/assets/article-cover.jpg"
-img_alt: "RicoFast v1.0 stable release notes"
+img_alt: "RicoFast v1.0 稳定版发布说明"
 ---
 
-RicoFast v1.0 is the stable release of the template. The earlier `v0.x` milestones proved the foundation; this release locks the content story, route coverage, and design system into a version teams can confidently build on.
+RicoFast v1.0 是模板的稳定版本。前面的 `v0.x` 版本验证了页面结构、内容系统和设计 tokens；v1.0 则把这些内容收束成一个可以直接开工的起点。
 
-This is not a feature dump. It is the point where the template stops feeling like a preview and starts feeling like a finished SaaS website.
+这不是单纯堆功能，而是让模板从“预览版”变成一个完整的 SaaS 官网示例。
 
-## From preview to stable
+## 从预览版到稳定版
 
-The path to v1.0 was intentionally staged:
+到 v1.0 为止，模板经历了几个阶段：
 
-- **v0.1** established the core marketing pages, MDX blog, changelog, dark mode, and reusable UI primitives.
-- **v0.2** refined the visual system with better dark-mode contrast, motion tuning, and the reusable `BrowserFrame.astro` component.
-- **v0.3** moved blog and changelog content to Astro Content Layer, unified metadata, and improved build performance.
-- **v1.0** completes the public-facing product story, adds auth templates, refreshes utility pages, and aligns all sample content around a stable release.
+- **v0.1**：建立核心营销页面、MDX Blog、Changelog、暗黑模式和基础 UI 组件。
+- **v0.2**：优化暗黑模式对比度、动效节奏，并抽出 `BrowserFrame.astro`。
+- **v0.3**：迁移 Blog 和 Changelog 到 Astro Content Layer，统一元信息并优化构建。
+- **v1.0**：补齐公开页面叙事、Auth 模板、工具页和稳定版示例内容。
 
-That history matters because a template is more than a set of sections. The page copy, content model, navigation, and release notes all need to agree with each other.
+模板不只是 section 的集合。页面文案、内容模型、导航和版本记录需要讲同一个故事。
 
-## Stable route coverage
+## 页面覆盖
 
-The final page set now covers the common surface area of a SaaS marketing site:
+当前页面已经覆盖一个 SaaS 营销站常见的公开面：
 
-- Core marketing pages for Home, Features, Pricing, About, and Contact
-- MDX-powered Blog and Changelog
-- Elements reference page for component and token review
-- Static Sign in and Sign up templates for auth entry points
-- A refreshed 404 page with useful recovery actions
+- Home、Features、Pricing、About、Contact
+- 基于 MDX 的 Blog 和 Changelog
+- 用于组件和 token 查看参考的 Elements 页面
+- 静态 Sign in 和 Sign up 模板
+- 带恢复动作的 404 页面
 
-Header and Footer navigation now include the auth templates and 404 page, so the template is easier to inspect as a complete product.
+Header 和 Footer 也已经把这些入口串起来，方便检查整站结构。
 
-## Content that reads like a product
+## 性能跑分
 
-The sample content has been rewritten for English-speaking users who are evaluating the template as a real starting point. The articles now cover four practical jobs:
+`v0.3` 的性能工作延续到 v1.0：
 
-- Introducing the product and who it is for
-- Showing how to customize the site quickly
-- Explaining the design system decisions
-- Documenting the stable v1.0 release
+- **冷启动构建时间**：CI 上从 21s 降到 14s
+- **首页首屏 JS**：AnimatedText 拆分后，gzip 体积从 31KB 降到 24KB
+- **图片加载**：Blog 卡片默认 lazy-load
 
-The goal is simple: when someone opens `/blog`, they should see useful model content, not placeholder marketing filler.
+全新安装后，Home、Features 和 Pricing 的 Lighthouse 在 Performance、Accessibility、Best Practices 和 SEO 上都有 95+ 基线。
 
-## Performance baseline
+## 首先该改哪里
 
-The performance work from `v0.3` carries into v1.0:
+如果你从 v1.0 开始，建议按这个顺序：
 
-- **Cold build time**: 21s -> 14s on CI
-- **First-load JS on Home**: 31KB -> 24KB gzipped after splitting AnimatedText into a dynamic chunk
-- **Image pipeline**: blog cards lazy-load images by default
+1. 修改 `src/config/site.js`：品牌、URL、SEO 和社交链接。
+2. 通过 `src/styles/global.css` 的 tokens 调整视觉，不要先写临时颜色。
+3. 替换首页文案、功能数组、价格内容和 FAQ。
+4. 用你自己的文章和 Changelog 替换示例内容。
+5. 把静态 Auth 页面接到真实认证服务。
 
-Lighthouse on a fresh install scores **95+** across Performance, Accessibility, Best Practices, and SEO on Home, Features, and Pricing.
-
-## What to customize first
-
-If you are starting from v1.0, begin with the parts that define your product:
-
-1. Update `src/config/site.js` with your brand, URL, metadata, and social links.
-2. Adjust `src/styles/global.css` only through tokens, not one-off component colors.
-3. Replace the homepage copy, feature arrays, pricing content, and FAQ.
-4. Swap sample blog posts and changelog entries with your own content.
-5. Connect the static auth pages to your real authentication provider.
-
-The template is intentionally static and provider-agnostic. Bring your own backend, auth, analytics, and billing when your product needs them.
-
-## What's next
-
-After v1.0, the priority is maintenance: bug fixes, documentation clarity, and small compatibility updates. Larger product-specific patterns should live in forks or optional examples rather than bloating the stable template.
-
-If you build something with RicoFast, open an issue on GitHub and share what worked, what you changed, and what should be easier in the next maintenance release.
+RicoFast 仍然保持静态和 provider-agnostic。你的后端、认证、分析和支付系统，可以在产品需要时再接入。

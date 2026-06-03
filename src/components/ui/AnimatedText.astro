@@ -15,16 +15,59 @@ let {
   ...rest
 } = Astro.props;
 
+const escapeHtml = (value: string) =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+
+const isCjk = (value: string) =>
+  /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(value);
+
+const isLatinTokenChar = (value: string) =>
+  /[\p{Letter}\p{Number}_#+./-]/u.test(value) && !isCjk(value);
+
+const tokenizeMixedText = (value: string) => {
+  const tokens: string[] = [];
+  let latinBuffer = "";
+
+  const flushLatin = () => {
+    if (!latinBuffer) return;
+    tokens.push(escapeHtml(latinBuffer));
+    latinBuffer = "";
+  };
+
+  for (const char of Array.from(value)) {
+    if (/\s/u.test(char)) {
+      flushLatin();
+      tokens.push("&nbsp;");
+      continue;
+    }
+
+    if (isLatinTokenChar(char)) {
+      latinBuffer += char;
+      continue;
+    }
+
+    flushLatin();
+    tokens.push(escapeHtml(char));
+  }
+
+  flushLatin();
+  return tokens;
+};
+
 let processedContent = "";
 if (content) {
-  // @ts-expect-error
-  const words = content.split(" "); // Split text into words
-  processedContent = words
+  const text = String(await content);
+  processedContent = tokenizeMixedText(text)
     .map(
-      (word: string) =>
-        `<span class="word" style="display: inline-block; will-change: transform; transform: translateY(10px); opacity: 0; filter: blur(10px);">${word}</span>`,
+      (token: string) =>
+        `<span class="word" style="display: inline-block; will-change: transform; transform: translateY(10px); opacity: 0; filter: blur(10px);">${token}</span>`,
     )
-    .join(" ");
+    .join("");
 }
 ---
 

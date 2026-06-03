@@ -16,10 +16,10 @@ import {
 } from "@lucide/astro";
 
 const colorPalette = [
-  { name: "Primary Blue", value: "#2d6dc3", token: "--color-primary" },
-  { name: "Primary Strong", value: "#0066ff", token: "--color-primary-strong" },
-  { name: "Primary Light", value: "#8fb9ff", token: "--color-primary-light" },
-  { name: "Accent Gold", value: "#fad13b", token: "--color-accent" },
+  { name: "主品牌蓝", value: "#2d6dc3", token: "--color-primary" },
+  { name: "强调蓝", value: "#0066ff", token: "--color-primary-strong" },
+  { name: "浅蓝", value: "#8fb9ff", token: "--color-primary-light" },
+  { name: "强调金", value: "#fad13b", token: "--color-accent" },
 ];
 
 const neutralScale = [
@@ -37,86 +37,86 @@ const neutralScale = [
 ];
 
 const bgColors = [
-  { name: "BG Primary", value: "#fdfaf5", token: "--color-bg-primary" },
-  { name: "BG Secondary", value: "#ffffff", token: "--color-bg-secondary" },
-  { name: "BG Primary Light", value: "#faf9f5", token: "--color-bg-primary-light" },
-  { name: "BG Primary Dark", value: "#0b1220", token: "--color-bg-primary-dark" },
-  { name: "BG Secondary Dark", value: "#0f1b2d", token: "--color-bg-secondary-dark" },
+  { name: "浅色页面底", value: "#fdfaf5", token: "--color-bg-primary" },
+  { name: "浅色卡片底", value: "#ffffff", token: "--color-bg-secondary" },
+  { name: "浅色内容底", value: "#faf9f5", token: "--color-bg-primary-light" },
+  { name: "深色页面底", value: "#0b1220", token: "--color-bg-primary-dark" },
+  { name: "深色卡片底", value: "#0f1b2d", token: "--color-bg-secondary-dark" },
 ];
 
 const textColors = [
-  { name: "Text Primary", value: "#2d6dc3", token: "--color-text-primary" },
-  { name: "Text Secondary", value: "#3f4a5a", token: "--color-text-secondary" },
-  { name: "Text Tertiary", value: "#7a6550", token: "--color-text-tertiary" },
+  { name: "主文本", value: "#2d6dc3", token: "--color-text-primary" },
+  { name: "正文文本", value: "#3f4a5a", token: "--color-text-secondary" },
+  { name: "辅助文本", value: "#7a6550", token: "--color-text-tertiary" },
 ];
 
 const icons = [
-  { Icon: Menu, name: "Menu", usage: "Mobile nav" },
-  { Icon: X, name: "X", usage: "Close" },
-  { Icon: ChevronRight, name: "ChevronRight", usage: "Breadcrumbs" },
-  { Icon: ChevronLeft, name: "ChevronLeft", usage: "Pagination" },
-  { Icon: ChevronDown, name: "ChevronDown", usage: "Dropdowns" },
-  { Icon: ArrowRight, name: "ArrowRight", usage: "CTA buttons" },
-  { Icon: ExternalLink, name: "ExternalLink", usage: "External links" },
-  { Icon: Sun, name: "Sun", usage: "Light mode" },
-  { Icon: Moon, name: "Moon", usage: "Dark mode" },
-  { Icon: Mail, name: "Mail", usage: "Contact" },
-  { Icon: Search, name: "Search", usage: "Search" },
-  { Icon: Download, name: "Download", usage: "Downloads" },
-  { Icon: Copy, name: "Copy", usage: "Copy text" },
-  { Icon: Check, name: "Check", usage: "Confirm" },
+  { Icon: Menu, name: "Menu", usage: "移动导航" },
+  { Icon: X, name: "X", usage: "关闭" },
+  { Icon: ChevronRight, name: "ChevronRight", usage: "面包屑" },
+  { Icon: ChevronLeft, name: "ChevronLeft", usage: "分页" },
+  { Icon: ChevronDown, name: "ChevronDown", usage: "下拉菜单" },
+  { Icon: ArrowRight, name: "ArrowRight", usage: "CTA 按钮" },
+  { Icon: ExternalLink, name: "ExternalLink", usage: "外部链接" },
+  { Icon: Sun, name: "Sun", usage: "浅色模式" },
+  { Icon: Moon, name: "Moon", usage: "深色模式" },
+  { Icon: Mail, name: "Mail", usage: "联系" },
+  { Icon: Search, name: "Search", usage: "搜索" },
+  { Icon: Download, name: "Download", usage: "下载" },
+  { Icon: Copy, name: "Copy", usage: "复制文本" },
+  { Icon: Check, name: "Check", usage: "确认" },
   { Icon: FileText, name: "FileText", usage: "Blog/Docs" },
-  { Icon: LayoutDashboard, name: "Layout", usage: "Page layout" },
-  { Icon: Layers, name: "Layers", usage: "Sections" },
-  { Icon: Grid3x3, name: "Grid", usage: "Grid view" },
-  { Icon: List, name: "List", usage: "List view" },
-  { Icon: GitFork, name: "GitFork", usage: "GitHub link" },
+  { Icon: LayoutDashboard, name: "Layout", usage: "页面布局" },
+  { Icon: Layers, name: "Layers", usage: "Section" },
+  { Icon: Grid3x3, name: "Grid", usage: "网格视图" },
+  { Icon: List, name: "List", usage: "列表视图" },
+  { Icon: GitFork, name: "GitFork", usage: "GitHub 链接" },
   { Icon: Rss, name: "Rss", usage: "RSS feed" },
-  { Icon: Zap, name: "Zap", usage: "Performance" },
-  { Icon: Sparkles, name: "Sparkles", usage: "Animations" },
-  { Icon: Palette, name: "Palette", usage: "Customize" },
-  { Icon: Code, name: "Code", usage: "Development" },
+  { Icon: Zap, name: "Zap", usage: "性能" },
+  { Icon: Sparkles, name: "Sparkles", usage: "动效" },
+  { Icon: Palette, name: "Palette", usage: "定制" },
+  { Icon: Code, name: "Code", usage: "开发" },
   { Icon: Globe, name: "Globe", usage: "Web" },
-  { Icon: Shield, name: "Shield", usage: "Security" },
+  { Icon: Shield, name: "Shield", usage: "安全" },
   { Icon: Lock, name: "Lock", usage: "Auth" },
-  { Icon: Rocket, name: "Rocket", usage: "Launch" },
-  { Icon: Bot, name: "Bot", usage: "AI tools" },
-  { Icon: ChartNoAxesColumn, name: "BarChart", usage: "Analytics" },
-  { Icon: PenTool, name: "PenTool", usage: "Design" },
-  { Icon: Monitor, name: "Monitor", usage: "Desktop" },
-  { Icon: Smartphone, name: "Smartphone", usage: "Mobile" },
-  { Icon: CircleAlert, name: "AlertCircle", usage: "Error state" },
-  { Icon: CircleCheck, name: "CheckCircle", usage: "Success" },
-  { Icon: Info, name: "Info", usage: "Information" },
-  { Icon: TriangleAlert, name: "AlertTriangle", usage: "Warning" },
-  { Icon: Wrench, name: "Wrench", usage: "Settings" },
+  { Icon: Rocket, name: "Rocket", usage: "发布" },
+  { Icon: Bot, name: "Bot", usage: "AI 工具" },
+  { Icon: ChartNoAxesColumn, name: "BarChart", usage: "数据分析" },
+  { Icon: PenTool, name: "PenTool", usage: "设计" },
+  { Icon: Monitor, name: "Monitor", usage: "桌面端" },
+  { Icon: Smartphone, name: "Smartphone", usage: "移动端" },
+  { Icon: CircleAlert, name: "AlertCircle", usage: "错误状态" },
+  { Icon: CircleCheck, name: "CheckCircle", usage: "成功状态" },
+  { Icon: Info, name: "Info", usage: "信息提示" },
+  { Icon: TriangleAlert, name: "AlertTriangle", usage: "警告" },
+  { Icon: Wrench, name: "Wrench", usage: "设置" },
 ];
 
 const sampleFaq = [
-  { question: "Sample accordion question?", answer: "This is a sample answer to demonstrate the AccordionItem component. It supports rich HTML content." },
-  { question: "Can I customize this?", answer: "Yes, all components accept props for easy customization. Check the source code for available options." },
+  { question: "这是一个示例折叠项吗？", answer: "是的。它用于展示 AccordionItem 组件的默认样式，也支持更丰富的 HTML 内容。" },
+  { question: "这些组件可以定制吗？", answer: "可以。多数组件通过 props 接收内容和状态，具体参数可以查看源码。" },
 ];
 ---
 
 <Layout
   title="Elements — RicoFast"
-  description="Component library and design system reference for the RicoFast SaaS template."
+  description="RicoFast SaaS 模板的组件库和设计系统参考。"
 >
   <section class="site-container my-12">
     <PageHeader
-      title="Elements"
-      description="Component library and design system reference."
+      title="设计系统"
+      description="组件库和设计系统参考。"
     />
   </section>
 
   <!-- 1. Colors -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
-    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Colors</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Primary palette, neutral scale, backgrounds, and text colors.</p>
+    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">颜色</h2>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">主色、灰阶、背景色和文本色。</p>
 
     <div class="space-y-10">
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Primary Palette</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">主色板</h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {colorPalette.map((c) => (
             <div class="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
@@ -132,7 +132,7 @@ const sampleFaq = [
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Neutral Scale</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">中性色阶</h3>
         <div class="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-11 gap-2">
           {neutralScale.map((c) => (
             <div class="text-center">
@@ -145,7 +145,7 @@ const sampleFaq = [
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Background Colors</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">背景色</h3>
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
           {bgColors.map((c) => (
             <div class="text-center">
@@ -158,7 +158,7 @@ const sampleFaq = [
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Text Colors</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">文本色</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {textColors.map((c) => (
             <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
@@ -177,54 +177,54 @@ const sampleFaq = [
 
   <!-- 2. Typography -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
-    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Typography</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Font families, type scale, and weight variants.</p>
+    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">排版</h2>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">字体族、字号层级和字重示例。</p>
 
     <div class="space-y-10">
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Font Families</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">字体族</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <p class="text-xs text-neutral-400 mb-2 font-mono">--font-brand (Instrument Serif)</p>
-            <p class="text-3xl font-brand text-neutral-800 dark:text-neutral-100">Launch a polished SaaS</p>
+            <p class="text-xs text-neutral-400 mb-2 font-mono">--font-brand (Source Han Sans SC)</p>
+            <p class="text-3xl font-brand text-neutral-800 dark:text-neutral-100">发布一个像样的 SaaS</p>
           </div>
           <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <p class="text-xs text-neutral-400 mb-2 font-mono">--font-sans (Inter)</p>
-            <p class="text-3xl font-sans text-neutral-800 dark:text-neutral-100">Clean body text</p>
+            <p class="text-xs text-neutral-400 mb-2 font-mono">--font-sans (Source Han Sans SC)</p>
+            <p class="text-3xl font-sans text-neutral-800 dark:text-neutral-100">清晰耐读的正文</p>
           </div>
         </div>
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Type Scale</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">字号层级</h3>
         <div class="space-y-4">
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <p class="text-xs text-neutral-400 mb-1">Display — 48px / 400</p>
-            <p class="text-5xl font-brand text-neutral-800 dark:text-neutral-100">Display headline</p>
+            <p class="text-xs text-neutral-400 mb-1">Display — 48px / 700</p>
+            <p class="text-5xl font-brand text-neutral-800 dark:text-neutral-100">展示标题</p>
           </div>
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <p class="text-xs text-neutral-400 mb-1">Heading 1 — 36px / 400</p>
-            <p class="text-4xl font-brand text-neutral-800 dark:text-neutral-100">Main heading</p>
+            <p class="text-xs text-neutral-400 mb-1">Heading 1 — 36px / 700</p>
+            <p class="text-4xl font-brand text-neutral-800 dark:text-neutral-100">主标题</p>
           </div>
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <p class="text-xs text-neutral-400 mb-1">Heading 2 — 28px / 400</p>
-            <p class="text-3xl font-brand text-neutral-800 dark:text-neutral-100">Section heading</p>
+            <p class="text-xs text-neutral-400 mb-1">Heading 2 — 28px / 700</p>
+            <p class="text-3xl font-brand text-neutral-800 dark:text-neutral-100">区块标题</p>
           </div>
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
             <p class="text-xs text-neutral-400 mb-1">Heading 3 — 20px / 600</p>
-            <p class="text-xl font-semibold text-neutral-800 dark:text-neutral-100">Subsection heading</p>
+            <p class="text-xl font-semibold text-neutral-800 dark:text-neutral-100">小节标题</p>
           </div>
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
             <p class="text-xs text-neutral-400 mb-1">Body — 16px / 400</p>
-            <p class="text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">The quick brown fox jumps over the lazy dog. A clean, fast, and reusable SaaS template built with Astro and Tailwind CSS.</p>
+            <p class="text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">一套清晰、快速、可复用的 SaaS 模板，基于 Astro 和 Tailwind CSS 构建。</p>
           </div>
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
             <p class="text-xs text-neutral-400 mb-1">Body Small — 14px / 400</p>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400">Supporting text for descriptions and secondary content.</p>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">用于说明文字、辅助信息和次级内容。</p>
           </div>
           <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700">
             <p class="text-xs text-neutral-400 mb-1">Caption — 12px / 400</p>
-            <p class="text-xs text-neutral-400">Timestamps, metadata, and fine print.</p>
+            <p class="text-xs text-neutral-400">用于时间、元信息和细则说明。</p>
           </div>
         </div>
       </div>
@@ -236,36 +236,36 @@ const sampleFaq = [
   <!-- 3. Buttons -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
     <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Buttons</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Primary, secondary, outline, and disabled variants in multiple sizes.</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">主按钮、次按钮、描边和禁用状态，以及不同尺寸。</p>
 
     <div class="space-y-8">
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Variants</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">状态</h3>
         <div class="flex flex-wrap items-center gap-4">
-          <Button url="#" type="fill">Primary filled</Button>
-          <Button url="#" type="solid">Secondary solid</Button>
-          <Button url="#" type="outline">Outline</Button>
-          <Button url="#" type="disabled">Disabled</Button>
+          <Button url="#" type="fill">主按钮</Button>
+          <Button url="#" type="solid">次按钮</Button>
+          <Button url="#" type="outline">描边按钮</Button>
+          <Button url="#" type="disabled">禁用</Button>
         </div>
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Sizes</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">尺寸</h3>
         <div class="flex flex-wrap items-center gap-4">
-          <Button url="#" type="fill" size="xs">Extra Small</Button>
-          <Button url="#" type="fill" size="sm">Small</Button>
-          <Button url="#" type="fill" size="md">Medium</Button>
-          <Button url="#" type="fill" size="lg">Large</Button>
-          <Button url="#" type="fill" size="xl">Extra Large</Button>
+          <Button url="#" type="fill" size="xs">超小</Button>
+          <Button url="#" type="fill" size="sm">小</Button>
+          <Button url="#" type="fill" size="md">中</Button>
+          <Button url="#" type="fill" size="lg">大</Button>
+          <Button url="#" type="fill" size="xl">超大</Button>
         </div>
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">With Icons</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">带图标</h3>
         <div class="flex flex-wrap items-center gap-4">
-          <Button url="#" type="fill">Get Started <ArrowRight size={16} /></Button>
-          <Button url="#" type="outline"><Mail size={16} /> Send Email</Button>
-          <Button url="#" type="fill"><GitFork size={16} /> Star on GitHub</Button>
+          <Button url="#" type="fill">开始使用 <ArrowRight size={16} /></Button>
+          <Button url="#" type="outline"><Mail size={16} /> 发送邮件</Button>
+          <Button url="#" type="fill"><GitFork size={16} /> GitHub Star</Button>
         </div>
       </div>
     </div>
@@ -276,27 +276,27 @@ const sampleFaq = [
   <!-- 4. Badges -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
     <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Badges & Tags</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Status labels and tags in multiple variants and sizes.</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">状态标签、内容标签，以及不同类型和尺寸。</p>
 
     <div class="space-y-8">
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Variants</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">类型</h3>
         <div class="flex flex-wrap items-center gap-3">
-          <Badge variant="primary">Primary</Badge>
-          <Badge variant="accent">Accent</Badge>
-          <Badge variant="neutral">Neutral</Badge>
-          <Badge variant="success">Success</Badge>
-          <Badge variant="warning">Warning</Badge>
-          <Badge variant="error">Error</Badge>
+          <Badge variant="primary">主要</Badge>
+          <Badge variant="accent">强调</Badge>
+          <Badge variant="neutral">中性</Badge>
+          <Badge variant="success">成功</Badge>
+          <Badge variant="warning">警告</Badge>
+          <Badge variant="error">错误</Badge>
         </div>
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Sizes</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">尺寸</h3>
         <div class="flex flex-wrap items-center gap-3">
-          <Badge variant="primary" size="sm">Small</Badge>
-          <Badge variant="primary" size="default">Default</Badge>
-          <Badge variant="primary" size="lg">Large</Badge>
+          <Badge variant="primary" size="sm">小</Badge>
+          <Badge variant="primary" size="default">默认</Badge>
+          <Badge variant="primary" size="lg">大</Badge>
         </div>
       </div>
     </div>
@@ -307,20 +307,20 @@ const sampleFaq = [
   <!-- 5. Cards -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
     <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Cards</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Basic, feature, and content card styles.</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">基础卡片、功能卡片和内容卡片样式。</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="p-6 rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700">
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">Basic Card</h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400">A simple card with border, background, and padding.</p>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">基础卡片</h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">包含边框、背景和内边距的基础容器。</p>
       </div>
 
       <div class="p-6 rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
         <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
           <Zap class="w-5 h-5 text-primary" />
         </div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">Feature Card</h3>
-        <p class="text-sm text-neutral-500 dark:text-neutral-400">With icon, hover lift effect, and shadow.</p>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">功能卡片</h3>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">包含图标、悬浮抬升和轻微阴影。</p>
       </div>
 
       <div class="rounded-xl bg-bg-secondary dark:bg-bg-secondary-dark border border-primary/10 dark:border-neutral-700 overflow-hidden">
@@ -328,8 +328,8 @@ const sampleFaq = [
           <Sparkles class="w-8 h-8 text-primary/50" />
         </div>
         <div class="p-6">
-          <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">Content Card</h3>
-          <p class="text-sm text-neutral-500 dark:text-neutral-400">With image placeholder, like blog cards.</p>
+          <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">内容卡片</h3>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">带图片区域，适合 Blog 卡片一类内容。</p>
         </div>
       </div>
     </div>
@@ -339,32 +339,32 @@ const sampleFaq = [
 
   <!-- 6. Form Elements -->
   <section class="site-container py-16 md:py-24 max-w-2xl mx-auto" data-aos="fade-up-xs" data-aos-once="true">
-    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Form Elements</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Inputs, selects, textareas, and toggle switches.</p>
+    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">表单元素</h2>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">输入框、下拉选择、文本域和切换控件。</p>
 
     <div class="space-y-6">
       <div>
-        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Text Input</label>
-        <input type="text" placeholder="Enter your name" class="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-bg-secondary dark:bg-bg-secondary-dark text-neutral-800 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
+        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">文本输入</label>
+        <input type="text" placeholder="输入你的姓名" class="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-bg-secondary dark:bg-bg-secondary-dark text-neutral-800 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
       </div>
       <div>
-        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Email Input</label>
+        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">邮箱输入</label>
         <input type="email" placeholder="your@email.com" class="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-bg-secondary dark:bg-bg-secondary-dark text-neutral-800 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
       </div>
       <div>
-        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Select</label>
+        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">下拉选择</label>
         <select class="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-bg-secondary dark:bg-bg-secondary-dark text-neutral-800 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors">
-          <option>Option A</option>
-          <option>Option B</option>
-          <option>Option C</option>
+          <option>选项 A</option>
+          <option>选项 B</option>
+          <option>选项 C</option>
         </select>
       </div>
       <div>
         <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Textarea</label>
-        <textarea rows="3" placeholder="Write your message..." class="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-bg-secondary dark:bg-bg-secondary-dark text-neutral-800 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"></textarea>
+        <textarea rows="3" placeholder="写下你的消息..." class="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-bg-secondary dark:bg-bg-secondary-dark text-neutral-800 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"></textarea>
       </div>
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Toggle Switch</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">切换控件</h3>
         <PricingToggle />
       </div>
     </div>
@@ -374,17 +374,17 @@ const sampleFaq = [
 
   <!-- 7. Layout Elements -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
-    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Layout Elements</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Section headers, page headers, and separators.</p>
+    <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">布局元素</h2>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">SectionHeader、PageHeader 和分隔线示例。</p>
 
     <div class="space-y-8">
       <div>
         <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Section Header</h3>
-        <SectionHeader title="Section title goes here" description="Optional description text for additional context." />
+        <SectionHeader title="这里是区块标题" description="这里可以放补充说明，用于解释这个区块的上下文。" />
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Separator Variants</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">分隔线样式</h3>
         <div class="space-y-4">
           <div class="w-full border-b border-dashed border-neutral-200 dark:border-neutral-700"></div>
           <div class="w-full border-b border-dashed border-primary/10 dark:border-primary-dark/10"></div>
@@ -393,13 +393,13 @@ const sampleFaq = [
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Container Widths</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">容器宽度</h3>
         <div class="space-y-4">
           <div class="p-4 bg-primary/5 rounded-lg border border-dashed border-primary/20">
             <p class="text-xs text-primary">site-container (max-width: 1200px)</p>
           </div>
           <div class="max-w-2xl mx-auto p-4 bg-primary/5 rounded-lg border border-dashed border-primary/20">
-            <p class="text-xs text-primary">Inner content (max-width: 672px)</p>
+            <p class="text-xs text-primary">Inner content（max-width: 672px）</p>
           </div>
         </div>
       </div>
@@ -411,7 +411,7 @@ const sampleFaq = [
   <!-- 8. Motion -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
     <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Motion & Animation</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Scroll animations, hover effects, and transition demos.</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">滚动入场、悬浮反馈和过渡效果示例。</p>
 
     <div class="space-y-10">
       <div>
@@ -432,24 +432,24 @@ const sampleFaq = [
       <div>
         <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">AnimatedText</h3>
         <div class="p-8 rounded-xl border border-neutral-200 dark:border-neutral-700">
-          <AnimatedText content="Staggered word animation demo" delay={0.5} stagger={0.08} />
+          <AnimatedText content="错落文字动效示例" delay={0.5} stagger={0.08} />
         </div>
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Hover Effects</h3>
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-4">悬浮反馈</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-700 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer">
-            <p class="text-sm font-medium text-neutral-800 dark:text-neutral-100">Card Lift</p>
+            <p class="text-sm font-medium text-neutral-800 dark:text-neutral-100">卡片抬升</p>
             <p class="text-xs text-neutral-400 mt-1">translateY + shadow</p>
           </div>
           <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-700 text-center transition-all duration-200 hover:shadow-[0_0_20px_rgba(45,109,195,0.15)] cursor-pointer">
-            <p class="text-sm font-medium text-neutral-800 dark:text-neutral-100">Button Glow</p>
+            <p class="text-sm font-medium text-neutral-800 dark:text-neutral-100">按钮光晕</p>
             <p class="text-xs text-neutral-400 mt-1">Primary glow shadow</p>
           </div>
           <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-700 text-center">
-            <a href="#" class="text-sm font-medium text-primary hover:underline underline-offset-4 transition-all">Link underline</a>
-            <p class="text-xs text-neutral-400 mt-2">Underline animation</p>
+            <a href="#" class="text-sm font-medium text-primary hover:underline underline-offset-4 transition-all">链接下划线</a>
+            <p class="text-xs text-neutral-400 mt-2">下划线反馈</p>
           </div>
         </div>
       </div>
@@ -461,7 +461,7 @@ const sampleFaq = [
   <!-- 9. Accordion -->
   <section class="site-container py-16 md:py-24 max-w-2xl mx-auto" data-aos="fade-up-xs" data-aos-once="true">
     <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Accordion / FAQ</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-8">Collapsible content panels.</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-8">可折叠的内容面板。</p>
 
     {sampleFaq.map((item, i) => (
       <AccordionItem question={item.question} answer={item.answer} index={i} />
@@ -473,7 +473,7 @@ const sampleFaq = [
   <!-- 10. Icons -->
   <section class="site-container py-16 md:py-24" data-aos="fade-up-xs" data-aos-once="true">
     <h2 class="text-3xl font-brand text-neutral-800 dark:text-neutral-100 mb-2">Icons</h2>
-    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">Lucide icon set used throughout the template.</p>
+    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-10">模板中使用的 Lucide 图标集合。</p>
 
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
       {icons.map(({ Icon, name, usage }) => (

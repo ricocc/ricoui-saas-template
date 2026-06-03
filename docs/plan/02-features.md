@@ -1,32 +1,16 @@
-# Features Page
+# 02 Features
 
-Source: `src/pages/features.astro`
+功能页用于展开首页中提到的核心能力。
 
-## Purpose
+## 模块
 
-The features page gives visitors a deeper look at the template capabilities introduced on the home page.
+- 页面结构：预置路由、容器宽度、移动优先。
+- 模块化 section：说明组件可组合、可重排。
+- MDX 内容：Blog 和 Changelog 的 Content Layer 工作流。
+- 动效：AOS、motion.js、AnimatedText。
+- 性能：Astro Islands、Sharp、静态输出、Lighthouse 95+。
+- 设计系统：tokens、Tailwind v4 `@theme`、dark mode、Elements 参考。
 
-## Implemented Content
+## 注意
 
-The page covers six major capability areas:
-
-- Clean page structure
-- Reusable sections
-- MDX-powered content
-- Lightweight performance
-- Built-in motion
-- Easy customization
-
-## Page Pattern
-
-- `Layout.astro` wraps the page.
-- `PageHeader.astro` introduces the route.
-- Feature sections use alternating text and visual layouts.
-- The page ends with a conversion CTA.
-
-## QA
-
-- Verify feature visual panels do not collapse on mobile.
-- Verify copy remains aligned with the home page feature language.
-- Verify light and dark mode contrast.
-- Verify CTA links point to the intended route or repository.
+示例代码、组件名和 token 名保留英文，说明文字使用中文。

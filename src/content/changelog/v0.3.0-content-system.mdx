@@ -1,44 +1,44 @@
 ---
-title: "Content Layer and faster builds"
+title: "Content Layer 与更快构建"
 publishDate: 2026-03-18
 version: "v0.3.0"
-description: "Astro Content Layer migration, unified metadata, and a 30% faster cold build."
+description: "迁移到 Astro Content Layer，统一元信息，并缩短冷启动构建时间。"
 ---
 
-## Migration to Content Layer
+## 迁移到 Content Layer
 
-Blog and changelog content moved to Astro's `glob` loader and Content Layer API. The migration removed older content patterns and made the site easier to extend later with external Markdown, a CMS, or another content source.
+Blog 和 Changelog 内容迁移到 Astro 的 `glob` loader 与 Content Layer API。旧内容模式被移除，后续接入外部 Markdown、CMS 或其他内容源会更直接。
 
-Key changes from the earlier preview:
+关键变化：
 
-- `entry.slug` became `entry.id`
-- `entry.render()` became `render(entry)` from `astro:content`
-- `Astro.glob()` usage moved to `import.meta.glob()` where static imports were still needed
-- `getStaticPaths()` params were normalized for Astro v6 readiness
+- `entry.slug` 改为 `entry.id`
+- `entry.render()` 改为来自 `astro:content` 的 `render(entry)`
+- 静态导入场景使用 `import.meta.glob()`
+- `getStaticPaths()` 参数为 Astro v6 做了规范化
 
-## Schema unification
+## Schema 统一
 
-Blog and changelog frontmatter now follow a shared shape:
+Blog 和 Changelog frontmatter 使用更接近的结构：
 
 ```yaml
 title: string
 description: string
 publishDate: date
-version?: string     # changelog only
-tags?: string[]      # blog only
-read?: number        # blog only
+version?: string
+tags?: string[]
+read?: number
 img?: string
 img_alt?: string
 featured?: boolean
 ```
 
-## Performance wins
+## 性能收益
 
-- Cold build time: **21s -> 14s** on CI (Vercel hobby runner, 8 routes)
-- First-load JS on Home: **31KB -> 24KB** gzipped after splitting AnimatedText into a dynamic chunk
-- Blog cards now use `loading="lazy"` by default
-- Lighthouse on a fresh install: **95+** across Performance, Accessibility, Best Practices, and SEO on Home, Features, and Pricing
+- 冷启动构建时间：CI 上从 **21s** 降到 **14s**
+- 首页首屏 JS：AnimatedText 拆分后，gzip 体积从 **31KB** 降到 **24KB**
+- Blog 卡片默认使用 `loading="lazy"`
+- 全新安装后，Home、Features、Pricing 的 Lighthouse 均为 **95+**
 
-## Release status
+## 发布状态
 
-`v0.3` locked the content and performance baseline. The remaining work before `v1.0` was product-story polish, route coverage, and final template cleanup.
+`v0.3` 锁定了内容和性能跑分。进入 `v1.0` 前，剩余重点是产品故事、路由覆盖和最终模板清理。

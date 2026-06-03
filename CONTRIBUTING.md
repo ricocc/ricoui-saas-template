@@ -1,110 +1,67 @@
-# Contributing to RicoFast
+# 参与贡献
 
-Thanks for considering a contribution! All forms of help are welcome — bug reports, feature ideas, documentation improvements, or code.
+感谢你愿意参与 RicoFast。Bug 反馈、功能建议、文档修正和代码贡献都欢迎。
 
-## Reporting bugs
+## 报告 Bug
 
-If you spot a bug:
+提交 issue 前，请先搜索现有 [Issues](https://github.com/ricocc/ricoui-saas-template/issues)。新 issue 建议包含：
 
-1. Search [Issues](https://github.com/ricocc/ricoui-saas-template/issues) to confirm it isn't already filed
-2. Open a new issue and include:
-   - A clear description of the problem
-   - Steps to reproduce
-   - Expected vs. actual behavior
-   - Screenshots (if relevant)
-   - Environment info (browser, OS, Node version)
+- 问题描述
+- 复现步骤
+- 期望行为和实际行为
+- 截图或录屏
+- 环境信息：浏览器、操作系统、Node.js 版本
 
-## Suggesting features
+## 提出功能建议
 
-If you have an idea for improvement:
+请说明：
 
-1. Search existing issues to avoid duplicates
-2. Open a new Feature Request describing:
-   - What the feature does
-   - The use case it solves
-   - A possible implementation sketch (optional)
+- 这个功能解决什么问题
+- 适合放进模板本体，还是更适合作为示例
+- 可能的实现方式
 
-## Submitting code
+## 提交代码
 
-1. **Fork the repo**
+```bash
+git clone https://github.com/your-username/ricoui-saas-template.git
+cd ricoui-saas-template
+git checkout -b feature/your-feature-name
+pnpm install
+```
 
-   ```bash
-   git clone https://github.com/your-username/ricoui-saas-template.git
-   cd ricoui-saas-template
-   ```
+开发时请参考：
 
-2. **Create a branch**
+- [`docs/DESIGN.md`](docs/DESIGN.md)
+- [`docs/PRD.md`](docs/PRD.md)
+- [`CLAUDE.md`](CLAUDE.md)
 
-   ```bash
-   git checkout -b feature/your-feature-name
-   # or
-   git checkout -b fix/your-bug-fix
-   ```
+提交前运行：
 
-3. **Install dependencies**
+```bash
+pnpm check
+pnpm build
+```
 
-   ```bash
-   pnpm install
-   ```
+## 代码约定
 
-4. **Make your changes**
-   - Follow the conventions described in [`CLAUDE.md`](CLAUDE.md) and [`docs/DESIGN.md`](docs/DESIGN.md)
-   - Run `pnpm check` to verify Biome lint passes
-   - Run `pnpm build` to verify the production build succeeds
-   - Test in both light and dark mode
+- 使用 Astro Content Layer：`getCollection()`、`entry.id`、`render(entry)`。
+- 样式优先使用 `src/styles/global.css` 中的 tokens。
+- 全站字体保持思源黑体字体栈。
+- 新组件必须同时考虑浅色和深色模式。
+- 动效优先使用 AOS，复杂编排再使用 motion.js。
+- 不要为了简单 UI 行为引入新依赖。
+- Auth 和 Contact 页面是静态 demo，不要把它们写成真实后端能力。
 
-5. **Commit using Conventional Commits**
+## PR 前检查
 
-   ```bash
-   git add .
-   git commit -m "feat: add BrowserFrame component"
-   ```
+- [ ] `pnpm check` 通过
+- [ ] `pnpm build` 通过
+- [ ] 已在本地 `pnpm dev` 检查
+- [ ] 浅色 / 深色模式可用
+- [ ] 移动端和桌面端布局正常
+- [ ] 没有坏掉的 import 或过期链接
 
-   Common prefixes:
-   - `feat:` new feature
-   - `fix:` bug fix
-   - `docs:` documentation only
-   - `style:` formatting / styling
-   - `refactor:` code restructuring
-   - `perf:` performance improvement
-   - `chore:` tooling, build, dependencies
+## 联系
 
-6. **Push and open a Pull Request**
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-   Then create a PR against `main` and fill in the description template.
-
-## Code conventions
-
-- **Astro / Content** — Use Astro v5 Content Layer (`glob` loader, `entry.id`, `render(entry)`, `import.meta.env`). See `CLAUDE.md` for the full list.
-- **Styling** — Use design tokens from `src/styles/global.css`. Don't introduce ad-hoc colors or magic spacing values.
-- **Dark mode** — Every component must work in both light and dark. Test with the toggle in the Header.
-- **Animation** — Use AOS for scroll reveals (`data-aos-once="true"`). Reserve motion.js for orchestrated entrances.
-- **TypeScript** — `pnpm build` runs `astro check`. Fix type errors before opening a PR.
-- **No new dependencies** — without strong justification in the PR description. The template stays light by design.
-
-## Development requirements
-
-- Node.js >= 18
-- pnpm (recommended), npm, or yarn
-- A modern browser (Chrome, Firefox, Safari, Edge)
-
-## Before opening a PR
-
-- [ ] `pnpm check` passes (Biome lint)
-- [ ] `pnpm build` succeeds with no type errors
-- [ ] Tested locally in dev (`pnpm dev`)
-- [ ] Works in both light and dark mode
-- [ ] Mobile (375px) and desktop (1440px) layouts intact
-- [ ] No broken imports or stale references after cleanup
-
-## Questions?
-
-- Browse [Issues](https://github.com/ricocc/ricoui-saas-template/issues)
-- Open a discussion or new issue
+- Issues: https://github.com/ricocc/ricoui-saas-template/issues
 - Email: hello@ricoui.com
-
-Thanks again for helping make this better.

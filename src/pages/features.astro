@@ -11,49 +11,49 @@ import {
 const featureModules = [
   {
     icon: LayoutDashboard,
-    title: "Clean, scalable page structure",
-    desc: "Nine pre-built pages — Home, Features, Pricing, Blog, Changelog, About, Contact, Elements, 404 — wired with consistent hierarchy, spacing, and typography. Add your tenth without re-deciding any of it.",
-    points: ["9 pre-built page templates", "Token-driven spacing (4 / 8 / 12 / 16 / 24 …)", "1200px max-width, 800px inner content", "Mobile-first responsive (375 / 768 / 1024 / 1440)"],
+    title: "清晰、可扩展的页面结构",
+    desc: "预置 9 个页面：Home、Features、Pricing、Blog、Changelog、About、Contact、Elements、404。层级、间距和字体规则已经统一，新增页面时不用重新做一遍判断。",
+    points: ["9 个预置页面模板", "基于 token 的间距系统（4 / 8 / 12 / 16 / 24 ...）", "1200px 主容器，800px 内容容器", "移动优先响应式（375 / 768 / 1024 / 1440）"],
     direction: "left",
     visual: "wireframe",
   },
   {
     icon: Layers,
-    title: "Modular, plug-and-play sections",
-    desc: "Every section is a standalone Astro component with a consistent props interface. Reorder Hero, Features, Pricing, Steps, FAQ, FinalCTA without rewriting layout glue.",
-    points: ["15+ reusable section components", "Consistent props API (title, description, items)", "Mix, match, and reorder without conflicts", "Documented in /elements for quick reference"],
+    title: "模块化 section，拿来就能组合",
+    desc: "每个 section 都是独立 Astro 组件，并保持相近的 props 结构。Hero、Features、Pricing、Steps、FAQ、FinalCTA 可以按项目需要重排。",
+    points: ["15+ 可复用 section 组件", "一致的 props API（title、description、items）", "可组合、可重排，减少布局冲突", "在 /elements 中提供快速参考"],
     direction: "right",
     visual: "blocks",
   },
   {
     icon: FileText,
-    title: "Content with full MDX support",
-    desc: "Blog and changelog powered by Astro 6 Content Layer. Plain Markdown for prose, imported Astro components for interactive bits. No CMS, no plugin sprawl.",
-    points: ["Astro 6 Content Layer with glob loader", "Component imports inside MDX", "TOC + reading progress + share built-in", "Auto RSS feed at /rss.xml"],
+    title: "完整 MDX 内容支持",
+    desc: "Blog 和 Changelog 基于 Astro Content Layer。正文使用 Markdown，需要交互时再在 MDX 中引入 Astro 组件，不需要一开始就接 CMS。",
+    points: ["Astro Content Layer + glob loader", "MDX 中可引入组件", "内置 TOC、阅读进度和分享入口", "自动生成 /rss.xml"],
     direction: "left",
     visual: "mdx",
   },
   {
     icon: Sparkles,
-    title: "Subtle, purposeful animations",
-    desc: "Scroll reveals via AOS, orchestrated entrances via motion.js, and a staggered hero text component. Restraint over spectacle — every animation has a reason.",
-    points: ["AOS scroll reveal with `data-aos-once`", "motion.js for orchestrated timelines", "AnimatedText for hero stagger", "Honors prefers-reduced-motion"],
+    title: "克制且有目的的动效",
+    desc: "AOS 负责滚动入场，motion.js 用于需要编排的动效，Hero 文本使用错落入场。动效服务于层级和反馈，不做无意义装饰。",
+    points: ["AOS 滚动入场，配合 `data-aos-once`", "motion.js 用于时间线编排", "AnimatedText 支持 Hero 错落展示", "遵循 prefers-reduced-motion"],
     direction: "right",
     visual: "motion",
   },
   {
     icon: Zap,
-    title: "Fast by default",
-    desc: "Astro ships zero JavaScript by default — interactive islands load only where needed. Tested on Vercel Edge and Cloudflare Pages, scoring Lighthouse 95+ across the board from a fresh install.",
-    points: ["Zero JS by default (Astro Islands)", "Automatic Sharp image optimization", "Static output, deployable anywhere", "Lighthouse 95+ on a fresh install"],
+    title: "默认就很快",
+    desc: "Astro 默认零 JavaScript，只有需要交互的 islands 才加载脚本。全新安装后即可获得 Lighthouse 95+ 的性能、可访问性和 SEO 基线。",
+    points: ["默认零 JS（Astro Islands）", "Sharp 自动图片优化", "静态输出，部署平台不限", "全新安装 Lighthouse 95+"],
     direction: "left",
     visual: "lighthouse",
   },
   {
     icon: Palette,
-    title: "Token-driven design system",
-    desc: "Colors, fonts, spacing, radii, and motion timing are all CSS custom properties documented in docs/DESIGN.md. Rebrand by editing one file — the rest of the site follows.",
-    points: ["~30 documented CSS tokens", "Tailwind v4 @theme integration", "Built-in dark mode with no flash", "/elements page as live reference"],
+    title: "由 token 驱动的设计系统",
+    desc: "颜色、字体、间距、圆角和动效时长都以 CSS 自定义属性维护，并记录在 docs/DESIGN.md。品牌替换优先改一个文件，整站跟随变化。",
+    points: ["约 30 个有文档说明的 CSS tokens", "集成 Tailwind v4 @theme", "内置无闪烁暗黑模式", "/elements 页面可作为实时参考"],
     direction: "right",
     visual: "palette",
   },
@@ -61,13 +61,13 @@ const featureModules = [
 ---
 
 <Layout
-  title="Features — RicoFast"
-  description="Everything you need to build a modern SaaS site. Carefully designed sections and production-ready components."
+  title="功能 — RicoFast"
+  description="构建现代 SaaS 官网所需的页面、组件、内容系统和设计 token。"
 >
   <section class="site-container my-12">
     <PageHeader
-      title="Everything you need to build a modern SaaS site"
-      description="Carefully designed sections, production-ready components, and a layout system that scales with your product."
+      title="搭建现代 SaaS 官网"
+      description="设计过的 section、可直接使用的组件，以及能随产品扩展的页面系统。"
     />
   </section>
 
@@ -144,9 +144,9 @@ const featureModules = [
                 <div><span class="text-primary">publishDate</span>: 2026-03-18</div>
                 <div><span class="text-primary">tags</span>: [<span class="text-emerald-600 dark:text-emerald-400">"Release"</span>]</div>
                 <div class="text-neutral-400">---</div>
-                <div class="mt-2"><span class="text-amber-600 dark:text-amber-400">## What's new</span></div>
-                <div class="mt-1">Three months after v1, RicoFast</div>
-                <div>v1.2 ships today.</div>
+                <div class="mt-2"><span class="text-amber-600 dark:text-amber-400">## 本次更新</span></div>
+                <div class="mt-1">v1 发布三个月后，RicoFast</div>
+                <div>今天带来 v1.2。</div>
                 <div class="mt-2 text-purple-600 dark:text-purple-400">&lt;Callout type="success"&gt;</div>
                 <div class="pl-4">Lighthouse 95+ across the board</div>
                 <div class="text-purple-600 dark:text-purple-400">&lt;/Callout&gt;</div>
@@ -161,7 +161,7 @@ const featureModules = [
                 <div class="absolute w-24 h-24 rounded-2xl border border-primary/50 bg-primary/20 shadow-md"></div>
                 <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
                   <Sparkles class="w-3 h-3 text-primary" />
-                  <span class="text-[10px] uppercase tracking-wider text-primary">Staggered entrance</span>
+                  <span class="text-[10px] uppercase tracking-wider text-primary">错落入场</span>
                 </div>
               </div>
             )}
@@ -171,9 +171,9 @@ const featureModules = [
               <div class="h-full flex flex-col">
                 <div class="grid grid-cols-4 gap-3 flex-1 items-center">
                   {[
-                    { label: "Perf", value: 98, color: "text-emerald-500" },
+                    { label: "性能", value: 98, color: "text-emerald-500" },
                     { label: "A11y", value: 90, color: "text-emerald-500" },
-                    { label: "Best", value: 100, color: "text-emerald-500" },
+                    { label: "实践", value: 100, color: "text-emerald-500" },
                     { label: "SEO", value: 95, color: "text-emerald-500" },
                   ].map((m) => (
                     <div class="flex flex-col items-center gap-2">
@@ -186,7 +186,7 @@ const featureModules = [
                 </div>
                 <div class="mt-4 flex items-center justify-center gap-1.5">
                   <Zap class="w-3 h-3 text-primary" />
-                  <span class="text-[10px] uppercase tracking-wider text-primary">Lighthouse · Home page</span>
+                  <span class="text-[10px] uppercase tracking-wider text-primary">Lighthouse · 首页</span>
                 </div>
               </div>
             )}
@@ -205,7 +205,7 @@ const featureModules = [
                   <div class="text-neutral-400">@theme &#123;</div>
                   <div class="pl-3"><span class="text-primary">--color-primary</span>: <span class="text-amber-600 dark:text-amber-400">#2d6dc3</span>;</div>
                   <div class="pl-3"><span class="text-primary">--color-accent</span>: <span class="text-amber-600 dark:text-amber-400">#fad13b</span>;</div>
-                  <div class="pl-3"><span class="text-primary">--font-brand</span>: Instrument Serif;</div>
+                  <div class="pl-3"><span class="text-primary">--font-brand</span>: Source Han Sans SC;</div>
                   <div class="text-neutral-400">&#125;</div>
                 </div>
               </div>
@@ -222,16 +222,16 @@ const featureModules = [
   <!-- CTA -->
   <section class="py-16 md:py-24 site-container" data-aos="fade-up-xs" data-aos-once="true">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-brand mb-4">See it in action</h2>
+      <h2 class="text-3xl md:text-4xl font-brand mb-4">直接看实际效果</h2>
       <p class="text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed">
-        Browse the live demo, then fork the repo when you're ready to make it yours.
+        先浏览在线演示。确认适合后，fork 仓库并替换成你的产品内容。
       </p>
       <div class="flex flex-wrap justify-center gap-3">
         <Button url="/" type="fill" className="text-lg px-8 py-3">
-          View Live Demo <ArrowRight size={18} />
+          查看在线演示 <ArrowRight size={18} />
         </Button>
         <Button url={siteConfig.social.github} className="text-lg px-8 py-3" target="_blank">
-          Get Template
+          获取模板
         </Button>
       </div>
     </div>
