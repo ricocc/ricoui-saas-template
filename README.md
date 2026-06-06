@@ -1,5 +1,7 @@
 # RicoFast - 面向 Astro 的高质感 SaaS 模板
 
+**中文版分支：** `template-zh`
+
 
 RicoFast 是一个开源 SaaS 官网模板，基于 Astro 6 和 Tailwind CSS v4 构建。它适合独立开发者、AI/开发工具团队、开源项目维护者，用来快速搭建一个设计完成度更高的产品站。
 
@@ -10,7 +12,10 @@ RicoFast 是一个开源 SaaS 官网模板，基于 Astro 6 和 Tailwind CSS v4 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.14-38B2AC?logo=tailwind-css&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-**链接：** [在线演示](https://ricofast.pages.dev/) · [GitHub](https://github.com/ricocc/ricoui-saas-template) · [Changelog](https://ricofast.pages.dev/changelog) · [Elements](https://ricofast.pages.dev/elements)
+**链接：** [在线演示](https://ricofast.pages.dev/) · [中文版预览](https://ricoui-saas-zh.netlify.app/) · [GitHub](https://github.com/ricocc/ricoui-saas-template) · [Changelog](https://ricofast.pages.dev/changelog) · [Elements](https://ricofast.pages.dev/elements)
+
+
+
 
 ## 为什么是 RicoFast
 
@@ -128,3 +133,48 @@ pnpm check     # Biome 检查和格式化
 ## License
 
 [MIT](LICENSE)
+
+
+---
+
+## 其他模板
+
+-  **启动模板** - 开源 :  [https://github.com/ricocc/ricoui-astro-starter](https://github.com/ricocc/ricoui-astro-starter)
+
+-  **个人网站** - 开源 :  [https://github.com/ricocc/ricoui-portfolio](https://github.com/ricocc/ricoui-portfolio)
+
+-  **博客** - 开源 :  [https://github.com/ricocc/public-portfolio-site](https://github.com/ricocc/public-portfolio-site)
+
+
+
+
+
+## 关于作者
+
+我是Rico <a href="https://x.com/ricouii" target="_blank">X (@ricouii)</a>，网页/UI设计师，热衷于做些有趣和创意的作品。拥有 UI/UX 设计工作经验，目前专注于网页设计和视觉落地，以及开发项目探索。
+
+可以添加我的微信，交个朋友
+
+<img src="https://ricoui.com/assets/wechat.png" alt="ricocc-wechat" width="280" height="auto" style="display:inline-block;margin:12px;">
+
+
+我平时在博客 <a href="https://ricoui.com/" target="_blank">Rico's Blog</a> 更新内容。也可以关注我的小红书 [@Rico的设计漫想](https://www.xiaohongshu.com/user/profile/5f2b6903000000000101f51f).
+
+---
+
+## 💜 支持作者
+
+如果觉得有所帮助的话，一点点支持就可以大大激励创作者的热情，感谢！
+
+<img src="https://ricoui.com/assets/wechat-qr.jpg" alt="ricocc-wechat" width="280" height="auto" style="display:inline-block;margin:12px;">
+
+
+<br/>
+
+<a href="https://ko-fi.com/T6T817U4KZ" target="_blank"><img height="40" src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" /></a>
+
+---
+
+
+⭐ 如果这个模板帮你节省了时间，请点一个 Star。
+
